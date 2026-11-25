@@ -1,0 +1,772 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>獅城步行誌</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
+<style>
+/* Layout: 田野筆記本——頂部黏性分頁（觀點／路線／記錄／手冊），單欄內容；新加坡綠、臺南橘。 */
+:root{
+  --bg:#f5f2eb; --surface:#ffffff; --ink:#1f2a30; --muted:#5f676c; --line:#ddd7cb; --soft:#efebe2;
+  --sg:#2e7d6b; --tn:#c8743a; --accent:#2e7d6b; --accent-ink:#ffffff; --hi:#e07a3f;
+  --warn:#a14a1f; --ok:#2e7d4f; --water:#c6dbe4; --land:#ece6d8; --demo:#fff4d6; --demo-ink:#6b4a00;
+  --display:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#13171a; --surface:#1b2024; --ink:#e7eaec; --muted:#9ba3a8; --line:#2d3439; --soft:#232a2f;
+  --sg:#6cc3ab; --tn:#e3a073; --accent:#6cc3ab; --accent-ink:#0f1416; --hi:#f0a070;
+  --warn:#f0a07a; --ok:#7fcf9e; --water:#22394a; --land:#262c30; --demo:#3a3016; --demo-ink:#f3dc9c; color-scheme:dark}}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-bottom:5rem;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+.wrap{max-width:54rem;margin:0 auto;min-width:0}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line);
+  margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.bar{max-width:54rem;margin:0 auto;display:flex;align-items:center;gap:.75rem;padding-block:.55rem;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1.08rem;white-space:nowrap}
+.brand small{font-family:var(--body);font-weight:400;color:var(--muted);font-size:.72rem;margin-left:.35rem}
+nav.tabs{display:flex;gap:.25rem;margin-left:auto;flex-wrap:wrap}
+nav.tabs a{font-size:.9rem;line-height:1.2;text-decoration:none;color:var(--ink);padding:.45rem .75rem;border-radius:.45rem;display:flex;flex-direction:column;align-items:center}
+nav.tabs a span{font-size:.62rem;color:var(--muted);letter-spacing:.04em}
+nav.tabs a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+nav.tabs a[aria-current="page"] span{color:var(--accent-ink);opacity:.8}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1{font-family:var(--display);font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.25;margin:.2rem 0 .3rem;text-wrap:balance}
+h2{font-family:var(--display);font-size:1.3rem;margin:2.2rem 0 .6rem;text-wrap:balance}
+h3{font-size:1.02rem;margin:0 0 .3rem}
+.sub{font-family:var(--display);color:var(--sg);font-size:clamp(1.05rem,3vw,1.35rem);margin:0 0 .6rem}
+.en{color:var(--muted);font-size:.85em}
+.eyebrow{font-size:.75rem;letter-spacing:.08em;color:var(--muted);margin:0}
+p{margin:.5rem 0}
+.hero{padding-block:1.6rem .4rem}
+.lede{max-width:42rem}
+.claim{font-family:var(--display);font-size:1.12rem;border-left:4px solid var(--sg);padding:.2rem 0 .2rem .9rem;margin:1rem 0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.5rem}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}.grid5{grid-template-columns:repeat(2,minmax(0,1fr))}.grid5 .card:last-child{grid-column:span 2}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:.6rem;padding:.9rem 1rem;min-width:0}
+.grid5 .card{padding:.7rem .75rem}.grid5 b{display:block}.grid5 p{font-size:.82rem;color:var(--muted);margin:.2rem 0 0;line-height:1.55}
+.ico{display:block;width:100%;max-width:7rem;height:auto;margin:0 0 .4rem;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ico .fill{fill:var(--soft)} .ico .acc{stroke:var(--sg)} .ico .accf{fill:var(--sg);stroke:none} .ico .g{stroke:var(--muted)}
+ol.flow{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem;counter-reset:f}
+@media (max-width:720px){ol.flow{grid-template-columns:1fr 1fr}}
+ol.flow li{counter-increment:f;background:var(--surface);border:1px solid var(--line);border-radius:.6rem;padding:.7rem .8rem;font-size:.9rem;min-width:0}
+ol.flow li::before{content:counter(f);display:inline-grid;place-items:center;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.8rem;margin-right:.4rem}
+ol.flow li b{display:block;margin-top:.2rem}
+.qs{display:grid;gap:.5rem}
+.q{display:grid;grid-template-columns:4.4rem minmax(0,1fr);gap:.7rem;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:.55rem;padding:.6rem .8rem}
+.qtag{font-weight:700;background:var(--soft);border-radius:.4rem;text-align:center;padding:.15rem 0;font-size:.85rem;line-height:1.35}
+.qtag small{display:block;font-weight:400;color:var(--muted);font-size:.72rem}
+.q p{margin:0}.q .o{font-size:.84rem;color:var(--muted)}
+.tl{list-style:none;padding:0;margin:.6rem 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.4rem;position:relative}
+.tl::before{content:"";position:absolute;left:5%;right:5%;top:2.05rem;border-top:2px solid var(--ink)}
+.tl li{text-align:center;font-size:.8rem;line-height:1.45;position:relative}
+.tl b{display:block;font-size:1.15rem;color:var(--sg);font-variant-numeric:tabular-nums}
+.tl i{display:block;width:.8rem;height:.8rem;border-radius:50%;background:var(--sg);margin:.15rem auto .4rem;border:2px solid var(--surface)}
+.tl li:last-child b{color:var(--hi)} .tl li:last-child i{background:var(--hi)}
+@media (max-width:560px){.tl{grid-template-columns:1fr;gap:.2rem}.tl::before{display:none}.tl li{text-align:left;display:flex;gap:.6rem;align-items:baseline}.tl i{display:none}}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.chip{font:inherit;font-size:.82rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:2rem;padding:.28rem .75rem;cursor:pointer;line-height:1.4}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.tag{font-size:.74rem;border-radius:1rem;padding:.05rem .55rem;background:var(--soft);color:var(--ink);white-space:nowrap}
+.day{display:grid;grid-template-columns:4.6rem minmax(0,1fr);gap:.6rem;padding:.55rem 0;border-bottom:1px solid var(--line)}
+.day .d{font-variant-numeric:tabular-nums;font-weight:700}
+.day .d small{display:block;font-weight:400;color:var(--muted);font-size:.74rem}
+.day .memo{font-size:.82rem;color:var(--muted)}
+.sitebtn{font:inherit;text-align:left;width:100%;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:.45rem;padding:.45rem .65rem;margin:.25rem 0;cursor:pointer;color:var(--ink);display:flex;gap:.5rem;align-items:center;justify-content:space-between}
+.sitebtn[aria-current="true"]{box-shadow:0 0 0 2px var(--c);background:color-mix(in srgb,var(--c) 10%,var(--surface))}
+.sitebtn .no{display:inline-grid;place-items:center;width:1.5rem;height:1.5rem;flex:none;border-radius:50%;background:var(--c);color:var(--accent-ink);margin-right:.45rem;vertical-align:middle}
+.sitebtn .no .sic{width:.95rem;height:.95rem}
+.sitebtn .cnt{font-size:.74rem;color:var(--muted);white-space:nowrap}
+.routegrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:1rem;align-items:start;margin-top:.6rem}
+.listcol{min-width:0}
+.mapcol{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hdr,64px) + 8px);min-width:0;z-index:5}
+.mappanel{background:var(--surface);border:1px solid var(--line);border-radius:.6rem;padding:.5rem .6rem .6rem}
+.maptabs{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.3rem}
+.maptabs button{font:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:2rem;padding:.15rem .65rem;cursor:pointer}
+.maptabs button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.citymap{width:100%;height:auto;display:block;border-radius:.4rem;background:var(--water)}
+.citymap .land{fill:var(--land);stroke:var(--line);stroke-width:1}
+.citymap .rail{fill:none;stroke:var(--muted);stroke-width:2;stroke-dasharray:6 4}
+.citymap .green{fill:none;stroke:var(--sg);stroke-width:9;stroke-linecap:round;opacity:.28}
+.citymap .lab{font-size:11px;fill:var(--muted)}
+.sic{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.citymap .mi{color:var(--accent-ink);pointer-events:none}
+.citymap .pt{cursor:pointer}
+.citymap .pt circle.core{stroke:var(--surface);stroke-width:2}
+.citymap .pt.sel circle.core{stroke:var(--ink);stroke-width:2.5}
+.citymap .pt.done circle.core{stroke:var(--hi);stroke-width:2.5}
+.citymap .glow{fill:var(--c);opacity:0}
+.citymap .pt.sel .glow{opacity:.35;animation:pulse 1.4s ease-out infinite}
+.citymap .sellab{font-size:13px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:4px}
+@keyframes pulse{0%{r:11;opacity:.5}100%{r:24;opacity:0}}
+@media (prefers-reduced-motion:reduce){.citymap .pt.sel .glow{animation:none;opacity:.35}}
+.mapinfo{font-size:.85rem;margin-top:.4rem;display:flex;gap:.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;min-height:2rem}
+@media (max-width:720px){.routegrid{grid-template-columns:1fr}.mapcol{top:calc(env(safe-area-inset-top,0px) + var(--hdr,96px))}.citymap{max-height:36vh}}
+dialog{border:1px solid var(--line);border-radius:.8rem;background:var(--surface);color:var(--ink);padding:0;width:min(40rem,calc(100vw - 32px));max-height:calc(100vh - 48px)}
+dialog::backdrop{background:color-mix(in srgb,#000 45%,transparent)}
+.dlg{padding:1.1rem 1.2rem;overflow:auto;max-height:calc(100vh - 60px)}
+.dlg .close{float:right}
+.dlg .ttl{display:flex;gap:.6rem;align-items:flex-start}
+.dlg .ttl .no{display:inline-grid;place-items:center;width:2.2rem;height:2.2rem;flex:none;border-radius:50%;background:var(--c);color:var(--accent-ink);margin-top:.3rem}
+.dlg .ttl .no .sic{width:1.3rem;height:1.3rem}
+.kv{display:grid;grid-template-columns:6rem minmax(0,1fr);gap:.2rem .7rem;font-size:.9rem;margin:.7rem 0}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.ask{background:var(--soft);border-radius:.45rem;padding:.55rem .75rem;margin:.6rem 0;font-size:.92rem}
+.weblink a{color:var(--accent);font-weight:500}
+label.f,.f{display:block;font-weight:500;margin:1rem 0 .35rem;font-size:.92rem}
+.f small{font-weight:400;color:var(--muted);margin-left:.3rem}
+select,textarea,input[type=text],input[type=number]{font:inherit;width:100%;border:1px solid var(--line);border-radius:.45rem;padding:.5rem .65rem;background:var(--surface);color:var(--ink)}
+textarea{min-height:6.5rem;resize:vertical}
+.btn{font:inherit;font-size:.9rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:.45rem;padding:.48rem .9rem;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:500}
+.btn.small{font-size:.8rem;padding:.28rem .65rem}
+.btn:disabled,.btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.35rem;margin:.6rem 0}
+.seg button{font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:.55rem;padding:.55rem .5rem;cursor:pointer;line-height:1.35;font-size:.9rem}
+.seg button small{display:block;font-size:.72rem;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.seg button[aria-pressed="true"] small{color:var(--surface);opacity:.75}
+fieldset.sec{border:1px solid var(--line);border-radius:.6rem;background:var(--surface);padding:.3rem .9rem .9rem;margin:.9rem 0;min-width:0}
+fieldset.sec legend{font-weight:700;padding:0 .35rem;font-size:.95rem}
+.timer{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.timer b{font-size:1.4rem;font-variant-numeric:tabular-nums;min-width:4.5rem}
+.ctab{width:100%;border-collapse:collapse;font-size:.88rem}
+.ctab th,.ctab td{border-bottom:1px solid var(--line);padding:.35rem .3rem;text-align:center;vertical-align:middle}
+.ctab th:first-child,.ctab td:first-child{text-align:left}
+.ctab input,.ctab select{padding:.3rem .4rem;font-size:.85rem}
+.tally{display:inline-flex;align-items:center;gap:.25rem}
+.tally button{font:inherit;width:2.4rem;height:2.4rem;border-radius:.45rem;border:1px solid var(--line);background:var(--soft);color:var(--ink);cursor:pointer;font-size:1.1rem;line-height:1}
+.tally button.plus{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tally output{min-width:2rem;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.gehl{display:grid;grid-template-columns:4.2rem repeat(6,minmax(0,1fr));gap:.3rem;align-items:stretch}
+.gehl .h{font-size:.74rem;color:var(--muted);text-align:center;align-self:end;line-height:1.3}
+.gehl .rh{font-size:.84rem;font-weight:500;align-self:center}
+.gehl button{font:inherit;border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:.45rem;min-height:3rem;cursor:pointer;font-weight:700;font-size:1.05rem;font-variant-numeric:tabular-nums;touch-action:manipulation}
+.gehl button:active{background:color-mix(in srgb,var(--accent) 30%,var(--soft))}
+.gehl.minus button{background:color-mix(in srgb,var(--warn) 14%,var(--surface))}
+.gehl .tot{font-size:.78rem;color:var(--muted);text-align:center;align-self:center}
+@media (max-width:520px){.gehl{grid-template-columns:3.2rem repeat(6,minmax(0,1fr));gap:.2rem}.gehl button{min-height:2.7rem;font-size:.95rem}.gehl .h{font-size:.66rem}}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(7.5rem,1fr));gap:.5rem;margin-top:.5rem}
+.photos:empty{display:none}
+.photos figure{margin:0;min-width:0;position:relative}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:.35rem;display:block;background:var(--soft)}
+.photos figcaption{font-size:.76rem;color:var(--muted)}
+.photos .rm{position:absolute;top:.25rem;right:.25rem;font-size:.72rem;padding:.1rem .4rem}
+.phbtn{display:inline-block}
+.note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:.5rem;padding:.7rem .9rem;margin:.6rem 0}
+.note .meta{font-size:.78rem;color:var(--muted);display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.note .txt{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem}
+.note .sum{font-size:.84rem;margin:.3rem 0}
+.status{font-size:.85rem;color:var(--muted);min-height:1.4em}
+.status.err{color:var(--warn)} .status.ok{color:var(--ok)}
+.banner{font-size:.86rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:.5rem;padding:.55rem .8rem;margin:.8rem 0}
+.banner.demo{background:var(--demo);color:var(--demo-ink);border-style:dashed}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem;margin:.6rem 0}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:.55rem;padding:.6rem .75rem}
+.stat div{font-size:.78rem;color:var(--muted)}
+.stat b{display:block;font-size:1.35rem;font-variant-numeric:tabular-nums}
+.stat b small{font-size:.8rem;color:var(--muted);font-weight:400}
+.stat .pb{height:.35rem;background:var(--soft);border-radius:1rem;margin-top:.35rem;overflow:hidden}
+.stat .pb i{display:block;height:100%;background:var(--sg);border-radius:1rem}
+.matrix{overflow-x:auto;border:1px solid var(--line);border-radius:.5rem;background:var(--surface)}
+.matrix table{border-collapse:collapse;width:100%;min-width:40rem;font-variant-numeric:tabular-nums}
+.matrix th,.matrix td{padding:.4rem .45rem;border-bottom:1px solid var(--line);text-align:center;font-size:.84rem}
+.matrix th:first-child,.matrix td:first-child{text-align:left}
+.matrix td.v{background:color-mix(in srgb,var(--sg) calc(var(--a)*1%),transparent)}
+.matrix select{width:auto;padding:.15rem .3rem;font-size:.8rem}
+.hb-site{margin:1.2rem 0 1.6rem;padding-top:.8rem;border-top:2px solid var(--c)}
+.hb-site .pre{font-size:.88rem;color:var(--muted)}
+.draft{background:var(--soft);border-radius:.5rem;padding:.7rem .9rem;margin-top:.6rem}
+.draft textarea{min-height:6rem;margin-top:.3rem}
+.empty{color:var(--muted);font-size:.9rem;padding:.6rem 0}
+footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
+</style></head><body>
+<header class="top"><div class="bar">
+  <div class="brand">獅城步行誌<small>新加坡 21 天田野工具</small></div>
+  <nav class="tabs" aria-label="分頁">
+    <a href="#overview">觀點<span>VIEW</span></a>
+    <a href="#route">路線<span>ROUTE</span></a>
+    <a href="#record">記錄<span>RECORD</span></a>
+    <a href="#handbook">手冊<span>HANDBOOK</span></a>
+  </nav>
+</div></header>
+<div class="wrap">
+
+<section id="v-overview" class="view">
+  <div class="hero">
+    <p class="eyebrow">青年百億海外圓夢基金・築夢工場組｜賀昭恩｜2027.10.5–10.25</p>
+    <h1>獅城步行誌</h1>
+    <p class="sub">從自駕前哨站到人本空間</p>
+    <p class="lede">我不開車，全程以步行、捷運、公車、單車與自駕接駁移動，用行人的眼睛，檢驗一座正在迎接自駕車的城市；再把看到的，轉譯成臺南南鐵綠園道的設計指引。</p>
+    <p class="claim">自駕城市的品質，不取決於車有多聰明，而取決於城市在車進來之前，是否已經把街道、路緣與被釋放的空間設計好、經營好。</p>
+  </div>
+
+  <h2>研究路徑</h2>
+  <ol class="flow">
+    <li>論文<b>自駕城市主義</b><span class="en">釋放雙手、空間、時間；18 條路徑、5 個原型</span></li>
+    <li>前哨站<b>新加坡 21 天</b><span class="en">23 個地點、12 個以上案例</span></li>
+    <li>基準線<b>南鐵綠園道</b><span class="en">出發前 3 處對照點，同一套表單</span></li>
+    <li>成果<b>圖集與設計指引</b><span class="en">事務所北、中、南所線上直播分享</span></li>
+  </ol>
+
+  <h2>為什麼是新加坡：自駕前哨站</h2>
+  <p>前哨站不是自駕車最多的城市，而是讓自駕車進入公共運輸、同時把街道還給人的城市。</p>
+  <ol class="tl">
+    <li><b>2015</b><i></i>緯壹科技城<br><span class="en">開放道路測試</span></li>
+    <li><b>2017</b><i></i>自駕車道路規則<br><span class="en">CETRAN 測試中心</span></li>
+    <li><b>2019</b><i></i>國家標準<br><span class="en">TR 68</span></li>
+    <li><b>2020</b><i></i>KPMG 準備度<br><span class="en">全球第一</span></li>
+    <li><b>2026</b><i></i>榜鵝自駕接駁<br><span class="en">開放民眾搭乘</span></li>
+  </ol>
+
+  <h2>四個研究問題</h2>
+  <div class="qs" id="q-list"></div>
+
+  <h2>被釋放的空間：五種類型</h2>
+  <p class="en">依空間的來源分類，作為案例比較與臺灣轉譯的共同架構。</p>
+  <div class="grid5" id="t-cards"></div>
+
+  <h2>現場怎麼記</h2>
+  <div class="grid2">
+    <div class="card"><h3>道路速寫表 <span class="tag">RQ1・M1</span></h3><p class="en">每點位每時段一份。平面與斷面速寫拍照上傳，路緣與上下客以計數器點按，停留秒數與發生位置直接選填。</p></div>
+    <div class="card"><h3>人本空間記錄表 <span class="tag">RQ2–RQ3・M3–M4</span></h3><p class="en">每案例平日與假日各一份。空間來源、設施勾選、分年齡層的活動計數（參考 Jan Gehl 公共生活調查），表末寫下臺灣轉譯筆記。</p></div>
+    <div class="card"><h3>搭乘紀錄 <span class="tag">RQ1・M2</span></h3><p class="en">每趟自駕接駁一份：上下客點、等待時間、步行距離與車上人數。</p></div>
+    <div class="card"><h3>手冊 <span class="tag">M5・RQ4</span></h3><p class="en">記錄自動彙整成進度、比較矩陣與案例卡，可請 Claude 依筆記起草段落，並匯出 Markdown。</p></div>
+  </div>
+  <footer>賀昭恩・九典聯合建築師事務所 建築設計師。本工具為「獅城步行誌」企劃的現場記錄工具；記錄資料僅由本人編輯，觀察只計人數與活動類型，不拍攝可辨識的面孔與車牌。</footer>
+</section>
+
+<section id="v-route" class="view" hidden>
+  <h1 style="font-size:1.6rem">21 天路線</h1>
+  <p class="en">點日程中的地點或地圖上的點，查看簡介、我帶去的問題與現場記錄。位置為示意。</p>
+  <div class="routegrid">
+    <div class="mapcol"><div class="mappanel">
+      <div class="maptabs" id="maptabs" role="group" aria-label="切換地圖"></div>
+      <svg id="citymap" class="citymap" viewBox="0 0 480 280" role="img" aria-label="地圖"></svg>
+      <div class="mapinfo" id="mapinfo"></div>
+    </div></div>
+    <div id="days" class="listcol"></div>
+  </div>
+</section>
+
+<section id="v-record" class="view" hidden>
+  <h1 style="font-size:1.6rem">現場記錄</h1>
+  <div id="rec-banner" class="banner">正在連線資料庫…</div>
+  <form id="rec-form" hidden autocomplete="off">
+    <div class="seg" id="kind" role="group" aria-label="表單">
+      <button type="button" data-kind="road" aria-pressed="true">道路速寫表<small>RQ1・路緣</small></button>
+      <button type="button" data-kind="space" aria-pressed="false">人本空間<small>RQ2–3・使用</small></button>
+      <button type="button" data-kind="ride" aria-pressed="false">搭乘紀錄<small>RQ1・接駁</small></button>
+    </div>
+    <div class="grid2">
+      <div><label class="f" for="f-site">地點</label><select id="f-site" required></select></div>
+      <div><span class="f">觀察計時<small>建議 30–60 分鐘</small></span>
+        <div class="timer"><b id="tm">00:00</b><button type="button" class="btn small" id="tm-go">開始</button><button type="button" class="btn small" id="tm-reset">歸零</button></div></div>
+    </div>
+    <span class="f">時段</span><div class="chips" id="f-slot"></div>
+    <span class="f">天氣</span><div class="chips" id="f-wx"></div>
+
+    <div data-for="road space"><span class="f">空間類型</span><div class="chips" id="f-t"></div></div>
+
+    <div data-for="road">
+      <fieldset class="sec"><legend>① 平面速寫　② 斷面速寫</legend>
+        <p class="en">在速寫本畫好後拍照上傳；斷面寬度由左至右填寫（公尺）。</p>
+        <div class="row"><input type="file" accept="image/*" capture="environment" id="ph-plan" data-ph="平面" hidden><label for="ph-plan" class="btn small phbtn">＋ 平面速寫</label>
+        <input type="file" accept="image/*" capture="environment" id="ph-sec" data-ph="斷面" hidden><label for="ph-sec" class="btn small phbtn">＋ 斷面速寫</label></div>
+        <label class="f" for="f-width">斷面寬度<small>例：人行道 2.5／植栽 0.5／車道 3.5／車道 3.5／植栽 0.5／人行道 2.5</small></label>
+        <input type="text" id="f-width">
+      </fieldset>
+      <fieldset class="sec"><legend>③ 上下客與用路人計數</legend>
+        <p class="en">每看到一次上下客就按＋；行人過街列計人數。</p>
+        <div style="overflow-x:auto"><table class="ctab"><thead><tr><th>類別</th><th>次數</th><th>平均停留（秒）</th><th>發生位置</th></tr></thead><tbody id="f-cnt"></tbody></table></div>
+      </fieldset>
+    </div>
+
+    <div data-for="space">
+      <fieldset class="sec"><legend>A 空間來源與經營</legend>
+        <div class="grid2"><div><label class="f" for="f-orig">原本的用途</label><input type="text" id="f-orig" placeholder="例：停車場、排水道、鐵道"></div>
+        <div><label class="f" for="f-op">管理單位</label><input type="text" id="f-op" placeholder="例：市鎮理事會、國家公園局"></div></div>
+        <span class="f">經營方式</span><div class="chips" id="f-opm"></div>
+        <span class="f">公眾參與</span><div class="chips" id="f-pp"></div>
+      </fieldset>
+      <fieldset class="sec"><legend>B 環境與設施</legend><div class="chips" id="f-fac"></div></fieldset>
+      <fieldset class="sec"><legend>C 使用觀察（年齡層 × 活動）</legend>
+        <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">每看到一人做某件事，就點對應格子一下。</p><button type="button" class="btn small" id="g-minus" aria-pressed="false">修正（－1）</button></div>
+        <div class="gehl" id="f-gehl" style="margin-top:.5rem"></div>
+      </fieldset>
+      <fieldset class="sec"><legend>D 照片</legend>
+        <div class="row"><input type="file" accept="image/*" capture="environment" multiple id="ph-site" data-ph="現場" hidden><label for="ph-site" class="btn small phbtn">＋ 拍照／上傳</label></div>
+      </fieldset>
+      <fieldset class="sec"><legend>E 臺灣轉譯筆記</legend>
+        <label class="f" for="f-tnpt">對應的南鐵綠園道對照點</label><select id="f-tnpt"></select>
+        <label class="f" for="f-tw">可以帶回去的做法／不能照搬的原因</label><textarea id="f-tw" data-mic placeholder="例：高架下的遮蔭讓午後也有人停留；臺灣的機車停放需另外處理…"></textarea>
+      </fieldset>
+    </div>
+
+    <div data-for="ride">
+      <div class="grid2">
+        <div><label class="f" for="r-on">上車點</label><input type="text" id="r-on"></div>
+        <div><label class="f" for="r-off">下車點</label><input type="text" id="r-off"></div>
+        <div><label class="f" for="r-wait">等待時間（分鐘）</label><input type="number" id="r-wait" min="0" inputmode="decimal"></div>
+        <div><label class="f" for="r-walk">從出發地走到上車點（公尺）</label><input type="number" id="r-walk" min="0" inputmode="numeric"></div>
+        <div><label class="f" for="r-pax">車上乘客數（不含自己）</label><input type="number" id="r-pax" min="0" inputmode="numeric"></div>
+      </div>
+      <span class="f">服務類型</span><div class="chips" id="r-svc"></div>
+      <span class="f">上下客點</span><div class="chips" id="r-stop"></div>
+    </div>
+
+    <div class="row" data-for="road ride"><input type="file" accept="image/*" capture="environment" multiple id="ph-more" data-ph="現場" hidden><label for="ph-more" class="btn small phbtn" style="margin-top:.8rem">＋ 其他照片</label></div>
+    <div class="photos" id="f-photos"></div>
+
+    <label class="f" for="f-text">觀察筆記</label>
+    <textarea id="f-text" data-mic placeholder="看到什麼、聽到什麼、誰在使用這個空間、由誰經營…"></textarea>
+    <div class="row" style="margin-top:.4rem"><button type="button" class="btn small" id="mic" hidden>🎙 語音輸入</button><span class="status" id="mic-status"></span></div>
+    <div class="row" style="margin-top:1rem">
+      <button type="submit" class="btn primary" id="save">儲存記錄</button>
+      <button type="button" class="btn" id="reset">清空</button>
+      <span class="status" id="save-status"></span>
+    </div>
+  </form>
+  <h2>最近的記錄</h2>
+  <div class="chips" id="rec-filter" style="margin-bottom:.4rem"></div>
+  <div id="recent"><p class="empty">尚無記錄。2027 年 10 月 5 日至 25 日在每一站新增；出發前先在南鐵綠園道對照點試填。</p></div>
+</section>
+
+<section id="v-handbook" class="view" hidden>
+  <h1 style="font-size:1.6rem">手冊</h1>
+  <p class="en">記錄自動彙整為進度、比較矩陣與案例卡，回國後直接作為《案例圖集》與《設計指引（草案）》的底稿。</p>
+  <div class="stats" id="stats"></div>
+  <div class="row"><button class="btn" id="export" hidden>匯出手冊（Markdown）</button><span class="status" id="export-status"></span></div>
+  <h2>M5 案例比較矩陣</h2>
+  <p class="en">六項各以 0–3 評分（0 無、1 弱、2 中、3 強）；色塊越深分數越高。</p>
+  <div class="matrix" id="matrix"></div>
+  <h2>案例卡</h2>
+  <div id="hb"></div>
+</section>
+<dialog id="site-dlg"><div class="dlg" id="site-body"></div></dialog>
+</div>
+
+<script>window.__STATIC__=true;</script>
+<script>
+var DATA={
+"ico":{
+ "bus":"\u003crect x='4' y='4' width='16' height='13' rx='3'/>\u003cpath d='M4 11h16'/>\u003cpath d='M7.5 20v-3M16.5 20v-3'/>\u003cpath d='M8 14.2h.01M16 14.2h.01'/>",
+ "grid":"\u003cpath d='M3 20.5h18'/>\u003cpath d='M5 20.5V9l5-3v14.5'/>\u003cpath d='M10 20.5V4l9 4v12.5'/>\u003cpath d='M13 10h3M13 13.5h3M13 17h3'/>",
+ "chip":"\u003crect x='7' y='7' width='10' height='10' rx='2'/>\u003cpath d='M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4'/>",
+ "gantry":"\u003cpath d='M4 21V6M20 21V6'/>\u003cpath d='M4 6h16'/>\u003crect x='8' y='8' width='8' height='4' rx='1'/>\u003cpath d='M7 21l2-5h6l2 5'/>",
+ "tree":"\u003cpath d='M12 21v-5'/>\u003cpath d='M12 3l6 7h-3l4 5H5l4-5H6z'/>",
+ "wave":"\u003cpath d='M3 9c2.5-2 4.5-2 7 0s4.5 2 7 0 3-1.5 4-1'/>\u003cpath d='M3 15c2.5-2 4.5-2 7 0s4.5 2 7 0 3-1.5 4-1'/>",
+ "lake":"\u003cpath d='M12 4c2.5 2.5 2.5 6 0 9-2.5-3-2.5-6.5 0-9z'/>\u003cpath d='M12 13c-3-.5-6-2.5-7-5 3 0 6 1.5 7 5zM12 13c3-.5 6-2.5 7-5-3 0-6 1.5-7 5z'/>\u003cpath d='M4 19c2.7-1.6 5.3-1.6 8 0s5.3 1.6 8 0'/>",
+ "rail":"\u003cpath d='M8 3l-2 18M16 3l2 18'/>\u003cpath d='M6.9 7h10.2M6.4 12h11.2M5.9 17h12.2'/>",
+ "viaduct":"\u003cpath d='M2 7h20'/>\u003cpath d='M2 10h20'/>\u003cpath d='M6 10v11M18 10v11'/>\u003cpath d='M10.5 21v-3a1.5 1.5 0 0 1 3 0v3'/>",
+ "cross":"\u003cpath d='M3 5h18M3 19h18'/>\u003cpath d='M6 8v8M10 8v8M14 8v8M18 8v8'/>",
+ "people":"\u003ccircle cx='8' cy='6' r='2.2'/>\u003ccircle cx='16' cy='6' r='2.2'/>\u003cpath d='M4.5 20v-5a3.5 3.5 0 0 1 7 0v5'/>\u003cpath d='M12.5 20v-5a3.5 3.5 0 0 1 7 0v5'/>",
+ "stack":"\u003crect x='4' y='12' width='16' height='9' rx='1'/>\u003crect x='6.5' y='6' width='11' height='6' rx='1'/>\u003cpath d='M12 6V3.5'/>\u003cpath d='M9 3.5c1.5-1.2 4.5-1.2 6 0'/>",
+ "roof":"\u003crect x='4' y='10' width='16' height='11' rx='1'/>\u003cpath d='M9.5 19v-6h2.2a1.8 1.8 0 0 1 0 3.6H9.5'/>\u003cpath d='M12 10V6'/>\u003cpath d='M12 7c-2-.2-3.3-1.3-3.5-3 2 .2 3.3 1.3 3.5 3zM12 7c2-.2 3.3-1.3 3.5-3-2 .2-3.3 1.3-3.5 3z'/>",
+ "gallery":"\u003cpath d='M3 9.5L12 4l9 5.5'/>\u003cpath d='M4 9.5h16'/>\u003cpath d='M6.5 12v6M10 12v6M14 12v6M17.5 12v6'/>\u003cpath d='M3 20.5h18'/>",
+ "shop":"\u003cpath d='M4 21V8l4-4h8l4 4v13'/>\u003cpath d='M4 11h16'/>\u003cpath d='M9 21v-5h6v5'/>\u003cpath d='M8 8h.01M12 8h.01M16 8h.01'/>",
+ "station":"\u003cpath d='M3 20.5h18'/>\u003cpath d='M5 20.5V10l7-5 7 5v10.5'/>\u003cpath d='M9 20.5v-5h6v5'/>\u003cpath d='M9.5 11.5h5'/>"
+},
+"T":[
+ {"k":"T1","zh":"立體化型","d":"把車道移到地下，或把多種公共設施垂直整合，釋放地面空間","svg":"\u003cpath class='g' d='M4 40h72'/>\u003crect class='fill' x='22' y='14' width='36' height='26' rx='2'/>\u003cpath d='M28 22h8M44 22h8M28 30h8M44 30h8'/>\u003crect class='acc' x='14' y='44' width='52' height='9' rx='2' stroke-dasharray='4 3'/>\u003cpath class='acc' d='M22 48.5h6M36 48.5h6M50 48.5h6'/>\u003ccircle class='accf' cx='12' cy='35' r='2.6'/>\u003ccircle class='accf' cx='66' cy='35' r='2.6'/>"},
+ {"k":"T2","zh":"道路轉用型","d":"封街、步行化或以減速設計，把道路還給行人","svg":"\u003cpath class='g' d='M4 18h72M4 46h72'/>\u003crect class='fill' x='4' y='18' width='72' height='28'/>\u003cpath d='M14 24v16M22 24v16M30 24v16'/>\u003ccircle class='accf' cx='46' cy='28' r='2.6'/>\u003ccircle class='accf' cx='56' cy='36' r='2.6'/>\u003ccircle class='accf' cx='66' cy='26' r='2.6'/>\u003cpath class='acc' d='M44 42c4-3 8-3 12 0'/>"},
+ {"k":"T3","zh":"高架下型","d":"在高架道路下設置有遮蔭的社區、運動與活動空間","svg":"\u003crect class='fill' x='4' y='10' width='72' height='8' rx='1'/>\u003cpath d='M16 18v32M64 18v32'/>\u003cpath class='g' d='M4 50h72'/>\u003ccircle class='accf' cx='30' cy='40' r='2.6'/>\u003ccircle class='accf' cx='40' cy='42' r='2.6'/>\u003ccircle class='accf' cx='50' cy='38' r='2.6'/>\u003cpath class='acc' d='M24 46h32'/>"},
+ {"k":"T4","zh":"線性廊道型","d":"沿舊鐵道、河道與森林帶，留設連續的步行與自行車空間","svg":"\u003cpath class='fill' d='M4 34c18-12 34 8 52-4 8-5 14-4 20-2v10c-6-2-12-3-20 2-18 12-34-8-52 4z'/>\u003cpath class='acc' d='M6 38c18-12 34 8 52-4 7-4 12-4 18-2' stroke-dasharray='5 4'/>\u003cpath d='M14 22v-6M14 16l-4 6h8zM40 18v-6M40 12l-4 6h8zM64 22v-6M64 16l-4 6h8z'/>"},
+ {"k":"T5","zh":"停車／路緣轉化型","d":"以共享停車減少停車位、停車樓屋頂轉為花園、規劃自駕上下客點","svg":"\u003crect class='fill' x='10' y='18' width='40' height='28' rx='1'/>\u003cpath d='M10 27h40M10 36h40'/>\u003cpath class='acc' d='M14 18c3-6 7-6 10 0M26 18c3-6 7-6 10 0M38 18c3-6 7-6 10 0'/>\u003cpath class='g' d='M4 50h72'/>\u003crect class='accf' x='58' y='40' width='14' height='7' rx='2'/>\u003cpath d='M56 50v-3'/>"}
+],
+"RQ":[
+ {"k":"RQ1","zh":"智慧城市","q":"AI 與自駕車如何被納入城市？對街道與路緣帶來什麼變化？","o":"自駕接駁的上下客點與步行距離、數位平台與共享停車、道路收費在街道上的痕跡"},
+ {"k":"RQ2","zh":"永續城市","q":"城市如何減少對汽車的依賴，把空間還給自然與人？","o":"少車新市鎮、車道地下化、共享停車、河道自然化與綠色廊道"},
+ {"k":"RQ3","zh":"友善都市空間","q":"友善的街道與公共空間如何被設計、經營，並與社區共同維持？","o":"過街與減速設計、舊鐵道與高架下社區節點、高齡友善社區；使用者、時段與公眾參與"},
+ {"k":"RQ4","zh":"臺灣轉譯","q":"對臺灣與南鐵綠園道有什麼啟示？","o":"臺灣對應空間、路緣與上下客原則、綠園道經營與使用"}
+],
+"M5":[["src","空間來源"],["car","汽車減量"],["mix","用途組合"],["op","經營模式"],["use","使用強度"],["link","與運輸及自駕的關係"]],
+"sites":[
+ {"id":"air","no":1,"zh":"榜鵝自駕接駁 Ai.R","en":"Punggol Autonomous Shuttle","area":"榜鵝","map":"sg","ll":[1.4048,103.9025],"ico":"bus","t":["T5"],"rq":["RQ1"],"intro":"2026年4月1日起開放民眾搭乘，平日9:30至17:30營運，車上配有安全員；固定路線免費，2026年9月起加入收費的隨選服務。","focus":"上下客點設計、步行距離、與組屋及車站的銜接","ask":"上下客點如何避開人行動線？從組屋大門走到上車點要幾公尺、有沒有遮蔭？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）"},
+ {"id":"pdd","no":2,"zh":"榜鵝數位區","en":"Punggol Digital District","area":"榜鵝","map":"sg","ll":[1.4112,103.9098],"ico":"grid","t":["T1","T5"],"rq":["RQ1","RQ2"],"intro":"以步行化林蔭大道為核心的少車園區；開放數位平台以 3D 數位孿生整合全區系統，共享停車使停車位減少約50%。","focus":"步行環境、共享停車的空間結果、數位平台的公共介面","ask":"少了一半的停車位，地面多出來的空間用在哪裡？數位平台在街上看得到嗎？","web":"https://www.jtc.gov.sg","org":"裕廊集團（JTC）"},
+ {"id":"onenorth","no":3,"zh":"緯壹科技城","en":"one-north","area":"緯壹","map":"sg","ll":[1.2995,103.7875],"ico":"chip","t":["T2"],"rq":["RQ1"],"intro":"2015年起的自駕車道路測試區，也是少車導向的科技園區。","focus":"試驗區的街道與路緣","ask":"測試了十年的街道，路緣和標線和一般街道有什麼不同？","web":"https://www.jtc.gov.sg","org":"裕廊集團（JTC）"},
+ {"id":"erp","no":4,"zh":"電子道路收費 ERP 2","en":"ERP 2.0（以中央商務區為觀察點）","area":"濱海灣、中央商務區","map":"sg","ll":[1.2805,103.8515],"ico":"gantry","t":["T2"],"rq":["RQ1","RQ2"],"intro":"2027年1月1日起全面改用衛星式收費，以路面標線取代收費門架。","focus":"門架拆除後的街道、道路收費與少車政策的關係","ask":"收費門架拆掉之後，路口和人行道有沒有被重新設計？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）"},
+ {"id":"tengah","no":5,"zh":"登加森林鎮","en":"Tengah","area":"登加","map":"sg","ll":[1.3585,103.7330],"ico":"tree","t":["T1","T4"],"rq":["RQ2"],"intro":"第一個車道走地下的無車鎮中心（依開放進度）；100公尺寬、5公里長的森林廊道；農園步道。","focus":"車道地下化後的地面使用、森林廊道與社區","ask":"車道走地下之後，鎮中心地面是誰在用？森林廊道和住家怎麼接？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）"},
+ {"id":"bishan","no":6,"zh":"碧山宏茂橋公園","en":"Bishan-Ang Mo Kio Park","area":"碧山、宏茂橋","map":"sg","ll":[1.3627,103.8433],"ico":"wave","t":["T4"],"rq":["RQ2","RQ3"],"intro":"混凝土排水道改為約3公里的自然化河道，暴雨時公園兼作排洪空間，2012年開放。","focus":"藍綠基礎設施與親水空間","ask":"排水道變成河岸之後，平日和假日分別是誰在河邊？","web":"https://www.nparks.gov.sg","org":"國家公園局（NParks）"},
+ {"id":"jurong","no":7,"zh":"裕廊湖花園與裕廊湖區","en":"Jurong Lake Gardens / District","area":"裕廊湖區","map":"sg","ll":[1.3385,103.7290],"ico":"lake","t":["T4"],"rq":["RQ2","RQ3"],"intro":"位於少車區的90公頃「人民的花園」。","focus":"少車區的步行連結與公園使用","ask":"從捷運站走到花園的路上，車和人怎麼分開？","web":"https://www.nparks.gov.sg","org":"國家公園局（NParks）"},
+ {"id":"rcn","no":8,"zh":"Rail Corridor 北段","en":"Rail Corridor（克蘭芝、泛島快速公路高架下節點）","area":"克蘭芝","map":"sg","ll":[1.4180,103.7615],"ico":"rail","t":["T3","T4"],"rq":["RQ3"],"intro":"原馬來亞鐵路，2011年土地交還後經公眾參與轉為社區與休閒廊道，全線24公里；北段有克蘭芝節點與泛島快速公路高架下節點。","focus":"線性廊道與社區節點、高架下空間","ask":"24公里的廊道，社區節點之間隔多遠？高架下的節點有哪些活動？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）"},
+ {"id":"rcm","no":9,"zh":"Rail Corridor 武吉知馬火車站","en":"Former Bukit Timah Railway Station","area":"武吉知馬","map":"sg","ll":[1.3404,103.7762],"ico":"rail","t":["T4"],"rq":["RQ3"],"intro":"保留的舊火車站，成為 Rail Corridor 中段的社區節點。","focus":"舊車站再利用、廊道與社區的連結","ask":"保留下來的車站，現在由誰經營、平日有沒有人？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）"},
+ {"id":"rcs","no":10,"zh":"Rail Corridor 武吉士達節點","en":"Rail Corridor Buona Vista","area":"武吉士達","map":"sg","ll":[1.3072,103.7905],"ico":"viaduct","t":["T3","T4"],"rq":["RQ3"],"intro":"Rail Corridor 南段的社區節點，鄰近捷運站與高架道路。","focus":"高架下空間的遮蔭與使用時段","ask":"高架下的遮蔭，讓午後的使用人數比旁邊高多少？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）"},
+ {"id":"queensway","no":11,"zh":"女皇鎮高架下節點","en":"Rail Corridor Queensway viaduct","area":"女皇鎮","map":"sg","ll":[1.2935,103.8030],"ico":"viaduct","t":["T3"],"rq":["RQ3"],"intro":"Rail Corridor 的高架下節點，預計2027年完成；依完工進度記錄完成或施工中的狀態。","focus":"高架下空間的設計與完成度","ask":"如果還在施工，圍籬外的人行動線怎麼處理？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）"},
+ {"id":"fsamk","no":12,"zh":"友善街道：宏茂橋","en":"Friendly Streets – Ang Mo Kio","area":"宏茂橋","map":"sg","ll":[1.3700,103.8495],"ico":"cross","t":["T2"],"rq":["RQ3"],"intro":"友善街道2023年起推動，宏茂橋為首批5處試點之一；預計2030年前每個市鎮至少一處。","focus":"無障礙過街、減速設計、綠燈時間、高齡與兒童的使用","ask":"上下學與市場時段，長者過一次馬路要多久？綠燈夠不夠？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）"},
+ {"id":"fstpy","no":13,"zh":"友善街道：大巴窯","en":"Friendly Streets – Toa Payoh","area":"大巴窯","map":"sg","ll":[1.3330,103.8480],"ico":"cross","t":["T2"],"rq":["RQ3"],"intro":"友善街道首批試點之一。","focus":"過街與減速設計","ask":"減速設計是怎麼做的？路緣有沒有讓出空間給行人？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）"},
+ {"id":"fstam","no":14,"zh":"友善街道：淡濱尼","en":"Friendly Streets – Tampines","area":"淡濱尼","map":"sg","ll":[1.3530,103.9440],"ico":"cross","t":["T2"],"rq":["RQ3"],"intro":"友善街道首批試點之一，作為不同市鎮的對照。","focus":"不同市鎮的做法差異","ask":"和宏茂橋相比，哪些做法相同、哪些因地制宜？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）"},
+ {"id":"fsbbw","no":15,"zh":"友善街道：武吉巴督西","en":"Friendly Streets – Bukit Batok West","area":"武吉巴督","map":"sg","ll":[1.3490,103.7420],"ico":"cross","t":["T2"],"rq":["RQ3"],"intro":"友善街道首批試點之一，作為不同市鎮的對照。","focus":"不同市鎮的做法差異","ask":"新市鎮邊緣的街道，步行者是誰？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）"},
+ {"id":"fswc","no":16,"zh":"友善街道：西海岸","en":"Friendly Streets – West Coast","area":"西海岸","map":"sg","ll":[1.3010,103.7640],"ico":"cross","t":["T2"],"rq":["RQ3"],"intro":"友善街道首批試點之一。","focus":"過街與減速設計","ask":"街道和公園、學校的入口怎麼銜接？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）"},
+ {"id":"haji","no":17,"zh":"街道為人：哈芝巷","en":"Streets for People – Haji Lane","area":"甘榜格南","map":"sg","ll":[1.3009,103.8590],"ico":"people","t":["T2"],"rq":["RQ3"],"intro":"街道為人（Streets for People）計畫下的週末無車街區。","focus":"臨時封街的經營","ask":"封街的時候，送貨和上下客改到哪裡？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）"},
+ {"id":"club","no":18,"zh":"街道為人：俱樂部街、環形路","en":"Club Street / Circular Road","area":"牛車水、駁船碼頭","map":"sg","ll":[1.2840,103.8475],"ico":"people","t":["T2"],"rq":["RQ3"],"intro":"週末無車的餐飲街區。","focus":"臨時與常態封街的經營","ask":"桌椅擺上車道之後，誰負責收、誰負責管？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）"},
+ {"id":"tiong","no":19,"zh":"中峇魯 Eng Hoon Street","en":"Tiong Bahru – Eng Hoon Street","area":"中峇魯","map":"sg","ll":[1.2846,103.8316],"ico":"people","t":["T2"],"rq":["RQ3"],"intro":"2023年完成步行化的社區街道。","focus":"常態步行化後的使用","ask":"常態步行化之後，街上多了哪些停留活動？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）"},
+ {"id":"kampung","no":20,"zh":"海軍部村莊","en":"Kampung Admiralty","area":"兀蘭","map":"sg","ll":[1.4400,103.8008],"ico":"stack","t":["T1"],"rq":["RQ3"],"intro":"原為空地與停車場，改建為整合高齡住宅、醫療、熟食中心、社區廣場與屋頂公園的垂直社區，2018年開放。","focus":"高齡友善、跨機關整合、垂直公共空間","ask":"傍晚的社區廣場是誰在用？屋頂公園長者上得去嗎？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）"},
+ {"id":"rooftop","no":21,"zh":"組屋停車樓屋頂花園","en":"HDB MSCP Rooftop Gardens","area":"文禮等地","map":"sg","ll":[1.3465,103.7120],"ico":"roof","t":["T5"],"rq":["RQ2","RQ3"],"intro":"多層停車樓屋頂改為社區農園。","focus":"停車空間的轉用（Parking+）","ask":"屋頂農園誰在照顧？從住家怎麼上去？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）"},
+ {"id":"ura","no":22,"zh":"城市展覽館與宜居城市中心","en":"Singapore City Gallery / CLC（URA Centre）","area":"丹戎巴葛","map":"sg","ll":[1.2794,103.8446],"ico":"gallery","t":[],"rq":["RQ1","RQ2","RQ3"],"intro":"城市規劃展覽館免費開放；宜居城市中心為國家發展部的研究機構，兩者位於同一區。","focus":"規劃制度與公眾溝通","ask":"新加坡怎麼向市民說明少車政策與自駕計畫？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）、宜居城市中心（CLC）"},
+ {"id":"joochiat","no":23,"zh":"如切","en":"Joo Chiat","area":"如切","map":"sg","ll":[1.3125,103.9015],"ico":"shop","t":["T2"],"rq":["RQ3"],"intro":"店屋街區，作為週末街道使用的補充觀察。","focus":"店屋街區的街道生活","ask":"騎樓式的五腳基和臺灣騎樓，使用有什麼不同？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）"},
+ {"id":"tnn","no":"A","zh":"南鐵綠園道：北段對照點","en":"臺南車站周邊（示意）","area":"臺南市東區、北區","map":"tn","ll":[22.9970,120.2128],"ico":"station","t":["T4"],"rq":["RQ4"],"intro":"臺南鐵路地下化第一階段已於2026年10月通車，原鐵道用地將轉為約30公尺寬的綠園道。出發前在沿線選定3處對照點，以同一套表單記錄一次，作為基準線。","focus":"車站周邊的上下客與步行環境","ask":"原鐵道兩側的街道，現在是誰在用？","web":"https://www.tainan.gov.tw","org":"臺南市政府"},
+ {"id":"tnm","no":"B","zh":"南鐵綠園道：中段對照點","en":"原平交道路口、原陸橋周邊（示意）","area":"臺南市東區","map":"tn","ll":[22.9870,120.2185],"ico":"rail","t":["T4","T2"],"rq":["RQ4"],"intro":"原平交道與陸橋周邊，陸橋與地下道將拆除、整平或改善，是「都市縫合」最直接的現場。","focus":"縫合後的過街與路口","ask":"陸橋拆除後，東西兩側的人怎麼過街？","web":"https://www.tainan.gov.tw","org":"臺南市政府"},
+ {"id":"tns","no":"C","zh":"南鐵綠園道：南段對照點","en":"未來車站周邊（示意）","area":"臺南市南區、東區","map":"tn","ll":[22.9700,120.2185],"ico":"station","t":["T4"],"rq":["RQ4"],"intro":"未來車站周邊，對照新加坡 Rail Corridor 的社區節點。","focus":"車站與綠園道的銜接","ask":"車站出口和綠園道之間，有沒有可以停留的地方？","web":"https://www.tainan.gov.tw","org":"臺南市政府"}
+],
+"days":[
+ {"d":1,"date":"10/5（二）","area":"臺北→新加坡","sites":[],"memo":"搭機、入住；確認保險、eSIM、交通卡"},
+ {"d":2,"date":"10/6（三）","area":"市中心、中峇魯","sites":["ura","tiong"]},
+ {"d":3,"date":"10/7（四）","area":"榜鵝","sites":["air","pdd"],"memo":"自駕接駁第一輪（約3趟）"},
+ {"d":4,"date":"10/8（五）","area":"宏茂橋、大巴窯、碧山","sites":["fsamk","fstpy","bishan"]},
+ {"d":5,"date":"10/9（六）","area":"Rail Corridor 北段","sites":["rcn"]},
+ {"d":6,"date":"10/10（日）","area":"市中心","sites":["haji","club"]},
+ {"d":7,"date":"10/11（一）","area":"Rail Corridor 中南段、緯壹","sites":["rcm","rcs","onenorth"]},
+ {"d":8,"date":"10/12（二）","area":"兀蘭","sites":["kampung"]},
+ {"d":9,"date":"10/13（三）","area":"登加","sites":["tengah"]},
+ {"d":10,"date":"10/14（四）","area":"裕廊湖區、文禮","sites":["jurong","rooftop"]},
+ {"d":11,"date":"10/15（五）","area":"榜鵝","sites":["air"],"memo":"自駕接駁第二輪（約3趟，含隨選服務）"},
+ {"d":12,"date":"10/16（六）","area":"碧山、宏茂橋","sites":["bishan","fsamk"],"memo":"週末對照"},
+ {"d":13,"date":"10/17（日）","area":"兀蘭、Rail Corridor","sites":["kampung","rcs"],"memo":"週末對照"},
+ {"d":14,"date":"10/18（一）","area":"淡濱尼、武吉巴督西","sites":["fstam","fsbbw"]},
+ {"d":15,"date":"10/19（二）","area":"濱海灣、西海岸、女皇鎮","sites":["erp","fswc","queensway"]},
+ {"d":16,"date":"10/20（三）","area":"市中心","sites":["ura"],"memo":"訪談或洽詢；期中整理比較矩陣"},
+ {"d":17,"date":"10/21（四）","area":"榜鵝","sites":["air","pdd"],"memo":"自駕接駁第三輪（約4趟）"},
+ {"d":18,"date":"10/22（五）","area":"市中心","sites":[],"memo":"訪談或公開活動；未成行則補充觀察"},
+ {"d":19,"date":"10/23（六）","area":"登加、裕廊湖區","sites":["tengah","jurong"],"memo":"週末對照"},
+ {"d":20,"date":"10/24（日）","area":"如切、市中心","sites":["joochiat","haji"],"memo":"成果初稿；雷雨備援"},
+ {"d":21,"date":"10/25（一）","area":"新加坡→臺北","sites":[],"memo":"返臺；資料備份"}
+],
+"sg":{"coast":[[1.3220,103.6350],[1.3480,103.6420],[1.3820,103.6700],[1.4220,103.6920],[1.4420,103.7080],[1.4480,103.7350],[1.4500,103.7650],[1.4560,103.7800],[1.4620,103.8000],[1.4660,103.8200],[1.4560,103.8420],[1.4380,103.8600],[1.4260,103.8780],[1.4200,103.9020],[1.4120,103.9230],[1.3950,103.9500],[1.3880,103.9750],[1.3780,103.9950],[1.3580,104.0020],[1.3330,103.9880],[1.3150,103.9600],[1.3020,103.9300],[1.2950,103.9000],[1.2850,103.8720],[1.2720,103.8600],[1.2640,103.8350],[1.2720,103.8050],[1.2850,103.7700],[1.2980,103.7400],[1.3020,103.7050],[1.3120,103.6650]],
+  "label":[[1.468,103.705,"柔佛海峽"],[1.262,103.905,"新加坡海峽"]]},
+"tn":{"rail":[[23.0060,120.2110],[22.9970,120.2128],[22.9905,120.2165],[22.9840,120.2192],[22.9760,120.2195],[22.9690,120.2188],[22.9610,120.2178]],"extent":[[23.008,120.200],[22.958,120.232]],
+  "label":[[23.004,120.2025,"北區"],[22.993,120.205,"中西區"],[22.983,120.229,"東區"],[22.962,120.205,"南區"]]}
+};
+
+</script>
+<script>
+(function(){
+"use strict";
+var SITES=DATA.sites, SBY={}; SITES.forEach(function(s){SBY[s.id]=s});
+var MAPS={sg:{zh:"新加坡",c:"var(--sg)"},tn:{zh:"臺南・南鐵綠園道",c:"var(--tn)"}};
+var SLOTS=["平日","假日","上午","中午","傍晚","夜間"], WX=["晴","多雲","陰","雨","雷雨"];
+var VEH=[["av","自駕接駁"],["taxi","計程車／網約車"],["car","一般汽車"],["moto","機車"],["bike","單車"],["ped","行人過街"]];
+var WHERE=["","路緣","港灣式停靠區","建築退縮","路口","人行道上","其他"];
+var OPM=["政府","市鎮理事會","社區","委外／民間","公私合作","不明"], PP=["有公眾參與","無","不明"];
+var FAC=["遮蔭","雨遮","座椅","飲水","廁所","無障礙坡道","照明","單車停放","遊戲設施","運動設施","攤商／熟食","綠地／水岸"];
+var AGES=[["kid","兒童"],["adult","青少年・青壯"],["elder","高齡"]];
+var ACTS=[["pass","通行"],["stay","停留"],["sit","坐"],["sport","運動"],["social","社交"],["trade","商業"]];
+var SVC=["固定路線","隨選服務"], STOP=["專用上下客點","一般公車站","路緣臨停","建築入口"];
+var KIND={road:"道路速寫表",space:"人本空間記錄表",ride:"搭乘紀錄"};
+var TARGET={road:16,space:24,ride:10,sites:12};
+var state={notes:[],drafts:{},mx:{},canWrite:false,db:null,assets:null,sample:null,downloads:null,editing:null,photos:[],kind:"road",counts:{},gehl:{},filter:"all"};
+var mapKey="sg", selSite=null;
+
+function use(n){try{return (window.claude&&window.claude.use)?window.claude.use(n):Promise.resolve(null)}catch(e){return Promise.resolve(null)}}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function $(id){return document.getElementById(id)}
+function sic(k,extra){var p=DATA.ico[k];return p?'<svg class="sic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"'+(extra||'')+'>'+p+'</svg>':''}
+function colorOf(s){return MAPS[s.map].c}
+function notesFor(id){return state.notes.filter(function(n){return n.site===id})}
+function num(v){var n=parseFloat(v);return isFinite(n)?n:null}
+function sum(o){var t=0;for(var k in o){t+=+o[k]||0}return t}
+function fmtTime(iso){try{var d=new Date(iso);return (d.getMonth()+1)+"/"+d.getDate()+" "+String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0")}catch(e){return""}}
+
+/* ---------- views ---------- */
+var VIEWS=["overview","route","record","handbook"];
+function show(){var v=(location.hash||"").slice(1); if(VIEWS.indexOf(v)<0)v="overview";
+  VIEWS.forEach(function(x){$("v-"+x).hidden=x!==v});
+  document.querySelectorAll("nav.tabs a").forEach(function(a){if(a.getAttribute("href")==="#"+v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  if(v==="route")renderRoute(); if(v==="record")renderRecent(); if(v==="handbook")renderHandbook();
+  setHdr(); window.scrollTo(0,0)}
+window.addEventListener("hashchange",show);
+function setHdr(){var h=document.querySelector("header.top");if(h)document.documentElement.style.setProperty("--hdr",h.offsetHeight+"px")}
+window.addEventListener("resize",setHdr);
+
+/* ---------- overview ---------- */
+$("q-list").innerHTML=DATA.RQ.map(function(q){return '<div class="q"><div class="qtag">'+q.k+'<small>'+q.zh+'</small></div><div><p>'+q.q+'</p><p class="o">'+q.o+'</p></div></div>'}).join("");
+$("t-cards").innerHTML=DATA.T.map(function(t){var ex=SITES.filter(function(s){return s.map==="sg"&&s.t.indexOf(t.k)>=0}).length;
+  return '<div class="card"><svg class="ico" viewBox="0 0 80 60" aria-hidden="true">'+t.svg+'</svg><b>'+t.k+' '+t.zh+'</b><p>'+t.d+'</p><p>新加坡地點 '+ex+' 處</p></div>'}).join("");
+
+/* ---------- map ---------- */
+function proj(key,W,H,m){
+  var c=DATA[key], pts=SITES.filter(function(s){return s.map===key}).map(function(s){return s.ll});
+  var ext=pts.concat(key==="sg"?c.coast:(c.extent||[]));
+  var la=ext.map(function(p){return p[0]}),lo=ext.map(function(p){return p[1]});
+  var la0=Math.min.apply(null,la),la1=Math.max.apply(null,la),lo0=Math.min.apply(null,lo),lo1=Math.max.apply(null,lo);
+  var k=Math.cos((la0+la1)/2*Math.PI/180);
+  var sc=Math.min((W-2*m)/((lo1-lo0)*k),(H-2*m)/(la1-la0));
+  var ox=W/2-((lo0+lo1)/2)*k*sc, oy=H/2+((la0+la1)/2)*sc;
+  return {P:function(a,b){return [a!=null?(b*k*sc+ox):0,(oy-a*sc)]},sc:sc};
+}
+function renderMap(){
+  $("maptabs").innerHTML=Object.keys(MAPS).map(function(k){return '<button type="button" data-mk="'+k+'" aria-pressed="'+(mapKey===k)+'">'+MAPS[k].zh+'</button>'}).join("");
+  var W=480,H=280,pr=proj(mapKey,W,H,mapKey==="sg"?18:34),P=function(p){var q=pr.P(p[0],p[1]);return q[0].toFixed(1)+","+q[1].toFixed(1)};
+  var g='',c=DATA[mapKey];
+  if(mapKey==="sg"){g+='<path class="land" d="M'+c.coast.map(P).join(" L")+' Z"/>'}
+  else{g+='<rect class="land" x="0" y="0" width="'+W+'" height="'+H+'"/>';g+='<path class="green" d="M'+c.rail.map(P).join(" L")+'"/><path class="rail" d="M'+c.rail.map(P).join(" L")+'"/>';
+    var q0=c.rail[0];var pp=pr.P(q0[0],q0[1]);g+='<text class="lab" x="'+(pp[0]+12).toFixed(1)+'" y="'+(pp[1]+12).toFixed(1)+'">原縱貫線鐵道（已地下化）→ 綠園道</text>'}
+  (c.label||[]).forEach(function(l){var q=pr.P(l[0],l[1]);g+='<text class="lab" x="'+q[0].toFixed(1)+'" y="'+q[1].toFixed(1)+'">'+esc(l[2])+'</text>'});
+  var kmPx=pr.sc/111.32, raw=70/kmPx, km=[0.2,0.5,1,2,5,10].reduce(function(a,v){return Math.abs(v-raw)<Math.abs(a-raw)?v:a},1), bar=km*kmPx;
+  g+='<g transform="translate(14,'+(H-14)+')"><path d="M0 0 h'+bar.toFixed(1)+'" stroke="var(--ink)" stroke-width="2"/><path d="M0 -4 v8 M'+bar.toFixed(1)+' -4 v8" stroke="var(--ink)" stroke-width="1.5"/><text class="lab" x="'+(bar+6).toFixed(1)+'" y="4">'+km+' km</text></g>';
+  g+='<g transform="translate('+(W-20)+',24)"><path d="M0 -12 L5 4 L0 0 L-5 4 Z" fill="var(--ink)"/><text class="lab" x="-4" y="16">N</text></g>';
+  var pts=SITES.filter(function(s){return s.map===mapKey}), POS={};
+  pts.forEach(function(s){POS[s.id]=pr.P(s.ll[0],s.ll[1])});
+  for(var it=0;it<14;it++){pts.forEach(function(a,i){pts.forEach(function(b,j){if(j<=i)return;var A=POS[a.id],B=POS[b.id],dx=B[0]-A[0],dy=B[1]-A[1],d=Math.hypot(dx,dy)||.01,min=24;if(d<min){var f=(min-d)/2/d;A[0]-=dx*f;A[1]-=dy*f;B[0]+=dx*f;B[1]+=dy*f}})})}
+  var col=MAPS[mapKey].c, selG='';
+  pts.forEach(function(s){var q=POS[s.id],x=q[0].toFixed(1),y=q[1].toFixed(1),sel=selSite===s.id,done=notesFor(s.id).length>0,r=sel?13:11;
+    var it='<g class="pt'+(sel?' sel':'')+(done?' done':'')+'" data-site="'+s.id+'" style="--c:'+col+'" tabindex="0" role="button" aria-label="'+esc(s.no+". "+s.zh)+'"><circle class="glow" cx="'+x+'" cy="'+y+'" r="14"/><circle class="core" cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+col+'"/>'+
+      sic(s.ico,' x="'+(q[0]-r*0.62).toFixed(1)+'" y="'+(q[1]-r*0.62).toFixed(1)+'" width="'+(r*1.24).toFixed(1)+'" height="'+(r*1.24).toFixed(1)+'"').replace('class="sic"','class="sic mi"')+'<title>'+esc(s.no+". "+s.zh)+'</title>'+
+      (sel?'<text class="sellab" x="'+(q[0]+(q[0]>W-150?-17:17)).toFixed(1)+'" y="'+(q[1]-14).toFixed(1)+'" text-anchor="'+(q[0]>W-150?"end":"start")+'">'+esc(s.zh)+'</text>':'')+'</g>';
+    if(sel)selG=it;else g+=it});
+  $("citymap").innerHTML=g+selG; $("citymap").setAttribute("aria-label",MAPS[mapKey].zh+"地點地圖（示意）");
+  var info='<span class="en">'+MAPS[mapKey].zh+'・位置為示意；外框橘色表示已有記錄</span>';
+  if(selSite){var s=SBY[selSite];info='<span><b>'+esc(s.zh)+'</b> <span class="en">'+esc(s.area)+'・記錄 '+notesFor(s.id).length+' 份</span></span><button class="btn small" type="button" data-open="'+s.id+'">查看詳情</button>'}
+  $("mapinfo").innerHTML=info;
+}
+function selectSite(id){selSite=id;var s=SBY[id];if(s)mapKey=s.map;renderMap();
+  document.querySelectorAll("#days .sitebtn").forEach(function(b){if(b.dataset.site===id)b.setAttribute("aria-current","true");else b.removeAttribute("aria-current")})}
+$("maptabs").addEventListener("click",function(e){var b=e.target.closest("[data-mk]");if(!b)return;mapKey=b.dataset.mk;if(selSite&&SBY[selSite].map!==mapKey)selSite=null;renderMap()});
+$("citymap").addEventListener("click",function(e){var g=e.target.closest("[data-site]");if(g)openSite(g.dataset.site)});
+$("citymap").addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var g=e.target.closest("[data-site]");if(g){e.preventDefault();openSite(g.dataset.site)}});
+$("mapinfo").addEventListener("click",function(e){var b=e.target.closest("[data-open]");if(b)openSite(b.dataset.open)});
+
+function siteBtn(id){var s=SBY[id],n=notesFor(id).length;
+  return '<button type="button" class="sitebtn" data-site="'+id+'" style="--c:'+colorOf(s)+'"><span><span class="no">'+sic(s.ico)+'</span>'+esc(s.zh)+'</span><span class="cnt">'+(n?n+' 份':'')+'</span></button>'}
+function renderRoute(){
+  var h='<div class="day"><div class="d">準備期<small>出發前</small></div><div><div class="memo">臺南・南鐵綠園道對照點：以同一套表單試填一次，作為基準線</div>'+["tnn","tnm","tns"].map(siteBtn).join("")+'</div></div>';
+  DATA.days.forEach(function(d){h+='<div class="day"><div class="d">第'+d.d+'日<small>'+esc(d.date)+'</small></div><div><div>'+esc(d.area)+'</div>'+(d.memo?'<div class="memo">'+esc(d.memo)+'</div>':'')+d.sites.map(siteBtn).join("")+'</div></div>'});
+  $("days").innerHTML=h; renderMap(); if(selSite)selectSite(selSite);
+}
+$("days").addEventListener("click",function(e){var b=e.target.closest(".sitebtn");if(!b)return;var id=b.dataset.site;if(selSite===id){openSite(id)}else{selectSite(id)}});
+
+function dayOf(id){return DATA.days.filter(function(d){return d.sites.indexOf(id)>=0}).map(function(d){return "第"+d.d+"日"})}
+function openSite(id){var s=SBY[id];if(!s)return;selectSite(id);
+  var ds=dayOf(id), ns=notesFor(id);
+  var h='<button class="btn small close" type="button" data-close>關閉</button><div class="ttl" style="--c:'+colorOf(s)+'"><span class="no">'+sic(s.ico)+'</span><div><p class="eyebrow">'+esc(s.no)+'・'+esc(s.area)+'</p><h2 style="margin:.1rem 0 0">'+esc(s.zh)+'</h2><div class="en">'+esc(s.en)+'</div></div></div>';
+  h+='<p class="intro">'+esc(s.intro)+'</p><dl class="kv"><dt>觀察重點</dt><dd>'+esc(s.focus)+'</dd><dt>空間類型</dt><dd>'+(s.t.length?s.t.map(function(t){return '<span class="tag">'+t+'</span>'}).join(" "):"—")+'</dd><dt>研究問題</dt><dd>'+s.rq.map(function(t){return '<span class="tag">'+t+'</span>'}).join(" ")+'</dd><dt>行程</dt><dd>'+(ds.length?ds.join("、"):(s.map==="tn"?"出發前":"—"))+'</dd><dt>主管機關</dt><dd>'+esc(s.org)+'</dd></dl>';
+  h+='<div class="ask"><b>我帶去的問題</b><br>'+esc(s.ask)+'</div>';
+  if(/^https:\/\//.test(s.web))h+='<p class="weblink"><a href="'+esc(s.web)+'" target="_blank" rel="noopener">主管機關網站 ↗</a></p>';
+  h+='<h3 style="margin-top:1rem">現場記錄（'+ns.length+'）</h3>'+(ns.length?ns.map(function(n){return noteHTML(n,false)}).join(""):'<p class="empty">尚無記錄。</p>');
+  if(state.canWrite)h+='<div class="row" style="margin-top:.6rem"><button class="btn primary small" type="button" data-new="road">新增道路速寫</button><button class="btn small" type="button" data-new="space">新增人本空間記錄</button>'+(id==="air"?'<button class="btn small" type="button" data-new="ride">新增搭乘紀錄</button>':'')+'</div>';
+  $("site-body").innerHTML=h; var dlg=$("site-dlg"); if(!dlg.open)dlg.showModal();
+}
+$("site-dlg").addEventListener("click",function(e){
+  if(e.target===$("site-dlg")||e.target.closest("[data-close]")){$("site-dlg").close();return}
+  var b=e.target.closest("[data-new]"); if(b){var id=selSite;$("site-dlg").close();location.hash="record";setTimeout(function(){startNew(id,b.dataset.new)},30)}
+});
+
+/* ---------- record form ---------- */
+function chips(id,list,multi){$(id).innerHTML=list.map(function(x){return '<button type="button" class="chip" data-k="'+esc(x)+'" aria-pressed="false">'+esc(x)+'</button>'}).join("");$(id).dataset.multi=multi?"1":""}
+function setChips(id,vals){vals=vals||[];$(id).querySelectorAll(".chip").forEach(function(b){b.setAttribute("aria-pressed",vals.indexOf(b.dataset.k)>=0?"true":"false")})}
+function getChips(id){return Array.prototype.map.call($(id).querySelectorAll('.chip[aria-pressed="true"]'),function(b){return b.dataset.k})}
+document.addEventListener("click",function(e){var b=e.target.closest("#rec-form .chip");if(!b||b.disabled)return;var box=b.parentNode;
+  if(!box.dataset.multi){box.querySelectorAll(".chip").forEach(function(x){if(x!==b)x.setAttribute("aria-pressed","false")})}
+  b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true")});
+chips("f-slot",SLOTS,true); chips("f-wx",WX,false); chips("f-t",DATA.T.map(function(t){return t.k+" "+t.zh}),true);
+chips("f-opm",OPM,true); chips("f-pp",PP,false); chips("f-fac",FAC,true); chips("r-svc",SVC,false); chips("r-stop",STOP,true);
+function fillSelects(){
+  $("f-site").innerHTML='<optgroup label="新加坡">'+SITES.filter(function(s){return s.map==="sg"}).map(function(s){return '<option value="'+s.id+'">'+s.no+'. '+esc(s.zh)+'</option>'}).join("")+'</optgroup><optgroup label="臺南・對照點">'+SITES.filter(function(s){return s.map==="tn"}).map(function(s){return '<option value="'+s.id+'">'+s.no+'. '+esc(s.zh)+'</option>'}).join("")+'</optgroup>';
+  $("f-tnpt").innerHTML='<option value="">（未指定）</option>'+SITES.filter(function(s){return s.map==="tn"}).map(function(s){return '<option value="'+s.id+'">'+s.no+'. '+esc(s.zh)+'</option>'}).join("")+'<option value="other">其他臺灣場址</option>';
+}
+fillSelects();
+function renderCounts(){
+  $("f-cnt").innerHTML=VEH.map(function(v){var c=state.counts[v[0]]||{n:0,dw:"",at:""};
+    return '<tr><td>'+v[1]+'</td><td><span class="tally"><button type="button" data-cm="'+v[0]+'" aria-label="'+v[1]+'減一">−</button><output>'+(c.n||0)+'</output><button type="button" class="plus" data-cp="'+v[0]+'" aria-label="'+v[1]+'加一">＋</button></span></td>'+
+      '<td><input type="number" min="0" inputmode="numeric" data-dw="'+v[0]+'" value="'+esc(c.dw)+'"'+(v[0]==="ped"?' placeholder="—"':'')+'></td><td><select data-at="'+v[0]+'">'+WHERE.map(function(w){return '<option'+(c.at===w?' selected':'')+'>'+esc(w)+'</option>'}).join("")+'</select></td></tr>'}).join("");
+}
+$("f-cnt").addEventListener("click",function(e){var b=e.target.closest("[data-cp],[data-cm]");if(!b||b.disabled)return;var k=b.dataset.cp||b.dataset.cm;var c=state.counts[k]||(state.counts[k]={n:0,dw:"",at:""});c.n=Math.max(0,(c.n||0)+(b.dataset.cp?1:-1));b.parentNode.querySelector("output").textContent=c.n});
+$("f-cnt").addEventListener("input",function(e){var t=e.target,k=t.dataset.dw||t.dataset.at;if(!k)return;var c=state.counts[k]||(state.counts[k]={n:0,dw:"",at:""});if(t.dataset.dw)c.dw=t.value;else c.at=t.value});
+function renderGehl(){
+  var h='<div></div>'+ACTS.map(function(a){return '<div class="h">'+a[1]+'</div>'}).join("");
+  AGES.forEach(function(g){h+='<div class="rh">'+g[1]+'</div>'+ACTS.map(function(a){var k=g[0]+"_"+a[0];return '<button type="button" data-g="'+k+'" aria-label="'+g[1]+a[1]+'">'+(state.gehl[k]||0)+'</button>'}).join("")});
+  h+='<div class="rh en">合計</div>'+ACTS.map(function(a){var t=0;AGES.forEach(function(g){t+=state.gehl[g[0]+"_"+a[0]]||0});return '<div class="tot">'+t+'</div>'}).join("");
+  $("f-gehl").innerHTML=h;
+}
+$("f-gehl").addEventListener("click",function(e){var b=e.target.closest("[data-g]");if(!b||b.disabled)return;var minus=$("g-minus").getAttribute("aria-pressed")==="true";var k=b.dataset.g;state.gehl[k]=Math.max(0,(state.gehl[k]||0)+(minus?-1:1));renderGehl();if(navigator.vibrate)try{navigator.vibrate(12)}catch(x){}});
+$("g-minus").addEventListener("click",function(){var on=this.getAttribute("aria-pressed")!=="true";this.setAttribute("aria-pressed",on);$("f-gehl").classList.toggle("minus",on);this.textContent=on?"修正中：點格子 −1":"修正（－1）"});
+
+function setKind(k){state.kind=k;document.querySelectorAll("#kind [data-kind]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.kind===k)});
+  document.querySelectorAll("[data-for]").forEach(function(el){el.hidden=el.dataset.for.split(" ").indexOf(k)<0})}
+$("kind").addEventListener("click",function(e){var b=e.target.closest("[data-kind]");if(b&&!state.editing)setKind(b.dataset.kind)});
+
+/* timer */
+var tmStart=null,tmAcc=0,tmInt=null;
+function tmNow(){return tmAcc+(tmStart?Date.now()-tmStart:0)}
+function tmShow(){var s=Math.floor(tmNow()/1000);$("tm").textContent=String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+$("tm-go").addEventListener("click",function(){if(tmStart){tmAcc=tmNow();tmStart=null;clearInterval(tmInt);this.textContent="繼續"}else{tmStart=Date.now();tmInt=setInterval(tmShow,1000);this.textContent="暫停"}tmShow()});
+function tmReset(min){tmAcc=(min||0)*60000;tmStart=null;clearInterval(tmInt);$("tm-go").textContent="開始";tmShow()}
+$("tm-reset").addEventListener("click",function(){tmReset(0)});
+
+function presetFor(site){var s=SBY[site];if(!s||state.editing)return;setChips("f-t",DATA.T.filter(function(t){return s.t.indexOf(t.k)>=0}).map(function(t){return t.k+" "+t.zh}))}
+$("f-site").addEventListener("change",function(){presetFor(this.value)});
+function guessSlot(){var d=new Date(),h=d.getHours(),w=d.getDay(),o=[(w===0||w===6)?"假日":"平日"];o.push(h<11?"上午":h<15?"中午":h<19?"傍晚":"夜間");return o}
+function clearForm(){state.counts={};state.gehl={};state.photos=[];
+  ["f-width","f-orig","f-op","f-tw","f-text","r-on","r-off","r-wait","r-walk","r-pax"].forEach(function(i){$(i).value=""});$("f-tnpt").value="";
+  ["f-opm","f-pp","f-fac","r-svc","r-stop"].forEach(function(i){setChips(i,[])});setChips("f-wx",[]);setChips("f-slot",guessSlot());
+  renderCounts();renderGehl();renderFormPhotos();tmReset(0)}
+function startNew(site,kind){state.editing=null;clearForm();setKind(kind||state.kind||"road");$("f-site").value=site||SITES[0].id;presetFor($("f-site").value);
+  $("save").textContent="儲存記錄";$("save-status").textContent="";$("save-status").className="status";if(site)$("rec-form").scrollIntoView({block:"start"})}
+function loadEdit(id){var n=state.notes.find(function(x){return x.id===id});if(!n)return;state.editing=null;clearForm();state.editing=id;setKind(n.kind||"road");
+  $("f-site").value=n.site;setChips("f-slot",n.slot);setChips("f-wx",n.wx?[n.wx]:[]);setChips("f-t",n.t);tmReset(n.min||0);
+  $("f-text").value=n.text||"";$("f-width").value=n.width||"";state.counts=JSON.parse(JSON.stringify(n.counts||{}));
+  $("f-orig").value=n.orig||"";$("f-op").value=n.op||"";setChips("f-opm",n.opm);setChips("f-pp",n.pp?[n.pp]:[]);setChips("f-fac",n.fac);state.gehl=Object.assign({},n.gehl||{});
+  $("f-tnpt").value=n.tnpt||"";$("f-tw").value=n.tw||"";
+  var r=n.ride||{};$("r-on").value=r.on||"";$("r-off").value=r.off||"";$("r-wait").value=r.wait==null?"":r.wait;$("r-walk").value=r.walk==null?"":r.walk;$("r-pax").value=r.pax==null?"":r.pax;setChips("r-svc",r.svc?[r.svc]:[]);setChips("r-stop",r.stop);
+  state.photos=(n.photos||[]).map(function(p){return {id:p.id,url:p.url,cap:p.cap||""}});renderCounts();renderGehl();renderFormPhotos();
+  $("save").textContent="更新記錄";$("rec-form").scrollIntoView({block:"start"})}
+$("reset").addEventListener("click",function(){startNew($("f-site").value,state.kind)});
+
+/* photos */
+function renderFormPhotos(){$("f-photos").innerHTML=state.photos.map(function(p,i){
+  return '<figure>'+(p.url?'<img src="'+esc(p.url)+'" alt="'+esc(p.cap)+'">':'<div class="status">上傳中…</div>')+'<button type="button" class="btn small rm" data-rm="'+i+'">移除</button><input type="text" value="'+esc(p.cap)+'" data-cap="'+i+'" aria-label="照片說明"></figure>'}).join("")}
+$("f-photos").addEventListener("click",function(e){var b=e.target.closest("[data-rm]");if(b){state.photos.splice(+b.dataset.rm,1);renderFormPhotos()}});
+$("f-photos").addEventListener("input",function(e){var i=e.target.dataset.cap;if(i!=null)state.photos[+i].cap=e.target.value});
+function shrink(file){return new Promise(function(res){var img=new Image(),u=URL.createObjectURL(file);
+  img.onload=function(){var m=1600,w=img.naturalWidth,h=img.naturalHeight,s=Math.min(1,m/Math.max(w,h)),c=document.createElement("canvas");c.width=Math.round(w*s);c.height=Math.round(h*s);c.getContext("2d").drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(u);c.toBlob(function(b){res(b||file)},"image/jpeg",.82)};
+  img.onerror=function(){URL.revokeObjectURL(u);res(file)};img.src=u})}
+document.addEventListener("change",async function(e){var inp=e.target;if(!inp.matches||!inp.matches("#rec-form input[type=file]"))return;
+  if(!state.assets){$("save-status").textContent="此檢視無法上傳照片";$("save-status").className="status err";inp.value="";return}
+  var files=Array.prototype.slice.call(inp.files||[]);inp.value="";
+  for(var i=0;i<files.length;i++){var slot={id:null,url:null,cap:inp.dataset.ph||""};state.photos.push(slot);renderFormPhotos();
+    try{var b=await shrink(files[i]);var r=await state.assets.upload(b,{type:"image/jpeg"});slot.id=r.id;slot.url=r.url;$("save-status").textContent="照片已上傳";$("save-status").className="status ok"}
+    catch(err){state.photos.splice(state.photos.indexOf(slot),1);$("save-status").textContent="照片上傳失敗："+(err&&err.code||"");$("save-status").className="status err"}
+    renderFormPhotos()}});
+
+/* save */
+$("rec-form").addEventListener("submit",async function(e){e.preventDefault();if(!state.canWrite||!state.db)return;
+  if(state.photos.some(function(p){return !p.url})){$("save-status").textContent="照片仍在上傳";return}
+  var k=state.kind, body={kind:k,site:$("f-site").value,slot:getChips("f-slot"),wx:getChips("f-wx")[0]||"",min:Math.round(tmNow()/60000),text:$("f-text").value.trim(),
+    photos:state.photos.map(function(p){return {id:p.id,url:p.url,cap:p.cap}})};
+  if(k!=="ride")body.t=getChips("f-t");
+  if(k==="road"){body.width=$("f-width").value.trim();var c={};VEH.forEach(function(v){var x=state.counts[v[0]];if(x&&(x.n||x.dw||x.at))c[v[0]]={n:x.n||0,dw:x.dw||"",at:x.at||""}});body.counts=c}
+  if(k==="space"){body.orig=$("f-orig").value.trim();body.op=$("f-op").value.trim();body.opm=getChips("f-opm");body.pp=getChips("f-pp")[0]||"";body.fac=getChips("f-fac");
+    var g={};for(var key in state.gehl){if(state.gehl[key])g[key]=state.gehl[key]}body.gehl=g;body.tnpt=$("f-tnpt").value;body.tw=$("f-tw").value.trim()}
+  if(k==="ride"){body.ride={on:$("r-on").value.trim(),off:$("r-off").value.trim(),wait:num($("r-wait").value),walk:num($("r-walk").value),pax:num($("r-pax").value),svc:getChips("r-svc")[0]||"",stop:getChips("r-stop")}}
+  var st=$("save-status");$("save").disabled=true;st.textContent="儲存中…";st.className="status";
+  try{if(state.editing){var old=state.notes.find(function(x){return x.id===state.editing});body.createdAt=old&&old.createdAt||new Date().toISOString();body.updatedAt=new Date().toISOString();await state.db.collection("notes").doc(state.editing).set(body)}
+    else{body.createdAt=new Date().toISOString();await state.db.collection("notes").add(body)}
+    st.textContent="已儲存";st.className="status ok";var site=body.site;startNew(site,k);st.textContent="已儲存";st.className="status ok"}
+  catch(err){st.textContent="儲存失敗："+(err&&err.code||"請再試一次");st.className="status err"}
+  $("save").disabled=false});
+
+/* ---------- note cards ---------- */
+function noteSummary(n){
+  if(n.kind==="road"){var c=n.counts||{},parts=VEH.filter(function(v){return c[v[0]]&&c[v[0]].n}).map(function(v){var x=c[v[0]];return v[1]+" "+x.n+(x.dw?"（"+x.dw+"秒）":"")+(x.at?"・"+x.at:"")});return (parts.length?parts.join("；"):"未計數")+(n.width?"｜斷面 "+n.width:"")}
+  if(n.kind==="space"){var g=n.gehl||{},tot=sum(g),ag=AGES.map(function(a){var t=0;ACTS.forEach(function(x){t+=g[a[0]+"_"+x[0]]||0});return a[1]+" "+t}).join("、");
+    return "使用 "+tot+" 人次（"+ag+"）"+(n.fac&&n.fac.length?"｜設施："+n.fac.join("、"):"")+(n.op?"｜管理："+n.op:"")}
+  if(n.kind==="ride"){var r=n.ride||{};return [r.on&&("上車 "+r.on),r.off&&("下車 "+r.off),r.wait!=null&&("等待 "+r.wait+" 分"),r.walk!=null&&("步行 "+r.walk+" 公尺"),r.pax!=null&&("同車 "+r.pax+" 人"),r.svc].filter(Boolean).join("・")}
+  return ""}
+function noteHTML(n,act){var s=SBY[n.site]||{zh:n.site,map:"sg"};
+  var h='<div class="note" style="--c:'+colorOf(s)+'"><div class="meta"><span class="tag">'+esc(KIND[n.kind]||"記錄")+'</span><b>'+esc(s.zh)+'</b><span>'+esc(fmtTime(n.createdAt))+'</span>'+(n.slot&&n.slot.length?'<span>'+esc(n.slot.join("・"))+'</span>':'')+(n.wx?'<span>'+esc(n.wx)+'</span>':'')+(n.min?'<span>'+n.min+' 分鐘</span>':'')+(n.t||[]).map(function(t){return '<span class="tag">'+esc(t.split(" ")[0])+'</span>'}).join("")+'</div>';
+  h+='<div class="sum">'+esc(noteSummary(n))+'</div>';
+  if(n.text)h+='<div class="txt">'+esc(n.text)+'</div>';
+  if(n.tw)h+='<div class="txt" style="margin-top:.3rem"><b>臺灣轉譯：</b>'+esc(n.tw)+(n.tnpt&&SBY[n.tnpt]?'（'+esc(SBY[n.tnpt].zh)+'）':'')+'</div>';
+  var ph=(n.photos||[]).filter(function(p){return p.url&&(/^https:\/\//.test(p.url)||/^\/_blob\//.test(p.url)||/^photos\//.test(p.url))});
+  if(ph.length)h+='<div class="photos">'+ph.map(function(p){return '<figure><img loading="lazy" src="'+esc(p.url)+'" alt="'+esc(p.cap||s.zh)+'">'+(p.cap?'<figcaption>'+esc(p.cap)+'</figcaption>':'')+'</figure>'}).join("")+'</div>';
+  if(act&&state.canWrite)h+='<div class="row" style="margin-top:.4rem"><button class="btn small" type="button" data-edit="'+esc(n.id)+'">編輯</button><button class="btn small" type="button" data-del="'+esc(n.id)+'">刪除</button><span class="status" id="del-'+esc(n.id)+'"></span></div>';
+  return h+'</div>'}
+function renderRecent(){
+  $("rec-filter").innerHTML=[["all","全部"],["road","道路速寫"],["space","人本空間"],["ride","搭乘"]].map(function(f){return '<button type="button" class="chip" data-f="'+f[0]+'" aria-pressed="'+(state.filter===f[0])+'">'+f[1]+'</button>'}).join("");
+  var ns=state.notes.filter(function(n){return state.filter==="all"||n.kind===state.filter}).sort(function(a,b){return String(b.createdAt).localeCompare(String(a.createdAt))});
+  if(!ns.length)return;
+  $("recent").innerHTML=ns.slice(0,40).map(function(n){return noteHTML(n,true)}).join("")}
+$("rec-filter").addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(!b)return;state.filter=b.dataset.f;$("recent").innerHTML='<p class="empty">沒有符合的記錄。</p>';renderRecent()});
+$("recent").addEventListener("click",function(e){var ed=e.target.closest("[data-edit]");if(ed){loadEdit(ed.dataset.edit);return}
+  var dl=e.target.closest("[data-del]");if(!dl)return;var id=dl.dataset.del;
+  if(dl.dataset.armed!=="1"){dl.dataset.armed="1";dl.textContent="再按一次確認刪除";return}
+  dl.disabled=true;var st=$("del-"+id);
+  state.db.collection("notes").doc(id).delete().then(function(){},function(err){dl.disabled=false;if(st){st.textContent="刪除失敗："+(err&&err.code||"");st.className="status err"}})});
+
+/* ---------- handbook ---------- */
+function agg(id){var ns=notesFor(id),o={road:0,space:0,ride:0,people:0,ages:{},fac:{},tw:[]};
+  ns.forEach(function(n){o[n.kind]=(o[n.kind]||0)+1;if(n.kind==="space"){var g=n.gehl||{};o.people+=sum(g);AGES.forEach(function(a){ACTS.forEach(function(x){var v=g[a[0]+"_"+x[0]]||0;o.ages[a[1]]=(o.ages[a[1]]||0)+v})});(n.fac||[]).forEach(function(f){o.fac[f]=(o.fac[f]||0)+1});if(n.tw)o.tw.push(n.tw)}});
+  return o}
+function renderHandbook(){
+  var c={road:0,space:0,ride:0},sites={},people=0;state.notes.forEach(function(n){c[n.kind]=(c[n.kind]||0)+1;if(SBY[n.site]&&SBY[n.site].map==="sg")sites[n.site]=1;if(n.kind==="space")people+=sum(n.gehl||{})});
+  var ns=Object.keys(sites).length;
+  function st(lab,v,t){return '<div class="stat"><div>'+lab+'</div><b>'+v+(t?'<small> / '+t+'</small>':'')+'</b>'+(t?'<div class="pb"><i style="width:'+Math.min(100,Math.round(v/t*100))+'%"></i></div>':'')+'</div>'}
+  $("stats").innerHTML=st("道路速寫表",c.road,TARGET.road)+st("使用觀察時段",c.space,TARGET.space)+st("自駕接駁搭乘",c.ride,TARGET.ride)+st("已記錄案例",ns,TARGET.sites)+st("計數人次",people);
+  var sg=SITES.filter(function(s){return s.map==="sg"});
+  var mh='<table><thead><tr><th>案例</th><th>記錄</th>'+DATA.M5.map(function(m){return '<th>'+m[1]+'</th>'}).join("")+'<th>合計</th></tr></thead><tbody>';
+  sg.forEach(function(s){var m=state.mx[s.id]||{},tot=0,n=notesFor(s.id).length;
+    mh+='<tr style="--c:var(--sg)"><td>'+s.no+'. '+esc(s.zh)+'</td><td>'+(n||"")+'</td>'+DATA.M5.map(function(c){var v=+m[c[0]]||0;tot+=v;
+      return '<td class="v" style="--a:'+(v*22)+'">'+(state.canWrite?'<select data-mx="'+s.id+'" data-c="'+c[0]+'" aria-label="'+esc(s.zh+" "+c[1])+'">'+[0,1,2,3].map(function(x){return '<option'+(x===v?' selected':'')+'>'+x+'</option>'}).join("")+'</select>':(v||"·"))+'</td>'}).join("")+'<td><b>'+(tot||"")+'</b></td></tr>'});
+  $("matrix").innerHTML=mh+'</tbody></table>';
+  var withN=SITES.filter(function(s){return notesFor(s.id).length});
+  if(!withN.length){$("hb").innerHTML='<p class="empty">有記錄的地點會在這裡產生案例卡。</p>';return}
+  $("hb").innerHTML=withN.map(function(s){var a=agg(s.id),dr=state.drafts[s.id];
+    var facs=Object.keys(a.fac).sort(function(x,y){return a.fac[y]-a.fac[x]});
+    var h='<div class="hb-site" style="--c:'+colorOf(s)+'"><h3>'+s.no+'. '+esc(s.zh)+' <span class="en">'+esc(s.en)+'</span></h3>';
+    h+='<p class="pre">道路速寫 '+a.road+' 份・人本空間 '+a.space+' 份'+(a.ride?'・搭乘 '+a.ride+' 趟':'')+(a.people?'・使用 '+a.people+' 人次（'+AGES.map(function(x){return x[1]+" "+(a.ages[x[1]]||0)}).join("、")+'）':'')+(facs.length?'・常見設施：'+esc(facs.slice(0,5).join("、")):'')+'</p>';
+    if(a.tw.length)h+='<p><b>臺灣轉譯筆記</b></p><ul>'+a.tw.map(function(t){return '<li>'+esc(t)+'</li>'}).join("")+'</ul>';
+    if(state.canWrite){h+='<div class="draft"><label class="f" for="dz-'+s.id+'" style="margin-top:0">案例卡段落（中文）</label><textarea id="dz-'+s.id+'">'+esc(dr&&dr.zh||"")+'</textarea><label class="f" for="dt-'+s.id+'">設計指引條文（臺灣轉譯）</label><textarea id="dt-'+s.id+'">'+esc(dr&&dr.tw||"")+'</textarea>'+
+      '<div class="row" style="margin-top:.5rem">'+(state.sample?'<button class="btn small" type="button" data-gen="'+s.id+'">請 Claude 依記錄起草</button>':'')+'<button class="btn primary small" type="button" data-savedr="'+s.id+'">儲存段落</button><span class="status" id="ds-'+s.id+'"></span></div></div>'}
+    else if(dr&&(dr.zh||dr.tw)){h+='<div class="draft">'+(dr.zh?'<p>'+esc(dr.zh)+'</p>':'')+(dr.tw?'<p><b>設計指引：</b>'+esc(dr.tw)+'</p>':'')+'</div>'}
+    return h+'</div>'}).join("");
+}
+$("matrix").addEventListener("change",async function(e){var t=e.target;if(!t.dataset.mx||!state.db)return;var id=t.dataset.mx,m=Object.assign({},state.mx[id]||{});m[t.dataset.c]=+t.value;state.mx[id]=m;
+  try{await state.db.collection("matrix").doc(id).set(m)}catch(err){$("export-status").textContent="矩陣儲存失敗";$("export-status").className="status err"}});
+$("hb").addEventListener("click",async function(e){
+  var g=e.target.closest("[data-gen]");
+  if(g&&state.sample){var id=g.dataset.gen,s=SBY[id],st=$("ds-"+id);g.disabled=true;st.textContent="起草中…";st.className="status";
+    var ns=notesFor(id).map(function(n){return {表單:KIND[n.kind],時段:(n.slot||[]).join("・"),摘要:noteSummary(n),筆記:n.text||"",臺灣轉譯:n.tw||""}});
+    var prompt="你是建築設計師的寫作助理。以下是在新加坡「"+s.zh+"」的現場記錄（JSON），觀察重點是："+s.focus+"。請只根據記錄，不要補充記錄中沒有的事實，用繁體中文寫：(1) zh：一段約120字的案例卡說明，描述空間怎麼被使用、誰在使用、由誰經營；(2) tw：一到兩條可放進臺灣設計指引（以南鐵綠園道為例）的原則，每條以「宜」或「應」開頭。回傳 JSON：{\"zh\":\"...\",\"tw\":\"...\"}。記錄："+JSON.stringify(ns);
+    try{var out=await state.sample.json(prompt,{modelTier:"default"});if(out&&typeof out.zh==="string"){$("dz-"+id).value=out.zh;$("dt-"+id).value=typeof out.tw==="string"?out.tw:"";st.textContent="已起草，請修改後按「儲存段落」";st.className="status ok"}else{st.textContent="起草格式不完整，請再試一次";st.className="status err"}}
+    catch(err){st.textContent="起草失敗："+(err&&err.code||"");st.className="status err"}
+    g.disabled=false;return}
+  var sv=e.target.closest("[data-savedr]");
+  if(sv&&state.db){var id2=sv.dataset.savedr,st2=$("ds-"+id2);st2.textContent="儲存中…";
+    try{await state.db.collection("drafts").doc(id2).set({zh:$("dz-"+id2).value,tw:$("dt-"+id2).value,updatedAt:new Date().toISOString()});st2.textContent="已儲存";st2.className="status ok"}
+    catch(err){st2.textContent="儲存失敗";st2.className="status err"}}});
+$("export").addEventListener("click",async function(){var st=$("export-status");if(!state.downloads)return;
+  var md="# 獅城步行誌：從自駕前哨站到人本空間\n\n賀昭恩｜新加坡 2027.10.5–10.25\n\n";
+  var c={road:0,space:0,ride:0};state.notes.forEach(function(n){c[n.kind]=(c[n.kind]||0)+1});
+  md+="- 道路速寫表："+c.road+" 份\n- 人本空間記錄表："+c.space+" 份\n- 自駕接駁搭乘："+c.ride+" 趟\n\n## M5 案例比較矩陣\n\n| 案例 | "+DATA.M5.map(function(m){return m[1]}).join(" | ")+" |\n|"+"---|".repeat(DATA.M5.length+1)+"\n";
+  SITES.filter(function(s){return s.map==="sg"}).forEach(function(s){var m=state.mx[s.id]||{};md+="| "+s.zh+" | "+DATA.M5.map(function(x){return +m[x[0]]||0}).join(" | ")+" |\n"});
+  md+="\n## 案例卡\n";
+  SITES.forEach(function(s){var ns=notesFor(s.id);if(!ns.length)return;var dr=state.drafts[s.id]||{};
+    md+="\n### "+s.no+". "+s.zh+"（"+s.en+"）\n\n"+(dr.zh?dr.zh+"\n\n":"")+(dr.tw?"**設計指引**："+dr.tw+"\n\n":"");
+    ns.forEach(function(n){md+="- ["+(KIND[n.kind]||"")+"] "+fmtTime(n.createdAt)+" "+(n.slot||[]).join("・")+"："+noteSummary(n)+(n.text?"。"+n.text.replace(/\n+/g," "):"")+(n.tw?"（臺灣轉譯："+n.tw.replace(/\n+/g," ")+"）":"")+"\n"})});
+  try{await state.downloads.save({filename:"獅城步行誌-手冊.md",data:md});st.textContent="已匯出";st.className="status ok"}catch(err){st.textContent="匯出失敗";st.className="status err"}});
+
+/* ---------- dictation ---------- */
+var micTarget="f-text";
+document.addEventListener("focusin",function(e){if(e.target.matches&&e.target.matches("textarea[data-mic]"))micTarget=e.target.id});
+async function setupMic(){var d=await use("dictation");if(!d)return;var mic=$("mic");mic.hidden=false;
+  d.onPartial(function(e){$("mic-status").textContent=e.text});
+  d.onFinal(function(e){var t=$(micTarget);t.value=(t.value?t.value+(/\s$/.test(t.value)?"":" "):"")+e.text;$("mic-status").textContent=""});
+  d.onState(function(e){mic.textContent=e.state==="listening"?"■ 停止":"🎙 語音輸入"});
+  mic.addEventListener("click",function(){if(d.active()){d.stop().catch(function(){})}else{$("mic-status").textContent="輸入到："+($(micTarget).id==="f-tw"?"臺灣轉譯筆記":"觀察筆記");d.start().catch(function(err){$("mic-status").textContent=err&&err.code==="not_granted"?"未允許語音輸入，請改用打字":"語音輸入無法使用";if(err&&err.code==="not_granted")mic.hidden=true})}})}
+
+/* ---------- boot ---------- */
+function rerender(){var v=(location.hash||"").slice(1);if(v==="record")renderRecent();if(v==="handbook")renderHandbook();if(v==="route")renderRoute()}
+function demoMode(msg){var b=$("rec-banner");b.className="banner demo";b.hidden=false;b.textContent=msg;$("rec-form").hidden=false;startNew();
+  $("rec-form").querySelectorAll("input,textarea,select,button").forEach(function(x){if(x.id!=="f-site"&&!x.closest("#kind"))x.disabled=true});
+  document.querySelectorAll(".phbtn").forEach(function(l){l.setAttribute("aria-disabled","true")})}
+function bootStatic(){demoMode("這是公開展示版。執行期間（2027/10/5–10/25）我以田野工具在現場記錄，整理後同步到這裡；下方為記錄介面的示範畫面，可切換三種表單瀏覽。");
+  fetch("data/records.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d)return;state.notes=Array.isArray(d.notes)?d.notes:[];state.drafts=d.drafts||{};state.mx=d.matrix||{};rerender()}).catch(function(){})}
+async function boot(){
+  if(window.__STATIC__){bootStatic();return}
+  var user=await use("user"),db=await use("db");state.db=db;
+  if(!db){demoMode("這個檢視無法讀取記錄（例如未登入），下方為記錄介面的示範畫面；觀點與路線仍可瀏覽。");return}
+  try{state.canWrite=!!(user&&await user.canEdit())}catch(e){state.canWrite=false}
+  if(state.canWrite){$("rec-form").hidden=false;$("rec-banner").hidden=true;startNew();
+    use("assets").then(function(a){state.assets=a;if(!a)document.querySelectorAll(".phbtn").forEach(function(l){l.setAttribute("aria-disabled","true")})});
+    use("sample").then(function(s){state.sample=s;if((location.hash||"")==="#handbook")renderHandbook()});
+    use("downloads").then(function(d){state.downloads=d;$("export").hidden=!d});
+    setupMic()}
+  else{demoMode("記錄由企劃執行者在現場新增；你可以在「路線」與「手冊」瀏覽已同步的記錄。下方為記錄介面的示範畫面。")}
+  var timer=setTimeout(function(){$("rec-banner").hidden=false;$("rec-banner").textContent="暫時連不上記錄資料，顯示的內容可能不是最新。"},10000);
+  db.collection("notes").onSnapshot(function(snap){if(!snap.metadata.fromCache){clearTimeout(timer);if(state.canWrite)$("rec-banner").hidden=true}
+    state.notes=snap.docs.map(function(d){var o=Object.assign({},d.data());o.id=d.id;return o});rerender()},
+    function(err){clearTimeout(timer);$("rec-banner").hidden=false;$("rec-banner").textContent="記錄資料無法載入（"+(err&&err.code||"")+"）。"});
+  db.collection("drafts").onSnapshot(function(snap){var o={};snap.docs.forEach(function(d){o[d.id]=d.data()});state.drafts=o;
+    if((location.hash||"")==="#handbook"&&!(document.activeElement&&document.activeElement.matches("textarea")))renderHandbook()},function(){});
+  db.collection("matrix").onSnapshot(function(snap){var o={};snap.docs.forEach(function(d){o[d.id]=d.data()});state.mx=o;
+    if((location.hash||"")==="#handbook"&&!(document.activeElement&&document.activeElement.matches("select,textarea")))renderHandbook()},function(){});
+}
+renderCounts();renderGehl();setKind("road");
+show();boot();
+})();
+</script>
+</body></html>
