@@ -225,9 +225,13 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
 .bars div{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr) 2.2rem;gap:.5rem;align-items:center}
 .bars i{display:block;height:.55rem;border-radius:1rem;background:var(--sg)}
 .bars b{font-weight:500;font-variant-numeric:tabular-nums;text-align:right}
+.dia2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.6rem;align-items:start}
+.dia2 figure{margin:0;min-width:0}
+.dia2 figcaption{font-size:.74rem;color:var(--muted);margin-bottom:.15rem}
+@media (max-width:560px){.dia2{grid-template-columns:1fr}}
 </style></head><body>
 <header class="top"><div class="bar">
-  <div class="brand">獅城步行誌<small>複合建築類型學・新加坡 21 天田野工具</small></div>
+  <div class="brand">獅城步行誌<small>複合建築與街道類型學・新加坡 21 天</small></div>
   <nav class="tabs" aria-label="分頁">
     <a href="#overview">觀點<span>VIEW</span></a>
     <a href="#route">路線<span>ROUTE</span></a>
@@ -242,53 +246,67 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
     <p class="eyebrow">青年百億海外圓夢基金・築夢工場組｜賀昭恩｜2027.10.5–10.25</p>
     <h1>獅城步行誌</h1>
     <p class="sub">從自駕前哨站到人本空間</p>
-    <p class="lede">智慧城市與永續城市，最後都落在「建築怎麼組合」。新加坡把交通、停車、居住、照護、商業與綠地疊進同一棟建築，形成新型態的複合建築。我把每個地點拆成元件與關係，像寫公式一樣記下來，畫成簡圖，再用人本的標準檢驗。</p>
-    <p class="claim">新的城市不一定有新的元件，而是有新的組合。當公共生活被收進建築，要問的是：它還是不是公共的？</p>
+    <p class="lede">自駕車不會一夕之間改變城市，但它會先釋放兩樣東西：路面與停車場。新加坡用少車政策，提前把這件事做了一遍：停車場改建成熟食中心與空中花園，社區中心把圖書館、診所和球場疊在一起，車道讓給行人與學童。我把這些新組合拆成元件與關係記下來，追問同一件事：被釋放的空間，最後有沒有回到人手上？</p>
+    <p class="claim">自駕城市的品質，不取決於車有多聰明，而取決於車退一步之後，建築與街道怎麼重新組合。</p>
   </div>
 
-  <h2>記錄的公式</h2>
-  <p><b>地點 ＝ 元件 ＋ 關係 ＋ 屬性</b>。例如 CapitaSpring ＝ 城市客廳 ＋ 熟食中心 ＋ 服務式公寓 ＋ 綠洲 ＋ 辦公 ＋ 空中花園，彼此層層疊合；熟食中心所在的基地原本是金鞋停車場。App 依公式自動畫出剖面簡圖。</p>
+  <h2>論點：釋放、重組、檢驗</h2>
+  <ol class="flow">
+    <li>釋放<b>路面與停車</b><span class="en">碩士論文推演：自駕與 AI 將釋放雙手、空間與時間；少車政策讓新加坡先走了一步</span></li>
+    <li>重組<b>複合建築</b><span class="en">停車、交通、居住、照護、商業與綠地垂直疊合，公共生活被收進建築</span></li>
+    <li>重組<b>人本街道</b><span class="en">車道讓出寬度，斷面重新分配給行人、單車、綠帶與封街活動</span></li>
+    <li>檢驗<b>人本與臺灣</b><span class="en">公共性四問與使用觀察；對應臺灣待設計空間，寫成設計原則</span></li>
+  </ol>
+
+  <h2>為什麼是新加坡</h2>
+  <p>前哨站不是自駕車最多的城市，而是<b>車還沒大量進來、空間已經先重組</b>的城市。新加坡同時具備三個條件：擁車證與道路收費讓停車與路面先被釋放；自 2017 年 Our Tampines Hub 起，整合型社區中心推廣到各市鎮；友善街道預計 2030 年前遍及每個市鎮。自駕接駁也在榜鵝開放搭乘，但本企劃不追著車看，而是看車退一步之後留下的空間。</p>
+  <ol class="tl">
+    <li><b>2015</b><i></i>緯壹科技城<br><span class="en">自駕道路測試</span></li>
+    <li><b>2017</b><i></i>Our Tampines Hub<br><span class="en">第一座整合型社區中心</span></li>
+    <li><b>2021</b><i></i>CapitaSpring<br><span class="en">停車場改建為複合大樓</span></li>
+    <li><b>2023</b><i></i>友善街道<br><span class="en">首批五處試點</span></li>
+    <li><b>2026</b><i></i>榜鵝自駕接駁<br><span class="en">開放民眾搭乘</span></li>
+  </ol>
+
+  <h2>兩套類型學</h2>
+  <p><b>建築：地點 ＝ 元件 ＋ 關係 ＋ 屬性。</b>元件依機能分類，關係分疊合、並置、圍合、連通；屬性記樓層、公共性、開放時段與原用途。<b>街道：地點 ＝ 斷面組成 ＋ 特徵。</b>由左到右記下每一條帶狀空間的寬度，App 算出「人本比例」（行人與單車寬度 ÷ 行人、單車與車用寬度）。兩者都自動畫出剖面／斷面與平面。</p>
   <div class="grid2" id="ex-dia"></div>
 
-  <h2>元件</h2>
-  <p class="en">依機能分類；現場可自訂名稱，例如「公園綠地」可記成「屋頂社區公園」。</p>
+  <h2>建築元件</h2>
   <div class="compgrid" id="comp-legend"></div>
-
-  <h2>關係</h2>
+  <h2>建築關係</h2>
   <div class="relgrid" id="rel-legend"></div>
+  <h2>街道斷面元素</h2>
+  <div class="compgrid" id="sec-legend"></div>
 
-  <h2>屬性：人本檢驗</h2>
+  <h2>人本檢驗</h2>
   <div class="grid2">
     <div class="card"><h3>公共性</h3><div class="legend" id="pub-legend"></div><p class="en" style="margin-top:.4rem">簡圖用實色、斜線、灰底區分，一眼看出哪幾層真的對外開放。</p></div>
-    <div class="card"><h3>四個問題</h3><p class="en">① 誰可以進來？② 什麼時段開放？③ 要不要付費？④ 人在裡面停留多久、做什麼？每個元件可記樓層、公共性、開放時段與原用途；人本空間記錄表再數人。</p></div>
+    <div class="card"><h3>四個問題</h3><p class="en">① 誰可以進來？② 什麼時段開放？③ 要不要付費？④ 人在裡面停留多久、做什麼？類型學記錄表記前三題，人本空間記錄表以「年齡層 × 活動」計數回答第四題。</p></div>
+  </div>
+
+  <h2>論文原型的現場版本</h2>
+  <div class="grid2">
+    <div class="card"><h3>Parking+</h3><p class="en">論文推演停車空間被釋放後的再利用。現場對照：CapitaSpring（原金鞋停車場）、組屋停車樓屋頂農園、Funan 室內單車道。</p></div>
+    <div class="card"><h3>Home Care+</h3><p class="en">論文推演照護與居住的整合。現場對照：海軍部村莊、One Punggol、Our Tampines Hub 的醫療與長者照護層。</p></div>
   </div>
 
   <h2>研究問題</h2>
   <div class="qs" id="q-list"></div>
 
-  <h2>為什麼是新加坡</h2>
-  <p>新加坡是自駕前哨站：讓自駕車進入公共運輸，同時把街道還給人；它也是新型態複合建築最密集的城市之一。兩者放在一起，正好回答「車少了、空間釋放之後，建築會怎麼組合」。</p>
-  <ol class="tl">
-    <li><b>2015</b><i></i>緯壹科技城<br><span class="en">開放道路測試</span></li>
-    <li><b>2017</b><i></i>自駕車道路規則<br><span class="en">CETRAN 測試中心</span></li>
-    <li><b>2019</b><i></i>國家標準<br><span class="en">TR 68</span></li>
-    <li><b>2020</b><i></i>KPMG 準備度<br><span class="en">全球第一</span></li>
-    <li><b>2026</b><i></i>榜鵝自駕接駁<br><span class="en">開放民眾搭乘</span></li>
-  </ol>
-
   <h2>現場怎麼記</h2>
   <div class="grid2">
-    <div class="card"><h3>類型學記錄表 <span class="tag">主表</span></h3><p class="en">以案頭版公式為起點，現場增刪元件、修正關係與屬性；簡圖即時更新，另可上傳手繪剖面或平面。</p></div>
-    <div class="card"><h3>人本空間記錄表</h3><p class="en">選定公式中的某個元件，以「年齡層 × 活動」點按計數，記錄設施、經營與公共性。</p></div>
-    <div class="card"><h3>臺灣對應的待設計空間</h3><p class="en">兩張表都可勾選臺灣哪一類待設計空間可以借鏡，例如車站周邊、停車場用地、社宅、高架橋下。</p></div>
-    <div class="card"><h3>手冊</h3><p class="en">類型學矩陣比較各地點的組成，統計最常出現的元件組合；可請 Claude 依記錄起草案例卡，匯出 Markdown。</p></div>
+    <div class="card"><h3>類型學記錄表 <span class="tag">主表</span></h3><p class="en">打開地點即載入案頭版（依公開資料整理、尚未實地確認），現場增刪元件、修正關係與寬度；簡圖即時更新，另可上傳手繪。</p></div>
+    <div class="card"><h3>人本空間記錄表</h3><p class="en">選定公式中的某個元件或斷面帶，以「年齡層 × 活動」點按計數，記錄設施、經營與公共性。</p></div>
+    <div class="card"><h3>臺灣對應的待設計空間</h3><p class="en">兩張表都可勾選臺灣哪一類待設計空間可以借鏡：車站周邊、停車場用地、社宅、高架橋下、鐵道廊道等。</p></div>
+    <div class="card"><h3>手冊</h3><p class="en">建築類型學矩陣、街道人本比例比較、最常出現的元件組合；可請 Claude 依記錄起草案例卡，匯出 Markdown。</p></div>
   </div>
-  <footer>賀昭恩・九典聯合建築師事務所 建築設計師。案頭版公式依公開資料整理，現場會再修正；觀察只計人數與活動類型，不拍攝可辨識的面孔與車牌。</footer>
+  <footer>賀昭恩・九典聯合建築師事務所 建築設計師。案頭版公式與寬度依公開資料整理，現場會再修正；觀察只計人數與活動類型，不拍攝可辨識的面孔與車牌。</footer>
 </section>
 
 <section id="v-route" class="view" hidden>
   <h1 style="font-size:1.6rem">21 天路線</h1>
-  <p class="en">點日程中的地點或地圖上的點，查看組成公式、簡圖、我帶去的問題與現場記錄。位置為示意。</p>
+  <p class="en">點日程中的地點或地圖上的點，查看組成公式、剖面與平面簡圖、我帶去的問題與現場記錄。位置為示意。</p>
   <div class="routegrid">
     <div class="mapcol"><div class="mappanel">
       <div class="maptabs" id="maptabs" role="group" aria-label="切換地圖"></div>
@@ -316,6 +334,8 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
     <span class="f">天氣</span><div class="chips" id="f-wx"></div>
 
     <div data-for="typo">
+      <p class="banner" id="t-modehint" style="margin-top:.6rem"></p>
+      <div data-mode="bld">
       <fieldset class="sec"><legend>① 組成元件</legend>
         <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">從案頭版開始修正；點下方按鈕加入元件。</p><button type="button" class="btn small" id="t-load">重新載入案頭版</button></div>
         <div id="t-els"></div>
@@ -326,7 +346,21 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
         <div id="t-rels"></div>
         <button type="button" class="btn small" id="t-addrel" style="margin-top:.3rem">＋ 加關係</button>
       </fieldset>
-      <fieldset class="sec"><legend>③ 公式與簡圖</legend>
+      </div>
+      <div data-mode="sec">
+      <fieldset class="sec"><legend>① 斷面組成（由左到右）</legend>
+        <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">寬度以公尺填寫；案頭版為示意寬度，請現場量測修正。</p><button type="button" class="btn small" id="s-load">重新載入案頭版</button></div>
+        <div id="s-strips"></div>
+        <span class="f">加入斷面元素</span><div class="chips addchips" id="s-add"></div>
+      </fieldset>
+      <fieldset class="sec"><legend>② 上方構造與特徵</legend>
+        <p class="en" style="margin:0">高架道路、天橋等跨在斷面上方的構造。</p>
+        <div id="s-ov"></div>
+        <button type="button" class="btn small" id="s-addov" style="margin-top:.3rem">＋ 加上方構造</button>
+        <span class="f">街道特徵</span><div class="chips" id="s-feat"></div>
+      </fieldset>
+      </div>
+      <fieldset class="sec"><legend>③ 公式與簡圖（剖面／斷面＋平面）</legend>
         <div id="t-preview"></div>
         <div class="row" style="margin-top:.5rem"><input type="file" accept="image/*" capture="environment" id="ph-sec" data-ph="手繪剖面" hidden><label for="ph-sec" class="btn small phbtn">＋ 手繪剖面</label>
         <input type="file" accept="image/*" capture="environment" id="ph-plan" data-ph="手繪平面" hidden><label for="ph-plan" class="btn small phbtn">＋ 手繪平面</label>
@@ -336,7 +370,7 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
 
     <div data-for="space">
       <fieldset class="sec"><legend>A 觀察的元件與經營</legend>
-        <label class="f" for="f-el">觀察的是公式中的哪個元件</label><select id="f-el"></select>
+        <label class="f" for="f-el">觀察的是公式中的哪個元件或斷面帶</label><select id="f-el"></select>
         <div class="grid2"><div><label class="f" for="f-orig">原本的用途</label><input type="text" id="f-orig" placeholder="例：停車場、排水道、鐵道"></div>
         <div><label class="f" for="f-op">管理單位</label><input type="text" id="f-op" placeholder="例：市鎮理事會、國家公園局"></div></div>
         <span class="f">經營方式</span><div class="chips" id="f-opm"></div>
@@ -378,9 +412,12 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
   <p class="en">記錄自動彙整為進度、類型學矩陣與案例卡，回國後作為《案例圖集》與《設計指引（草案）》的底稿。現場版優先，尚未記錄的地點顯示案頭版。</p>
   <div class="stats" id="stats"></div>
   <div class="row"><button class="btn" id="export" hidden>匯出手冊（Markdown）</button><span class="status" id="export-status"></span></div>
-  <h2>類型學矩陣</h2>
+  <h2>建築類型學矩陣</h2>
   <div class="legend" id="hb-legend" style="margin-bottom:.4rem"></div>
   <div class="tmx" id="tmx"></div>
+  <h2>街道斷面比較</h2>
+  <p class="en">人本比例＝行人與單車寬度 ÷（行人與單車＋車用）寬度；不含建築與綠帶。</p>
+  <div class="tmx" id="smx"></div>
   <h2>組合統計</h2>
   <div class="grid2">
     <div class="card"><h3>最常一起出現的元件</h3><div class="bars" id="pairs"></div></div>
@@ -394,40 +431,44 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
 
 <script>window.__STATIC__=true;</script>
 <script>
-var DATA={"ico":{"bus":"\u003crect x='4' y='4' width='16' height='13' rx='3'/>\u003cpath d='M4 11h16'/>\u003cpath d='M7.5 20v-3M16.5 20v-3'/>\u003cpath d='M8 14.2h.01M16 14.2h.01'/>","grid":"\u003cpath d='M3 20.5h18'/>\u003cpath d='M5 20.5V9l5-3v14.5'/>\u003cpath d='M10 20.5V4l9 4v12.5'/>\u003cpath d='M13 10h3M13 13.5h3M13 17h3'/>","chip":"\u003crect x='7' y='7' width='10' height='10' rx='2'/>\u003cpath d='M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4'/>","gantry":"\u003cpath d='M4 21V6M20 21V6'/>\u003cpath d='M4 6h16'/>\u003crect x='8' y='8' width='8' height='4' rx='1'/>\u003cpath d='M7 21l2-5h6l2 5'/>","tree":"\u003cpath d='M12 21v-5'/>\u003cpath d='M12 3l6 7h-3l4 5H5l4-5H6z'/>","wave":"\u003cpath d='M3 9c2.5-2 4.5-2 7 0s4.5 2 7 0 3-1.5 4-1'/>\u003cpath d='M3 15c2.5-2 4.5-2 7 0s4.5 2 7 0 3-1.5 4-1'/>","lake":"\u003cpath d='M12 4c2.5 2.5 2.5 6 0 9-2.5-3-2.5-6.5 0-9z'/>\u003cpath d='M12 13c-3-.5-6-2.5-7-5 3 0 6 1.5 7 5zM12 13c3-.5 6-2.5 7-5-3 0-6 1.5-7 5z'/>\u003cpath d='M4 19c2.7-1.6 5.3-1.6 8 0s5.3 1.6 8 0'/>","rail":"\u003cpath d='M8 3l-2 18M16 3l2 18'/>\u003cpath d='M6.9 7h10.2M6.4 12h11.2M5.9 17h12.2'/>","viaduct":"\u003cpath d='M2 7h20'/>\u003cpath d='M2 10h20'/>\u003cpath d='M6 10v11M18 10v11'/>\u003cpath d='M10.5 21v-3a1.5 1.5 0 0 1 3 0v3'/>","cross":"\u003cpath d='M3 5h18M3 19h18'/>\u003cpath d='M6 8v8M10 8v8M14 8v8M18 8v8'/>","people":"\u003ccircle cx='8' cy='6' r='2.2'/>\u003ccircle cx='16' cy='6' r='2.2'/>\u003cpath d='M4.5 20v-5a3.5 3.5 0 0 1 7 0v5'/>\u003cpath d='M12.5 20v-5a3.5 3.5 0 0 1 7 0v5'/>","stack":"\u003crect x='4' y='12' width='16' height='9' rx='1'/>\u003crect x='6.5' y='6' width='11' height='6' rx='1'/>\u003cpath d='M12 6V3.5'/>\u003cpath d='M9 3.5c1.5-1.2 4.5-1.2 6 0'/>","roof":"\u003crect x='4' y='10' width='16' height='11' rx='1'/>\u003cpath d='M9.5 19v-6h2.2a1.8 1.8 0 0 1 0 3.6H9.5'/>\u003cpath d='M12 10V6'/>\u003cpath d='M12 7c-2-.2-3.3-1.3-3.5-3 2 .2 3.3 1.3 3.5 3zM12 7c2-.2 3.3-1.3 3.5-3-2 .2-3.3 1.3-3.5 3z'/>","gallery":"\u003cpath d='M3 9.5L12 4l9 5.5'/>\u003cpath d='M4 9.5h16'/>\u003cpath d='M6.5 12v6M10 12v6M14 12v6M17.5 12v6'/>\u003cpath d='M3 20.5h18'/>","shop":"\u003cpath d='M4 21V8l4-4h8l4 4v13'/>\u003cpath d='M4 11h16'/>\u003cpath d='M9 21v-5h6v5'/>\u003cpath d='M8 8h.01M12 8h.01M16 8h.01'/>","station":"\u003cpath d='M3 20.5h18'/>\u003cpath d='M5 20.5V10l7-5 7 5v10.5'/>\u003cpath d='M9 20.5v-5h6v5'/>\u003cpath d='M9.5 11.5h5'/>","tower":"\u003cpath d='M3 21h18'/>\u003cpath d='M8 21V3h8v18'/>\u003cpath d='M8 9h8M8 15h8'/>\u003cpath d='M10.5 12c.8-1.2 2.2-1.2 3 0'/>\u003cpath d='M11 6h2M11 18h2'/>","drop":"\u003cpath d='M3 21h18'/>\u003cpath d='M4 21c0-7 3.5-11 8-11s8 4 8 11'/>\u003cpath d='M12 10V3'/>\u003cpath d='M10 6.5c.6 1 .6 2 0 3M14 6.5c-.6 1-.6 2 0 3'/>","canopy":"\u003cpath d='M2 10c3-3 6-3 10 0s7 3 10 0'/>\u003cpath d='M6 10v11M18 10v11'/>\u003cpath d='M3 21h18'/>\u003cpath d='M10 21v-5h4v5'/>","eye":"\u003cpath d='M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z'/>\u003ccircle cx='12' cy='12' r='2.8'/>","flask":"\u003cpath d='M9 3h6'/>\u003cpath d='M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3'/>\u003cpath d='M7.5 15h9'/>","plane":"\u003cpath d='M3 21h18'/>\u003cpath d='M2 13l8-1 5-7h2l-3 7 5-.5 2-2h1.5l-1 3.5 1 3.5H20l-2-2-5-.5 3 7h-2l-5-7-8-1z'/>"},"RQ":[{"k":"RQ1","zh":"智慧城市","q":"AI 與自駕車如何被納入城市？對街道與路緣帶來什麼變化？","o":"自駕接駁的上下客點與步行距離、數位平台與共享停車、道路收費在街道上的痕跡"},{"k":"RQ2","zh":"永續城市","q":"城市如何減少對汽車的依賴，把空間還給自然與人？","o":"少車新市鎮、車道地下化、共享停車、河道自然化與綠色廊道"},{"k":"RQ3","zh":"友善都市空間","q":"友善的街道與公共空間如何被設計、經營，並與社區共同維持？","o":"過街與減速設計、舊鐵道與高架下社區節點、高齡友善社區；使用者、時段與公眾參與"},{"k":"RQ4","zh":"臺灣轉譯","q":"對臺灣的待設計空間有什麼啟示？","o":"車站周邊、停車場用地、社宅、高架橋下、鐵道廊道等臺灣待設計空間的對應原則"}],"sites":[{"id":"air","no":1,"zh":"榜鵝自駕接駁 Ai.R","en":"Punggol Autonomous Shuttle","area":"榜鵝","map":"sg","ll":[1.4048,103.9025],"ico":"bus","rq":["RQ1"],"intro":"2026年4月1日起開放民眾搭乘，平日9:30至17:30營運，車上配有安全員；固定路線免費，2026年9月起加入收費的隨選服務。","focus":"上下客點設計、步行距離、與組屋及車站的銜接","ask":"上下客點如何避開人行動線？從組屋大門走到上車點要幾公尺、有沒有遮蔭？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街區","typo":{"els":[{"k":"trn","n":"自駕接駁上下客點","pub":"pub"},{"k":"trn","n":"榜鵝捷運站","pub":"pub"},{"k":"res","n":"組屋","pub":"priv"},{"k":"rnd","n":"榜鵝數位區","pub":"semi"}],"rel":[{"a":0,"r":"link","b":1,"n":"接駁路線"},{"a":0,"r":"adj","b":2},{"a":0,"r":"link","b":3}]}},
-{"id":"pdd","no":2,"zh":"榜鵝數位區","en":"Punggol Digital District","area":"榜鵝","map":"sg","ll":[1.4112,103.9098],"ico":"grid","rq":["RQ1","RQ2"],"intro":"以步行化林蔭大道為核心的少車園區；開放數位平台以 3D 數位孿生整合全區系統，共享停車使停車位減少約50%。","focus":"步行環境、共享停車的空間結果、數位平台的公共介面","ask":"少了一半的停車位，地面多出來的空間用在哪裡？數位平台在街上看得到嗎？","web":"https://www.jtc.gov.sg","org":"裕廊集團（JTC）","scale":"街區","typo":{"els":[{"k":"rnd","n":"商業園區","pub":"semi"},{"k":"edu","n":"新加坡理工大學","pub":"semi"},{"k":"grn","n":"步行林蔭大道","pub":"pub"},{"k":"com","n":"零售與餐飲","pub":"pub"},{"k":"prk","n":"共享停車","pub":"priv"},{"k":"trn","n":"榜鵝海岸捷運站","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":1},{"a":3,"r":"stack","b":4},{"a":2,"r":"link","b":5}]}},
-{"id":"onenorth","no":3,"zh":"緯壹科技城","en":"one-north","area":"緯壹","map":"sg","ll":[1.2995,103.7875],"ico":"chip","rq":["RQ1"],"intro":"2015年起的自駕車道路測試區，也是少車導向的科技園區。","focus":"試驗區的街道與路緣","ask":"測試了十年的街道，路緣和標線和一般街道有什麼不同？","web":"https://www.jtc.gov.sg","org":"裕廊集團（JTC）","scale":"街區","typo":{"els":[{"k":"rnd","n":"研發大樓","pub":"semi"},{"k":"res","n":"住宅","pub":"priv"},{"k":"com","n":"商業","pub":"pub"},{"k":"grn","n":"緯壹公園","pub":"pub"},{"k":"trn","n":"捷運站","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":3},{"a":3,"r":"adj","b":1},{"a":2,"r":"adj","b":0},{"a":2,"r":"link","b":4}]}},
-{"id":"erp","no":4,"zh":"電子道路收費 ERP 2","en":"ERP 2.0（以中央商務區為觀察點）","area":"濱海灣、中央商務區","map":"cbd","ll":[1.2805,103.8515],"ico":"gantry","rq":["RQ1","RQ2"],"intro":"2027年1月1日起全面改用衛星式收費，以路面標線取代收費門架。","focus":"門架拆除後的街道、道路收費與少車政策的關係","ask":"收費門架拆掉之後，路口和人行道有沒有被重新設計？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"els":[{"k":"st","n":"收費路段","orig":"收費門架（2027起改衛星收費）"},{"k":"off","n":"辦公","pub":"priv"},{"k":"trn","n":"捷運站","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":1},{"a":1,"r":"link","b":2}]}},
-{"id":"tengah","no":5,"zh":"登加森林鎮","en":"Tengah","area":"登加","map":"sg","ll":[1.3585,103.733],"ico":"tree","rq":["RQ2"],"intro":"第一個車道走地下的無車鎮中心（依開放進度）；100公尺寬、5公里長的森林廊道；農園步道。","focus":"車道地下化後的地面使用、森林廊道與社區","ask":"車道走地下之後，鎮中心地面是誰在用？森林廊道和住家怎麼接？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）","scale":"新市鎮","typo":{"els":[{"k":"st","n":"車道","fl":"B1"},{"k":"com","n":"鎮中心","pub":"pub"},{"k":"res","n":"組屋","pub":"priv"},{"k":"grn","n":"森林廊道","pub":"pub"},{"k":"grn","n":"農園步道","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":1,"r":"adj","b":2},{"a":2,"r":"adj","b":3},{"a":3,"r":"adj","b":4}]}},
-{"id":"bishan","no":6,"zh":"碧山宏茂橋公園","en":"Bishan-Ang Mo Kio Park","area":"碧山、宏茂橋","map":"sg","ll":[1.3627,103.8433],"ico":"wave","rq":["RQ2","RQ3"],"intro":"混凝土排水道改為約3公里的自然化河道，暴雨時公園兼作排洪空間，2012年開放。","focus":"藍綠基礎設施與親水空間","ask":"排水道變成河岸之後，平日和假日分別是誰在河邊？","web":"https://www.nparks.gov.sg","org":"國家公園局（NParks）","scale":"公園","typo":{"els":[{"k":"grn","n":"自然化河道（兼排洪）","pub":"pub","orig":"混凝土排水道"},{"k":"grn","n":"公園","pub":"pub"},{"k":"res","n":"周邊組屋","pub":"priv"}],"rel":[{"a":1,"r":"encl","b":0},{"a":1,"r":"adj","b":2}]}},
-{"id":"jurong","no":7,"zh":"裕廊湖花園與裕廊湖區","en":"Jurong Lake Gardens / District","area":"裕廊湖區","map":"sg","ll":[1.3385,103.729],"ico":"lake","rq":["RQ2","RQ3"],"intro":"位於少車區的90公頃「人民的花園」。區內的新科學中心（Zaha Hadid Architects 與 Architects 61 設計）預計2027年底開幕，屆時觀察外觀或工程進度。","focus":"少車區的步行連結與公園使用","ask":"從捷運站走到花園的路上，車和人怎麼分開？","web":"https://www.nparks.gov.sg","org":"國家公園局（NParks）","scale":"街區","typo":{"els":[{"k":"grn","n":"裕廊湖花園","pub":"pub"},{"k":"edu","n":"新科學中心（2027年底開幕）","pub":"pub"},{"k":"com","n":"裕廊湖區商業","pub":"semi"},{"k":"trn","n":"捷運站","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":1},{"a":1,"r":"link","b":3},{"a":3,"r":"adj","b":2}]}},
-{"id":"rcn","no":8,"zh":"Rail Corridor 北段","en":"Rail Corridor（克蘭芝、泛島快速公路高架下節點）","area":"克蘭芝","map":"sg","ll":[1.418,103.7615],"ico":"rail","rq":["RQ3"],"intro":"原馬來亞鐵路，2011年土地交還後經公眾參與轉為社區與休閒廊道，全線24公里；北段有克蘭芝節點與泛島快速公路高架下節點。","focus":"線性廊道與社區節點、高架下空間","ask":"24公里的廊道，社區節點之間隔多遠？高架下的節點有哪些活動？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"廊道","typo":{"els":[{"k":"way","n":"步行與單車廊道","pub":"pub","orig":"馬來亞鐵路"},{"k":"grn","n":"綠帶","pub":"pub"},{"k":"cmy","n":"克蘭芝社區節點","pub":"pub"}],"rel":[{"a":1,"r":"encl","b":0},{"a":0,"r":"link","b":2}]}},
-{"id":"rcm","no":9,"zh":"Rail Corridor 武吉知馬火車站","en":"Former Bukit Timah Railway Station","area":"武吉知馬","map":"sg","ll":[1.3404,103.7762],"ico":"rail","rq":["RQ3"],"intro":"保留的舊火車站，成為 Rail Corridor 中段的社區節點。","focus":"舊車站再利用、廊道與社區的連結","ask":"保留下來的車站，現在由誰經營、平日有沒有人？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"廊道","typo":{"els":[{"k":"edu","n":"舊火車站（保存）","pub":"pub","orig":"武吉知馬火車站"},{"k":"way","n":"步行與單車廊道","pub":"pub","orig":"馬來亞鐵路"},{"k":"grn","n":"綠帶","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":1},{"a":2,"r":"encl","b":1}]}},
-{"id":"rcs","no":10,"zh":"Rail Corridor 武吉士達節點","en":"Rail Corridor Buona Vista","area":"武吉士達","map":"sg","ll":[1.3072,103.7905],"ico":"viaduct","rq":["RQ3"],"intro":"Rail Corridor 南段的社區節點，鄰近捷運站與高架道路。","focus":"高架下空間的遮蔭與使用時段","ask":"高架下的遮蔭，讓午後的使用人數比旁邊高多少？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"廊道","typo":{"els":[{"k":"st","n":"高架道路"},{"k":"cmy","n":"高架下社區節點","pub":"pub"},{"k":"way","n":"步行與單車廊道","pub":"pub","orig":"馬來亞鐵路"}],"rel":[{"a":0,"r":"stack","b":1},{"a":1,"r":"link","b":2}]}},
-{"id":"queensway","no":11,"zh":"女皇鎮高架下節點","en":"Rail Corridor Queensway viaduct","area":"女皇鎮","map":"sg","ll":[1.2935,103.803],"ico":"viaduct","rq":["RQ3"],"intro":"Rail Corridor 的高架下節點，預計2027年完成；依完工進度記錄完成或施工中的狀態。","focus":"高架下空間的設計與完成度","ask":"如果還在施工，圍籬外的人行動線怎麼處理？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"廊道","typo":{"els":[{"k":"st","n":"高架道路"},{"k":"cmy","n":"高架下節點（依完工進度）","pub":"pub"},{"k":"way","n":"步行與單車廊道","pub":"pub","orig":"馬來亞鐵路"}],"rel":[{"a":0,"r":"stack","b":1},{"a":1,"r":"link","b":2}]}},
-{"id":"fsamk","no":12,"zh":"友善街道：宏茂橋","en":"Friendly Streets – Ang Mo Kio","area":"宏茂橋","map":"sg","ll":[1.37,103.8495],"ico":"cross","rq":["RQ3"],"intro":"友善街道2023年起推動，宏茂橋為首批5處試點之一；預計2030年前每個市鎮至少一處。","focus":"無障礙過街、減速設計、綠燈時間、高齡與兒童的使用","ask":"上下學與市場時段，長者過一次馬路要多久？綠燈夠不夠？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"els":[{"k":"st","n":"友善街道","pub":"pub","orig":"縮減後的車道"},{"k":"edu","n":"學校","pub":"semi"},{"k":"com","n":"市場與熟食中心","pub":"pub"},{"k":"res","n":"組屋","pub":"priv"}],"rel":[{"a":0,"r":"adj","b":1},{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":3}]}},
-{"id":"fstpy","no":13,"zh":"友善街道：大巴窯","en":"Friendly Streets – Toa Payoh","area":"大巴窯","map":"sg","ll":[1.333,103.848],"ico":"cross","rq":["RQ3"],"intro":"友善街道首批試點之一。","focus":"過街與減速設計","ask":"減速設計是怎麼做的？路緣有沒有讓出空間給行人？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"els":[{"k":"st","n":"友善街道","pub":"pub","orig":"縮減後的車道"},{"k":"edu","n":"學校","pub":"semi"},{"k":"com","n":"市場","pub":"pub"},{"k":"res","n":"組屋","pub":"priv"}],"rel":[{"a":0,"r":"adj","b":1},{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":3}]}},
-{"id":"fstam","no":14,"zh":"友善街道：淡濱尼","en":"Friendly Streets – Tampines","area":"淡濱尼","map":"sg","ll":[1.353,103.944],"ico":"cross","rq":["RQ3"],"intro":"友善街道首批試點之一，作為不同市鎮的對照。","focus":"不同市鎮的做法差異","ask":"和宏茂橋相比，哪些做法相同、哪些因地制宜？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"els":[{"k":"st","n":"友善街道","pub":"pub","orig":"縮減後的車道"},{"k":"edu","n":"學校","pub":"semi"},{"k":"com","n":"鄰里商店","pub":"pub"},{"k":"res","n":"組屋","pub":"priv"}],"rel":[{"a":0,"r":"adj","b":1},{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":3}]}},
-{"id":"fsbbw","no":15,"zh":"友善街道：武吉巴督西","en":"Friendly Streets – Bukit Batok West","area":"武吉巴督","map":"sg","ll":[1.349,103.742],"ico":"cross","rq":["RQ3"],"intro":"友善街道首批試點之一，作為不同市鎮的對照。","focus":"不同市鎮的做法差異","ask":"新市鎮邊緣的街道，步行者是誰？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"els":[{"k":"st","n":"友善街道","pub":"pub","orig":"縮減後的車道"},{"k":"edu","n":"學校","pub":"semi"},{"k":"com","n":"鄰里商店","pub":"pub"},{"k":"res","n":"組屋","pub":"priv"}],"rel":[{"a":0,"r":"adj","b":1},{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":3}]}},
-{"id":"fswc","no":16,"zh":"友善街道：西海岸","en":"Friendly Streets – West Coast","area":"西海岸","map":"sg","ll":[1.301,103.764],"ico":"cross","rq":["RQ3"],"intro":"友善街道首批試點之一。","focus":"過街與減速設計","ask":"街道和公園、學校的入口怎麼銜接？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"els":[{"k":"st","n":"友善街道","pub":"pub","orig":"縮減後的車道"},{"k":"edu","n":"學校","pub":"semi"},{"k":"com","n":"市場","pub":"pub"},{"k":"res","n":"組屋","pub":"priv"}],"rel":[{"a":0,"r":"adj","b":1},{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":3}]}},
-{"id":"haji","no":17,"zh":"街道為人：哈芝巷","en":"Streets for People – Haji Lane","area":"甘榜格南","map":"cbd","ll":[1.3009,103.859],"ico":"people","rq":["RQ3"],"intro":"街道為人（Streets for People）計畫下的週末無車街區。","focus":"臨時封街的經營","ask":"封街的時候，送貨和上下客改到哪裡？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"街道","typo":{"els":[{"k":"st","n":"哈芝巷（封街）","pub":"pub","hrs":"週末","orig":"車道"},{"k":"com","n":"店屋商店","pub":"pub"}],"rel":[{"a":0,"r":"encl","b":1}]}},
-{"id":"club","no":18,"zh":"街道為人：俱樂部街、環形路","en":"Club Street / Circular Road","area":"牛車水、駁船碼頭","map":"cbd","ll":[1.284,103.8475],"ico":"people","rq":["RQ3"],"intro":"週末無車的餐飲街區。","focus":"臨時與常態封街的經營","ask":"桌椅擺上車道之後，誰負責收、誰負責管？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"街道","typo":{"els":[{"k":"st","n":"俱樂部街、環形路（封街）","pub":"pub","hrs":"週末","orig":"車道"},{"k":"com","n":"餐飲","pub":"pub"},{"k":"off","n":"辦公","pub":"priv"}],"rel":[{"a":0,"r":"adj","b":1},{"a":1,"r":"adj","b":2}]}},
-{"id":"tiong","no":19,"zh":"中峇魯 Eng Hoon Street","en":"Tiong Bahru – Eng Hoon Street","area":"中峇魯","map":"cbd","ll":[1.2846,103.8316],"ico":"people","rq":["RQ3"],"intro":"2023年完成步行化的社區街道。","focus":"常態步行化後的使用","ask":"常態步行化之後，街上多了哪些停留活動？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"街區","typo":{"els":[{"k":"st","n":"Eng Hoon Street 步行化","pub":"pub","orig":"車道"},{"k":"res","n":"戰前組屋","pub":"priv"},{"k":"com","n":"店面與咖啡","pub":"pub"},{"k":"hwk","n":"中峇魯市場","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":2},{"a":2,"r":"adj","b":0},{"a":0,"r":"link","b":3}]}},
-{"id":"kampung","no":20,"zh":"海軍部村莊","en":"Kampung Admiralty","area":"兀蘭","map":"sg","ll":[1.44,103.8008],"ico":"stack","rq":["RQ3"],"intro":"原為空地與停車場，改建為整合高齡住宅、醫療、熟食中心、社區廣場與屋頂公園的垂直社區，2018年開放。","focus":"高齡友善、跨機關整合、垂直公共空間","ask":"傍晚的社區廣場是誰在用？屋頂公園長者上得去嗎？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）","arch":"WOHA","hours":"公共廣場全天開放","scale":"建築","typo":{"els":[{"k":"cmy","n":"社區廣場","pub":"pub","orig":"空地與停車場"},{"k":"hwk","n":"熟食中心","pub":"pub"},{"k":"med","n":"醫療中心","pub":"semi"},{"k":"grn","n":"屋頂社區公園","pub":"pub"},{"k":"res","n":"高齡住宅","pub":"priv"},{"k":"trn","n":"海軍部捷運站","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"stack","b":1},{"a":3,"r":"stack","b":2},{"a":4,"r":"stack","b":3},{"a":0,"r":"link","b":5}]}},
-{"id":"rooftop","no":21,"zh":"組屋停車樓屋頂花園","en":"HDB MSCP Rooftop Gardens","area":"文禮等地","map":"sg","ll":[1.3465,103.712],"ico":"roof","rq":["RQ2","RQ3"],"intro":"多層停車樓屋頂改為社區農園。","focus":"停車空間的轉用（Parking+）","ask":"屋頂農園誰在照顧？從住家怎麼上去？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）","scale":"建築","typo":{"els":[{"k":"prk","n":"多層停車樓","pub":"semi"},{"k":"grn","n":"屋頂社區農園","pub":"pub","orig":"停車樓屋頂"},{"k":"res","n":"組屋","pub":"priv"}],"rel":[{"a":1,"r":"stack","b":0},{"a":0,"r":"adj","b":2}]}},
-{"id":"ura","no":22,"zh":"城市展覽館與宜居城市中心","en":"Singapore City Gallery / CLC（URA Centre）","area":"丹戎巴葛","map":"cbd","ll":[1.2794,103.8446],"ico":"gallery","rq":["RQ1","RQ2","RQ3"],"intro":"城市規劃展覽館免費開放；宜居城市中心為國家發展部的研究機構，兩者位於同一區。","focus":"規劃制度與公眾溝通","ask":"新加坡怎麼向市民說明少車政策與自駕計畫？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）、宜居城市中心（CLC）","scale":"建築","typo":{"els":[{"k":"edu","n":"城市展覽館","pub":"pub"},{"k":"off","n":"宜居城市中心","pub":"semi"}],"rel":[{"a":0,"r":"adj","b":1}]}},
-{"id":"joochiat","no":23,"zh":"如切","en":"Joo Chiat","area":"如切","map":"sg","ll":[1.3125,103.9015],"ico":"shop","rq":["RQ3"],"intro":"店屋街區，作為週末街道使用的補充觀察。","focus":"店屋街區的街道生活","ask":"騎樓式的五腳基和臺灣騎樓，使用有什麼不同？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"街區","typo":{"els":[{"k":"com","n":"店屋商店","pub":"pub"},{"k":"res","n":"店屋上層住宅","pub":"priv"},{"k":"st","n":"如切路","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":0,"r":"adj","b":2}]}},
-{"id":"jewel","no":24,"zh":"星耀樟宜","en":"Jewel Changi Airport","area":"樟宜","map":"sg","ll":[1.3602,103.9894],"ico":"drop","rq":["RQ2","RQ3"],"arch":"Safdie Architects","hours":"全天開放；雨漩渦約10:00–22:00，夜間有燈光秀（出發前確認）","intro":"2019年開幕，以40公尺高的室內瀑布「雨漩渦」與五層樓的森林谷，把航廈、商場、旅館與停車串成免費開放的室內公共空間，不搭機也能進入。","focus":"交通樞紐作為公共空間、室內綠化與氣候調節、轉乘動線","ask":"沒有要搭機的人來這裡做什麼？轉乘旅客與在地居民各停留多久？森林谷是給人走、給人坐，還是只給人拍照？","web":"https://www.jewelchangiairport.com","org":"樟宜機場集團（Changi Airport Group）","scale":"建築","typo":{"els":[{"k":"trn","n":"航廈連通","pub":"pub"},{"k":"com","n":"商場","pub":"pub"},{"k":"grn","n":"森林谷與雨漩渦","pub":"pub","hrs":"雨漩渦約10:00–22:00"},{"k":"grn","n":"樹冠公園（部分收費）","pub":"semi"},{"k":"hot","n":"旅館","pub":"priv"},{"k":"prk","n":"停車","pub":"semi","fl":"B"}],"rel":[{"a":1,"r":"encl","b":2},{"a":3,"r":"stack","b":1},{"a":1,"r":"link","b":0,"n":"步行連通"},{"a":4,"r":"adj","b":1},{"a":1,"r":"stack","b":5}]}},
-{"id":"t3","no":25,"zh":"樟宜機場第三航廈","en":"Changi Airport Terminal 3","area":"樟宜","map":"sg","ll":[1.3555,103.9865],"ico":"plane","rq":["RQ2"],"arch":"SOM、CPG Consultants","hours":"全天開放（出入境大廳為非管制區）","intro":"2008年啟用，約300公尺長、五層樓高的垂直綠牆從出境與入境大廳都看得到，屋頂以百葉天窗引入自然光；是「花園城市」從機場開始的第一印象。","focus":"室內綠化與自然採光、旅客動線上的停留空間","ask":"綠牆旁有沒有可以停留的座位？自然光讓等候的人移到哪裡？","web":"https://www.changiairport.com","org":"樟宜機場集團（Changi Airport Group）","scale":"建築","typo":{"els":[{"k":"trn","n":"第三航廈","pub":"pub"},{"k":"grn","n":"垂直綠牆","pub":"pub"},{"k":"com","n":"商店與餐飲","pub":"semi"}],"rel":[{"a":0,"r":"encl","b":1},{"a":2,"r":"adj","b":0}]}},
-{"id":"capitaspring","no":26,"zh":"CapitaSpring","en":"CapitaSpring","area":"萊佛士坊","map":"cbd","ll":[1.284,103.8505],"ico":"tower","rq":["RQ2","RQ3"],"arch":"BIG、Carlo Ratti Associati","hours":"綠洲（17–20樓）與空中花園（51樓）：週一至週五 8:30–10:30、14:30–18:00；週末及國定假日不開放","intro":"2021年完工的51層複合大樓，基地原為金鞋停車場；2–3樓為熟食中心，17–20樓「綠洲」與51樓空中花園對外開放，另含辦公與服務式公寓。是停車場用地轉為公共生活的實例。","focus":"停車場用地轉化（Parking+）、垂直公共空間的開放規則","ask":"空中花園只在平日早上與下午開放，這樣的公共空間誰用得到？樓下熟食中心的午餐人潮從哪裡來？","web":"https://www.capitaland.com","org":"凱德集團（CapitaLand）","scale":"建築","typo":{"els":[{"k":"cmy","n":"城市客廳","pub":"pub","fl":"1F"},{"k":"hwk","n":"熟食中心","pub":"pub","fl":"2–3F","orig":"金鞋停車場"},{"k":"hot","n":"服務式公寓","pub":"priv"},{"k":"grn","n":"綠洲","pub":"semi","fl":"17–20F","hrs":"平日 8:30–10:30、14:30–18:00"},{"k":"off","n":"辦公","pub":"priv"},{"k":"grn","n":"空中花園","pub":"semi","fl":"51F","hrs":"平日 8:30–10:30、14:30–18:00"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"stack","b":1},{"a":3,"r":"stack","b":2},{"a":4,"r":"stack","b":3},{"a":5,"r":"stack","b":4}]}},
-{"id":"marinaone","no":27,"zh":"Marina One 公共綠心","en":"Marina One","area":"濱海灣","map":"cbd","ll":[1.2775,103.8525],"ico":"tree","rq":["RQ2","RQ3"],"arch":"ingenhoven associates、Architects 61；景觀 Gustafson Porter + Bowman","hours":"公共綠心約7:00–22:00（依現場公告）","intro":"兩棟辦公與兩棟住宅塔樓圍出多層的公共綠心「Green Heart」，地下步行網連接4條捷運線，以遮陽百葉與立體植栽調節微氣候。","focus":"塔樓之間的公共綠地、地下步行網與捷運的銜接","ask":"從捷運走到綠心要經過幾道門、幾分鐘？綠心在午休與下班時段各有多少人停留？","web":"https://www.marinaone.com.sg","org":"M+S（新加坡與馬來西亞合資開發）","scale":"建築","typo":{"els":[{"k":"off","n":"辦公塔×2","pub":"priv"},{"k":"grn","n":"公共綠心","pub":"pub","hrs":"約7:00–22:00"},{"k":"res","n":"住宅塔×2","pub":"priv"},{"k":"com","n":"零售","pub":"pub"},{"k":"trn","n":"地下步行網→4條捷運","pub":"pub","fl":"B"}],"rel":[{"a":0,"r":"encl","b":1},{"a":2,"r":"encl","b":1},{"a":1,"r":"stack","b":3},{"a":3,"r":"link","b":4,"n":"地下步行網"}]}},
-{"id":"southbeach","no":28,"zh":"South Beach（風華南岸）","en":"South Beach","area":"美芝路","map":"cbd","ll":[1.295,103.8565],"ico":"canopy","rq":["RQ2","RQ3"],"arch":"Foster + Partners、Aedas","hours":"中央步行軸全天可通行；大廳與餐廳約8:00–22:00","intro":"2016年完工，在舊軍營基地上保留4棟歷史建築與老樹，以約280公尺長的波浪頂棚為中央步行軸遮陽、導風並收集雨水；辦公、旅館、住宅與商店圍繞開放的公共空間。","focus":"熱帶氣候的半戶外公共空間、歷史建築與新建築並存","ask":"頂棚下比外面的街道涼多少、人多多少？舊軍營建築現在是誰在使用？","web":"https://www.fosterandpartners.com/projects/south-beach","org":"南岸財團（城市發展與IOI置業合資）","scale":"建築","typo":{"els":[{"k":"off","n":"辦公塔","pub":"priv"},{"k":"way","n":"頂棚下步行軸","pub":"pub"},{"k":"hot","n":"旅館與住宅塔","pub":"priv"},{"k":"cmy","n":"保存的舊軍營建築","pub":"semi","orig":"軍營"},{"k":"com","n":"商店與餐飲","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":1},{"a":1,"r":"adj","b":2},{"a":3,"r":"adj","b":1},{"a":4,"r":"stack","b":3}]}},
-{"id":"mbs","no":29,"zh":"濱海灣金沙（城市鳥瞰點）","en":"Marina Bay Sands","area":"濱海灣","map":"cbd","ll":[1.2834,103.8607],"ico":"eye","rq":["RQ1","RQ2"],"arch":"Safdie Architects","hours":"56樓觀景台約10:00–22:00，分離峰與尖峰時段，需購票（出發前確認）","intro":"2010年開幕的綜合度假村，三棟塔樓頂部以空中花園相連。本企劃把它當作城市鳥瞰點：從上方對照市中心已調查的複合型建築、濱海灣步道與道路系統。","focus":"鳥瞰城市結構：捷運、道路、濱水步道與複合型建築的配置","ask":"從上面看，市中心有多少地面留給人、多少留給車？已調查的建築在城市裡連成了什麼？","web":"https://www.marinabaysands.com","org":"濱海灣金沙（Marina Bay Sands）","scale":"建築","typo":{"els":[{"k":"hot","n":"旅館塔×3","pub":"priv"},{"k":"grn","n":"空中花園與觀景台（購票）","pub":"semi","hrs":"約10:00–22:00"},{"k":"com","n":"購物中心","pub":"pub"},{"k":"edu","n":"會展與劇院","pub":"semi"},{"k":"trn","n":"捷運站","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":3},{"a":2,"r":"link","b":4}]}},
-{"id":"geneo","no":30,"zh":"Geneo（新加坡科學園區）","en":"Geneo, Singapore Science Park","area":"肯特崗","map":"sg","ll":[1.2905,103.7905],"ico":"flask","rq":["RQ1","RQ3"],"arch":"Serie Architects、Multiply Architects","hours":"活動廣場開放；商店依各店營業時間","intro":"科學園區更新計畫的生命科學聚落，2025年全區啟用；以木構頂棚的活動廣場、服務式公寓與商業設施，讓研發園區第一次有了居住與夜間生活，並取得綠色標章白金級超低耗能認證。","focus":"研發園區的工作、居住與休閒混合；熱帶木構頂棚的公共廣場","ask":"下班後的廣場還有人嗎？研究人員、園區住客與附近居民會在同一個空間相遇嗎？","web":"https://www.geneo.com.sg","org":"凱德集團（CapitaLand）","scale":"園區","typo":{"els":[{"k":"rnd","n":"研發大樓","pub":"semi"},{"k":"cmy","n":"木構頂棚活動廣場","pub":"pub"},{"k":"com","n":"餐飲零售","pub":"pub"},{"k":"hot","n":"服務式公寓","pub":"priv"}],"rel":[{"a":0,"r":"encl","b":1},{"a":2,"r":"adj","b":1},{"a":3,"r":"adj","b":0}]}},
-{"id":"dleedon","no":31,"zh":"d'Leedon（對照點）","en":"d'Leedon","area":"法拉路","map":"sg","ll":[1.3125,103.8075],"ico":"tower","rq":["RQ3"],"arch":"Zaha Hadid Architects","hours":"私人住宅，僅能於公共道路觀看外觀","intro":"札哈．哈蒂建築師事務所設計的私人公寓社區，由多棟曲線塔樓組成。本企劃把它當作對照點：封閉式私人社區與街道的關係，對照組屋底層與海軍部村莊的開放界面。","focus":"私人社區的圍牆、出入口與人行道","ask":"社區邊界留給街道的是圍牆、車道，還是可以停留的空間？","web":"","org":"私人開發","scale":"建築","typo":{"els":[{"k":"res","n":"曲線住宅塔","pub":"priv"},{"k":"grn","n":"社區內花園","pub":"priv"},{"k":"st","n":"外圍道路"}],"rel":[{"a":0,"r":"encl","b":1},{"a":0,"r":"adj","b":2}]}},
-{"id":"keppel","no":32,"zh":"吉寶灣映水苑（對照點）","en":"Reflections at Keppel Bay","area":"吉寶灣","map":"sg","ll":[1.2666,103.8119],"ico":"wave","rq":["RQ2","RQ3"],"arch":"Studio Libeskind、DCA Architects","hours":"私人住宅，僅能外觀；建議黃昏由吉寶灣沿岸觀看","intro":"2011年完工的濱水住宅，6棟24至41層的曲面塔樓與低層住宅沿約750公尺海岸線排列；吉寶港原為造船廠與港口，2000年後轉型為住宅與遊艇港。作為港口用地轉型與濱水可及性的對照。","focus":"港口用地轉型、濱水步道的公共可及性","ask":"這段海岸線有多少是公眾走得到的？","web":"","org":"吉寶置業（Keppel Land）","scale":"建築","typo":{"els":[{"k":"res","n":"曲面住宅塔","pub":"priv","orig":"造船廠與港口"},{"k":"res","n":"低層住宅","pub":"priv"},{"k":"way","n":"濱水步道（可及性待確認）"}],"rel":[{"a":0,"r":"adj","b":1},{"a":1,"r":"adj","b":2}]}}],"days":[{"d":1,"date":"10/5（二）","area":"臺北→新加坡；樟宜","sites":["jewel"],"memo":"搭機、入住；確認保險、eSIM、交通卡；抵達後於星耀樟宜做夜間觀察"},
-{"d":2,"date":"10/6（三）","area":"市中心、濱海灣","sites":["ura","capitaspring","marinaone","erp"],"memo":"CapitaSpring 空中花園平日14:30起開放"},
-{"d":3,"date":"10/7（四）","area":"榜鵝","sites":["air","pdd"],"memo":"自駕接駁第一輪（約3趟）"},
+var DATA={"ico":{"bus":"\u003crect x='4' y='4' width='16' height='13' rx='3'/>\u003cpath d='M4 11h16'/>\u003cpath d='M7.5 20v-3M16.5 20v-3'/>\u003cpath d='M8 14.2h.01M16 14.2h.01'/>","grid":"\u003cpath d='M3 20.5h18'/>\u003cpath d='M5 20.5V9l5-3v14.5'/>\u003cpath d='M10 20.5V4l9 4v12.5'/>\u003cpath d='M13 10h3M13 13.5h3M13 17h3'/>","chip":"\u003crect x='7' y='7' width='10' height='10' rx='2'/>\u003cpath d='M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4'/>","gantry":"\u003cpath d='M4 21V6M20 21V6'/>\u003cpath d='M4 6h16'/>\u003crect x='8' y='8' width='8' height='4' rx='1'/>\u003cpath d='M7 21l2-5h6l2 5'/>","tree":"\u003cpath d='M12 21v-5'/>\u003cpath d='M12 3l6 7h-3l4 5H5l4-5H6z'/>","wave":"\u003cpath d='M3 9c2.5-2 4.5-2 7 0s4.5 2 7 0 3-1.5 4-1'/>\u003cpath d='M3 15c2.5-2 4.5-2 7 0s4.5 2 7 0 3-1.5 4-1'/>","lake":"\u003cpath d='M12 4c2.5 2.5 2.5 6 0 9-2.5-3-2.5-6.5 0-9z'/>\u003cpath d='M12 13c-3-.5-6-2.5-7-5 3 0 6 1.5 7 5zM12 13c3-.5 6-2.5 7-5-3 0-6 1.5-7 5z'/>\u003cpath d='M4 19c2.7-1.6 5.3-1.6 8 0s5.3 1.6 8 0'/>","rail":"\u003cpath d='M8 3l-2 18M16 3l2 18'/>\u003cpath d='M6.9 7h10.2M6.4 12h11.2M5.9 17h12.2'/>","viaduct":"\u003cpath d='M2 7h20'/>\u003cpath d='M2 10h20'/>\u003cpath d='M6 10v11M18 10v11'/>\u003cpath d='M10.5 21v-3a1.5 1.5 0 0 1 3 0v3'/>","cross":"\u003cpath d='M3 5h18M3 19h18'/>\u003cpath d='M6 8v8M10 8v8M14 8v8M18 8v8'/>","people":"\u003ccircle cx='8' cy='6' r='2.2'/>\u003ccircle cx='16' cy='6' r='2.2'/>\u003cpath d='M4.5 20v-5a3.5 3.5 0 0 1 7 0v5'/>\u003cpath d='M12.5 20v-5a3.5 3.5 0 0 1 7 0v5'/>","stack":"\u003crect x='4' y='12' width='16' height='9' rx='1'/>\u003crect x='6.5' y='6' width='11' height='6' rx='1'/>\u003cpath d='M12 6V3.5'/>\u003cpath d='M9 3.5c1.5-1.2 4.5-1.2 6 0'/>","roof":"\u003crect x='4' y='10' width='16' height='11' rx='1'/>\u003cpath d='M9.5 19v-6h2.2a1.8 1.8 0 0 1 0 3.6H9.5'/>\u003cpath d='M12 10V6'/>\u003cpath d='M12 7c-2-.2-3.3-1.3-3.5-3 2 .2 3.3 1.3 3.5 3zM12 7c2-.2 3.3-1.3 3.5-3-2 .2-3.3 1.3-3.5 3z'/>","gallery":"\u003cpath d='M3 9.5L12 4l9 5.5'/>\u003cpath d='M4 9.5h16'/>\u003cpath d='M6.5 12v6M10 12v6M14 12v6M17.5 12v6'/>\u003cpath d='M3 20.5h18'/>","shop":"\u003cpath d='M4 21V8l4-4h8l4 4v13'/>\u003cpath d='M4 11h16'/>\u003cpath d='M9 21v-5h6v5'/>\u003cpath d='M8 8h.01M12 8h.01M16 8h.01'/>","station":"\u003cpath d='M3 20.5h18'/>\u003cpath d='M5 20.5V10l7-5 7 5v10.5'/>\u003cpath d='M9 20.5v-5h6v5'/>\u003cpath d='M9.5 11.5h5'/>","tower":"\u003cpath d='M3 21h18'/>\u003cpath d='M8 21V3h8v18'/>\u003cpath d='M8 9h8M8 15h8'/>\u003cpath d='M10.5 12c.8-1.2 2.2-1.2 3 0'/>\u003cpath d='M11 6h2M11 18h2'/>","drop":"\u003cpath d='M3 21h18'/>\u003cpath d='M4 21c0-7 3.5-11 8-11s8 4 8 11'/>\u003cpath d='M12 10V3'/>\u003cpath d='M10 6.5c.6 1 .6 2 0 3M14 6.5c-.6 1-.6 2 0 3'/>","canopy":"\u003cpath d='M2 10c3-3 6-3 10 0s7 3 10 0'/>\u003cpath d='M6 10v11M18 10v11'/>\u003cpath d='M3 21h18'/>\u003cpath d='M10 21v-5h4v5'/>","eye":"\u003cpath d='M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z'/>\u003ccircle cx='12' cy='12' r='2.8'/>","flask":"\u003cpath d='M9 3h6'/>\u003cpath d='M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3'/>\u003cpath d='M7.5 15h9'/>","plane":"\u003cpath d='M3 21h18'/>\u003cpath d='M2 13l8-1 5-7h2l-3 7 5-.5 2-2h1.5l-1 3.5 1 3.5H20l-2-2-5-.5 3 7h-2l-5-7-8-1z'/>"},"RQ":[{"k":"RQ1","zh":"智慧城市","q":"AI 與自駕車大量進城之前，智慧園區與交通樞紐如何重組建築與街道？","o":"榜鵝數位區、緯壹科技城、Geneo、星耀樟宜等智慧園區與交通樞紐的複合方式"},{"k":"RQ2","zh":"永續城市","q":"城市如何減少對汽車的依賴，把空間還給自然與人？","o":"停車場改建、車道地下化、共享停車、屋頂與空中綠化、河道自然化"},{"k":"RQ3","zh":"友善都市空間","q":"友善的街道與公共空間如何被設計、經營，並與社區共同維持？","o":"整合型社區中心、空中村落、友善街道與封街；各層的公共性、使用者與時段"},{"k":"RQ4","zh":"臺灣轉譯","q":"對臺灣的待設計空間有什麼啟示？","o":"車站周邊、停車場用地、社宅、高架橋下、鐵道廊道等臺灣待設計空間的對應原則"}],"sites":[{"id":"jewel","no":1,"zh":"星耀樟宜","en":"Jewel Changi Airport","area":"樟宜","map":"sg","ll":[1.3602,103.9894],"ico":"drop","rq":["RQ2","RQ3"],"arch":"Safdie Architects","hours":"全天開放；雨漩渦約10:00–22:00，夜間有燈光秀（出發前確認）","intro":"2019年開幕，以40公尺高的室內瀑布「雨漩渦」與五層樓的森林谷，把航廈、商場、旅館與停車串成免費開放的室內公共空間，不搭機也能進入。","focus":"交通樞紐作為公共空間、室內綠化與氣候調節、轉乘動線","ask":"沒有要搭機的人來這裡做什麼？轉乘旅客與在地居民各停留多久？森林谷是給人走、給人坐，還是只給人拍照？","web":"https://www.jewelchangiairport.com","org":"樟宜機場集團（Changi Airport Group）","scale":"建築","typo":{"els":[{"k":"trn","n":"航廈連通","pub":"pub"},{"k":"com","n":"商場","pub":"pub"},{"k":"grn","n":"森林谷與雨漩渦","pub":"pub","hrs":"雨漩渦約10:00–22:00"},{"k":"grn","n":"樹冠公園（部分收費）","pub":"semi"},{"k":"hot","n":"旅館","pub":"priv"},{"k":"prk","n":"停車","pub":"semi","fl":"B"}],"rel":[{"a":1,"r":"encl","b":2},{"a":3,"r":"stack","b":1},{"a":1,"r":"link","b":0,"n":"步行連通"},{"a":4,"r":"adj","b":1},{"a":1,"r":"stack","b":5}]},"mode":"bld"},
+{"id":"ura","no":2,"zh":"城市展覽館與宜居城市中心","en":"Singapore City Gallery / CLC（URA Centre）","area":"丹戎巴葛","map":"cbd","ll":[1.2794,103.8446],"ico":"gallery","rq":["RQ1","RQ2","RQ3"],"intro":"城市規劃展覽館免費開放；宜居城市中心為國家發展部的研究機構，兩者位於同一區。","focus":"規劃制度與公眾溝通","ask":"新加坡怎麼向市民說明少車政策與自駕計畫？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）、宜居城市中心（CLC）","scale":"建築","typo":{"els":[{"k":"edu","n":"城市展覽館","pub":"pub"},{"k":"off","n":"宜居城市中心","pub":"semi"}],"rel":[{"a":0,"r":"adj","b":1}]},"mode":"bld"},
+{"id":"capitaspring","no":3,"zh":"CapitaSpring","en":"CapitaSpring","area":"萊佛士坊","map":"cbd","ll":[1.284,103.8505],"ico":"tower","rq":["RQ2","RQ3"],"arch":"BIG、Carlo Ratti Associati","hours":"綠洲（17–20樓）與空中花園（51樓）：週一至週五 8:30–10:30、14:30–18:00；週末及國定假日不開放","intro":"2021年完工的51層複合大樓，基地原為金鞋停車場；2–3樓為熟食中心，17–20樓「綠洲」與51樓空中花園對外開放，另含辦公與服務式公寓。是停車場用地轉為公共生活的實例。","focus":"停車場用地轉化（Parking+）、垂直公共空間的開放規則","ask":"空中花園只在平日早上與下午開放，這樣的公共空間誰用得到？樓下熟食中心的午餐人潮從哪裡來？","web":"https://www.capitaland.com","org":"凱德集團（CapitaLand）","scale":"建築","typo":{"els":[{"k":"cmy","n":"城市客廳","pub":"pub","fl":"1F"},{"k":"hwk","n":"熟食中心","pub":"pub","fl":"2–3F","orig":"金鞋停車場"},{"k":"hot","n":"服務式公寓","pub":"priv"},{"k":"grn","n":"綠洲","pub":"semi","fl":"17–20F","hrs":"平日 8:30–10:30、14:30–18:00"},{"k":"off","n":"辦公","pub":"priv"},{"k":"grn","n":"空中花園","pub":"semi","fl":"51F","hrs":"平日 8:30–10:30、14:30–18:00"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"stack","b":1},{"a":3,"r":"stack","b":2},{"a":4,"r":"stack","b":3},{"a":5,"r":"stack","b":4}]},"mode":"bld"},
+{"id":"marinaone","no":4,"zh":"Marina One 公共綠心","en":"Marina One","area":"濱海灣","map":"cbd","ll":[1.2775,103.8525],"ico":"tree","rq":["RQ2","RQ3"],"arch":"ingenhoven associates、Architects 61；景觀 Gustafson Porter + Bowman","hours":"公共綠心約7:00–22:00（依現場公告）","intro":"兩棟辦公與兩棟住宅塔樓圍出多層的公共綠心「Green Heart」，地下步行網連接4條捷運線，以遮陽百葉與立體植栽調節微氣候。","focus":"塔樓之間的公共綠地、地下步行網與捷運的銜接","ask":"從捷運走到綠心要經過幾道門、幾分鐘？綠心在午休與下班時段各有多少人停留？","web":"https://www.marinaone.com.sg","org":"M+S（新加坡與馬來西亞合資開發）","scale":"建築","typo":{"els":[{"k":"off","n":"辦公塔×2","pub":"priv"},{"k":"grn","n":"公共綠心","pub":"pub","hrs":"約7:00–22:00"},{"k":"res","n":"住宅塔×2","pub":"priv"},{"k":"com","n":"零售","pub":"pub"},{"k":"trn","n":"地下步行網→4條捷運","pub":"pub","fl":"B"}],"rel":[{"a":0,"r":"encl","b":1},{"a":2,"r":"encl","b":1},{"a":1,"r":"stack","b":3},{"a":3,"r":"link","b":4,"n":"地下步行網"}]},"mode":"bld"},
+{"id":"onepunggol","zh":"One Punggol（榜鵝綜合社區中心）","en":"One Punggol","area":"榜鵝","map":"sg","ll":[1.406,103.903],"ico":"people","rq":["RQ1","RQ3"],"hours":"公共空間開放；屋頂平台與各設施時段待確認","intro":"9個單位共構的整合型社區中心，含社區俱樂部、5層區域圖書館、約700座位熟食中心、托育與長者照護、政府服務中心；屋頂有活動平台，並以綠帶連接捷運站與商場，2022年起陸續開放。","focus":"數位新市鎮裡的共構社區中心、屋頂平台、與輕軌和綠帶的連接","ask":"和 Our Tampines Hub 相比，五年後的新一代社區中心組合方式變了什麼？","web":"https://www.pa.gov.sg","org":"人民協會（People's Association）","scale":"建築","mode":"bld","typo":{"els":[{"k":"hwk","n":"熟食中心","pub":"pub"},{"k":"cmy","n":"社區俱樂部與政府服務中心","pub":"pub"},{"k":"edu","n":"區域圖書館（5層）","pub":"pub"},{"k":"med","n":"托育、長者照護與洗腎中心","pub":"semi"},{"k":"grn","n":"屋頂活動平台","pub":"pub"},{"k":"prk","n":"地下停車","pub":"semi","fl":"B"},{"k":"trn","n":"三記輕軌站","pub":"pub"},{"k":"way","n":"榜鵝綠帶","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"adj","b":1},{"a":3,"r":"stack","b":1},{"a":4,"r":"stack","b":3},{"a":0,"r":"stack","b":5},{"a":1,"r":"link","b":6,"n":"二樓天橋"},{"a":0,"r":"adj","b":7}]},"no":5},
+{"id":"pdd","no":6,"zh":"榜鵝數位區","en":"Punggol Digital District","area":"榜鵝","map":"sg","ll":[1.4112,103.9098],"ico":"grid","rq":["RQ1","RQ2"],"intro":"以步行化林蔭大道為核心的少車園區；開放數位平台以 3D 數位孿生整合全區系統，共享停車使停車位減少約50%。","focus":"步行環境、共享停車的空間結果、數位平台的公共介面","ask":"少了一半的停車位，地面多出來的空間用在哪裡？數位平台在街上看得到嗎？","web":"https://www.jtc.gov.sg","org":"裕廊集團（JTC）","scale":"街區","typo":{"els":[{"k":"rnd","n":"商業園區","pub":"semi"},{"k":"edu","n":"新加坡理工大學","pub":"semi"},{"k":"grn","n":"步行林蔭大道","pub":"pub"},{"k":"com","n":"零售與餐飲","pub":"pub"},{"k":"prk","n":"共享停車","pub":"priv"},{"k":"trn","n":"榜鵝海岸捷運站","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":1},{"a":3,"r":"stack","b":4},{"a":2,"r":"link","b":5}]},"mode":"bld"},
+{"id":"fsamk","no":7,"zh":"友善街道：宏茂橋","en":"Friendly Streets – Ang Mo Kio","area":"宏茂橋","map":"sg","ll":[1.37,103.8495],"ico":"cross","rq":["RQ3"],"intro":"友善街道2023年起推動，宏茂橋為首批5處試點之一；預計2030年前每個市鎮至少一處。","focus":"無障礙過街、減速設計、綠燈時間、高齡與兒童的使用","ask":"上下學與市場時段，長者過一次馬路要多久？綠燈夠不夠？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"組屋","w":6},{"k":"sw","n":"人行道","w":2.5},{"k":"gr","n":"植栽帶","w":1.0},{"k":"cw","n":"車道","w":3.0},{"k":"md","n":"庇護島","w":1.5},{"k":"cw","n":"車道","w":3.0},{"k":"gr","n":"植栽帶","w":1.0},{"k":"sw","n":"人行道","w":2.5},{"k":"bld","n":"學校、市場","w":6}],"ov":[],"feat":["路緣延伸","行人庇護島","抬高式穿越道","學校區速限"]},"mode":"sec"},
+{"id":"fstpy","no":8,"zh":"友善街道：大巴窯","en":"Friendly Streets – Toa Payoh","area":"大巴窯","map":"sg","ll":[1.333,103.848],"ico":"cross","rq":["RQ3"],"intro":"友善街道首批試點之一。","focus":"過街與減速設計","ask":"減速設計是怎麼做的？路緣有沒有讓出空間給行人？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"組屋","w":6},{"k":"sw","n":"人行道","w":2.5},{"k":"gr","n":"植栽帶","w":1.0},{"k":"cw","n":"車道","w":3.0},{"k":"md","n":"庇護島","w":1.5},{"k":"cw","n":"車道","w":3.0},{"k":"gr","n":"植栽帶","w":1.0},{"k":"sw","n":"人行道","w":2.5},{"k":"bld","n":"學校、市場","w":6}],"ov":[],"feat":["路緣延伸","行人庇護島","抬高式穿越道","學校區速限"]},"mode":"sec"},
+{"id":"bishan","no":9,"zh":"碧山宏茂橋公園","en":"Bishan-Ang Mo Kio Park","area":"碧山、宏茂橋","map":"sg","ll":[1.3627,103.8433],"ico":"wave","rq":["RQ2","RQ3"],"intro":"混凝土排水道改為約3公里的自然化河道，暴雨時公園兼作排洪空間，2012年開放。","focus":"藍綠基礎設施與親水空間","ask":"排水道變成河岸之後，平日和假日分別是誰在河邊？","web":"https://www.nparks.gov.sg","org":"國家公園局（NParks）","scale":"廊道","typo":{"strips":[{"k":"gr","n":"草坡公園","w":12},{"k":"wt","n":"自然化河道（兼排洪）","w":15,"orig":"混凝土排水道"},{"k":"gr","n":"草坡公園","w":12},{"k":"bld","n":"周邊組屋","w":6}],"ov":[],"feat":[]},"mode":"sec"},
+{"id":"rcn","no":10,"zh":"Rail Corridor 北段","en":"Rail Corridor（克蘭芝、泛島快速公路高架下節點）","area":"克蘭芝","map":"sg","ll":[1.418,103.7615],"ico":"rail","rq":["RQ3"],"intro":"原馬來亞鐵路，2011年土地交還後經公眾參與轉為社區與休閒廊道，全線24公里；北段有克蘭芝節點與泛島快速公路高架下節點。","focus":"線性廊道與社區節點、高架下空間","ask":"24公里的廊道，社區節點之間隔多遠？高架下的節點有哪些活動？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"廊道","typo":{"strips":[{"k":"gr","n":"綠帶","w":8},{"k":"tr","n":"步行與單車步道","w":4,"orig":"馬來亞鐵路"},{"k":"gr","n":"綠帶","w":8}],"ov":[],"feat":["遮蔭"]},"mode":"sec"},
+{"id":"haji","no":11,"zh":"街道為人：哈芝巷","en":"Streets for People – Haji Lane","area":"甘榜格南","map":"cbd","ll":[1.3009,103.859],"ico":"people","rq":["RQ3"],"intro":"街道為人（Streets for People）計畫下的週末無車街區。","focus":"臨時封街的經營","ask":"封街的時候，送貨和上下客改到哪裡？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"店屋","w":5},{"k":"arc","n":"五腳基","w":1.5},{"k":"pl","n":"封街步行空間","w":4,"orig":"車道","hrs":"週末"},{"k":"arc","n":"五腳基","w":1.5},{"k":"bld","n":"店屋","w":5}],"ov":[],"feat":["週末封街"]},"mode":"sec"},
+{"id":"club","no":12,"zh":"街道為人：俱樂部街、環形路","en":"Club Street / Circular Road","area":"牛車水、駁船碼頭","map":"cbd","ll":[1.284,103.8475],"ico":"people","rq":["RQ3"],"intro":"週末無車的餐飲街區。","focus":"臨時與常態封街的經營","ask":"桌椅擺上車道之後，誰負責收、誰負責管？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"店屋","w":5},{"k":"arc","n":"五腳基","w":1.5},{"k":"sw","n":"人行道","w":1.5},{"k":"pl","n":"封街步行空間","w":7,"orig":"車道","hrs":"週末"},{"k":"sw","n":"人行道","w":1.5},{"k":"arc","n":"五腳基","w":1.5},{"k":"bld","n":"店屋與辦公","w":5}],"ov":[],"feat":["週末封街","座椅"]},"mode":"sec"},
+{"id":"southbeach","no":13,"zh":"South Beach（風華南岸）","en":"South Beach","area":"美芝路","map":"cbd","ll":[1.295,103.8565],"ico":"canopy","rq":["RQ2","RQ3"],"arch":"Foster + Partners、Aedas","hours":"中央步行軸全天可通行；大廳與餐廳約8:00–22:00","intro":"2016年完工，在舊軍營基地上保留4棟歷史建築與老樹，以約280公尺長的波浪頂棚為中央步行軸遮陽、導風並收集雨水；辦公、旅館、住宅與商店圍繞開放的公共空間。","focus":"熱帶氣候的半戶外公共空間、歷史建築與新建築並存","ask":"頂棚下比外面的街道涼多少、人多多少？舊軍營建築現在是誰在使用？","web":"https://www.fosterandpartners.com/projects/south-beach","org":"南岸財團（城市發展與IOI置業合資）","scale":"建築","typo":{"els":[{"k":"off","n":"辦公塔","pub":"priv"},{"k":"way","n":"頂棚下步行軸","pub":"pub"},{"k":"hot","n":"旅館與住宅塔","pub":"priv"},{"k":"cmy","n":"保存的舊軍營建築","pub":"semi","orig":"軍營"},{"k":"com","n":"商店與餐飲","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":1},{"a":1,"r":"adj","b":2},{"a":3,"r":"adj","b":1},{"a":4,"r":"stack","b":3}]},"mode":"bld"},
+{"id":"rcm","no":14,"zh":"Rail Corridor 武吉知馬火車站","en":"Former Bukit Timah Railway Station","area":"武吉知馬","map":"sg","ll":[1.3404,103.7762],"ico":"rail","rq":["RQ3"],"intro":"保留的舊火車站，成為 Rail Corridor 中段的社區節點。","focus":"舊車站再利用、廊道與社區的連結","ask":"保留下來的車站，現在由誰經營、平日有沒有人？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"廊道","typo":{"strips":[{"k":"bld","n":"舊武吉知馬火車站","w":8},{"k":"pl","n":"站前廣場","w":8},{"k":"tr","n":"步行與單車步道","w":4,"orig":"馬來亞鐵路"},{"k":"gr","n":"綠帶","w":8}],"ov":[],"feat":["座椅"]},"mode":"sec"},
+{"id":"dleedon","no":15,"zh":"d'Leedon（對照點）","en":"d'Leedon","area":"法拉路","map":"sg","ll":[1.3125,103.8075],"ico":"tower","rq":["RQ3"],"arch":"Zaha Hadid Architects","hours":"私人住宅，僅能於公共道路觀看外觀","intro":"札哈．哈蒂建築師事務所設計的私人公寓社區，由多棟曲線塔樓組成。本企劃把它當作對照點：封閉式私人社區與街道的關係，對照組屋底層與海軍部村莊的開放界面。","focus":"私人社區的圍牆、出入口與人行道","ask":"社區邊界留給街道的是圍牆、車道，還是可以停留的空間？","web":"","org":"私人開發","scale":"建築","typo":{"els":[{"k":"res","n":"曲線住宅塔","pub":"priv"},{"k":"grn","n":"社區內花園","pub":"priv"},{"k":"st","n":"外圍道路"}],"rel":[{"a":0,"r":"encl","b":1},{"a":0,"r":"adj","b":2}]},"mode":"bld"},
+{"id":"rcs","no":16,"zh":"Rail Corridor 武吉士達節點","en":"Rail Corridor Buona Vista","area":"武吉士達","map":"sg","ll":[1.3072,103.7905],"ico":"viaduct","rq":["RQ3"],"intro":"Rail Corridor 南段的社區節點，鄰近捷運站與高架道路。","focus":"高架下空間的遮蔭與使用時段","ask":"高架下的遮蔭，讓午後的使用人數比旁邊高多少？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"廊道","typo":{"strips":[{"k":"gr","n":"綠帶","w":6},{"k":"tr","n":"步行與單車步道","w":4,"orig":"馬來亞鐵路"},{"k":"pl","n":"高架下社區節點","w":12},{"k":"gr","n":"綠帶","w":6}],"ov":[{"n":"泛島快速公路高架","a":1,"b":2,"h":12}],"feat":["遮蔭","座椅","單車停放"]},"mode":"sec"},
+{"id":"onenorth","no":17,"zh":"緯壹科技城","en":"one-north","area":"緯壹","map":"sg","ll":[1.2995,103.7875],"ico":"chip","rq":["RQ1"],"intro":"2015年起的自駕車道路測試區，也是少車導向的科技園區。","focus":"試驗區的街道與路緣","ask":"測試了十年的街道，路緣和標線和一般街道有什麼不同？","web":"https://www.jtc.gov.sg","org":"裕廊集團（JTC）","scale":"街區","typo":{"els":[{"k":"rnd","n":"研發大樓","pub":"semi"},{"k":"res","n":"住宅","pub":"priv"},{"k":"com","n":"商業","pub":"pub"},{"k":"grn","n":"緯壹公園","pub":"pub"},{"k":"trn","n":"捷運站","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":3},{"a":3,"r":"adj","b":1},{"a":2,"r":"adj","b":0},{"a":2,"r":"link","b":4}]},"mode":"bld"},
+{"id":"kampung","no":18,"zh":"海軍部村莊","en":"Kampung Admiralty","area":"兀蘭","map":"sg","ll":[1.44,103.8008],"ico":"stack","rq":["RQ3"],"intro":"原為空地與停車場，改建為整合高齡住宅、醫療、熟食中心、社區廣場與屋頂公園的垂直社區，2018年開放。","focus":"高齡友善、跨機關整合、垂直公共空間","ask":"傍晚的社區廣場是誰在用？屋頂公園長者上得去嗎？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）","arch":"WOHA","hours":"公共廣場全天開放","scale":"建築","typo":{"els":[{"k":"cmy","n":"社區廣場","pub":"pub","orig":"空地與停車場"},{"k":"hwk","n":"熟食中心","pub":"pub"},{"k":"med","n":"醫療中心","pub":"semi"},{"k":"grn","n":"屋頂社區公園","pub":"pub"},{"k":"res","n":"高齡住宅","pub":"priv"},{"k":"trn","n":"海軍部捷運站","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"stack","b":1},{"a":3,"r":"stack","b":2},{"a":4,"r":"stack","b":3},{"a":0,"r":"link","b":5}]},"mode":"bld"},
+{"id":"tengah","no":19,"zh":"登加森林鎮","en":"Tengah","area":"登加","map":"sg","ll":[1.3585,103.733],"ico":"tree","rq":["RQ2"],"intro":"第一個車道走地下的無車鎮中心（依開放進度）；100公尺寬、5公里長的森林廊道；農園步道。","focus":"車道地下化後的地面使用、森林廊道與社區","ask":"車道走地下之後，鎮中心地面是誰在用？森林廊道和住家怎麼接？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）","scale":"新市鎮","typo":{"els":[{"k":"st","n":"車道","fl":"B1"},{"k":"com","n":"鎮中心","pub":"pub"},{"k":"res","n":"組屋","pub":"priv"},{"k":"grn","n":"森林廊道","pub":"pub"},{"k":"grn","n":"農園步道","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":1,"r":"adj","b":2},{"a":2,"r":"adj","b":3},{"a":3,"r":"adj","b":4}]},"mode":"bld"},
+{"id":"jurong","no":20,"zh":"裕廊湖花園與裕廊湖區","en":"Jurong Lake Gardens / District","area":"裕廊湖區","map":"sg","ll":[1.3385,103.729],"ico":"lake","rq":["RQ2","RQ3"],"intro":"位於少車區的90公頃「人民的花園」。區內的新科學中心（Zaha Hadid Architects 與 Architects 61 設計）預計2027年底開幕，屆時觀察外觀或工程進度。","focus":"少車區的步行連結與公園使用","ask":"從捷運站走到花園的路上，車和人怎麼分開？","web":"https://www.nparks.gov.sg","org":"國家公園局（NParks）","scale":"街區","typo":{"els":[{"k":"grn","n":"裕廊湖花園","pub":"pub"},{"k":"edu","n":"新科學中心（2027年底開幕）","pub":"pub"},{"k":"com","n":"裕廊湖區商業","pub":"semi"},{"k":"trn","n":"捷運站","pub":"pub"}],"rel":[{"a":0,"r":"adj","b":1},{"a":1,"r":"link","b":3},{"a":3,"r":"adj","b":2}]},"mode":"bld"},
+{"id":"rooftop","no":21,"zh":"組屋停車樓屋頂花園","en":"HDB MSCP Rooftop Gardens","area":"文禮等地","map":"sg","ll":[1.3465,103.712],"ico":"roof","rq":["RQ2","RQ3"],"intro":"多層停車樓屋頂改為社區農園。","focus":"停車空間的轉用（Parking+）","ask":"屋頂農園誰在照顧？從住家怎麼上去？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）","scale":"建築","typo":{"els":[{"k":"prk","n":"多層停車樓","pub":"semi"},{"k":"grn","n":"屋頂社區農園","pub":"pub","orig":"停車樓屋頂"},{"k":"res","n":"組屋","pub":"priv"}],"rel":[{"a":1,"r":"stack","b":0},{"a":0,"r":"adj","b":2}]},"mode":"bld"},
+{"id":"funan","zh":"Funan（福南）","en":"Funan","area":"政府大廈","map":"cbd","ll":[1.2913,103.8497],"ico":"stack","rq":["RQ1","RQ2","RQ3"],"arch":"Woods Bagot、RSP Architects","hours":"室內單車道單向、限速每小時10公里；屋頂農園時段待確認","intro":"2019年重建完成的複合開發：商場、兩棟辦公、共居服務式公寓 lyf，並有新加坡第一條穿越商業建築的室內單車道，以及7樓的屋頂都市農園。","focus":"單車進入建築、屋頂農園、零售之外的公共層","ask":"早上騎單車進來的人去了哪裡？屋頂農園有人上去嗎？","web":"https://www.capitaland.com","org":"凱德集團（CapitaLand）","scale":"建築","mode":"bld","typo":{"els":[{"k":"com","n":"商場","pub":"pub"},{"k":"way","n":"室內單車道","pub":"pub","hrs":"單向、限速10公里"},{"k":"grn","n":"屋頂都市農園","pub":"pub","fl":"7F"},{"k":"off","n":"辦公×2","pub":"priv"},{"k":"hot","n":"共居公寓 lyf","pub":"priv"},{"k":"prk","n":"地下停車","pub":"semi","fl":"B"}],"rel":[{"a":1,"r":"link","b":0,"n":"穿越商場"},{"a":2,"r":"stack","b":0},{"a":3,"r":"adj","b":0},{"a":4,"r":"adj","b":0},{"a":0,"r":"stack","b":5}]},"no":22},
+{"id":"skyville","zh":"SkyVille @ Dawson（達士敦空中村落）","en":"SkyVille @ Dawson","area":"女皇鎮","map":"sg","ll":[1.2945,103.809],"ico":"tower","rq":["RQ2","RQ3"],"arch":"WOHA","hours":"地面公園與公共空間開放；屋頂空中公園時段待確認","intro":"2015年完工的公共住宅，3棟47層塔樓、960戶；每80戶組成一個空中村落，共用一層社區平台，屋頂有對外開放的空中公園，社區不設圍牆。","focus":"空中村落的共用平台、不設圍牆的組屋","ask":"每個村落一層社區平台，鄰居真的在那裡碰面嗎？和 d'Leedon 的圍牆對照起來如何？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）","scale":"建築","mode":"bld","typo":{"els":[{"k":"com","n":"超市、咖啡店與托育","pub":"pub"},{"k":"prk","n":"停車裙樓","pub":"semi"},{"k":"res","n":"空中村落住宅","pub":"priv"},{"k":"grn","n":"村落社區平台","pub":"semi"},{"k":"res","n":"空中村落住宅","pub":"priv"},{"k":"grn","n":"屋頂空中公園","pub":"pub"},{"k":"grn","n":"地面公園（保留雨樹）","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"stack","b":1},{"a":3,"r":"stack","b":2},{"a":4,"r":"stack","b":3},{"a":5,"r":"stack","b":4},{"a":0,"r":"adj","b":6}]},"no":23},
+{"id":"oth","zh":"Our Tampines Hub（淡濱尼天地）","en":"Our Tampines Hub","area":"淡濱尼","map":"sg","ll":[1.3531,103.9404],"ico":"people","rq":["RQ2","RQ3"],"arch":"DP Architects","hours":"公共空間開放；各設施依營業時間","intro":"2017年啟用，新加坡第一座整合型社區中心，由人民協會主導、整合12個單位，把區域圖書館、熟食中心、社區俱樂部、運動場館與商場放在同一處；圖書館、熟食中心與商場圍著足球場配置。","focus":"多機關共構、圍繞球場的公共層、不同年齡的相遇","ask":"圖書館看得到球場，這種視線讓不同年齡的人互相看見嗎？平日與週末的使用者差在哪？","web":"https://www.pa.gov.sg","org":"人民協會（People's Association）","scale":"建築","mode":"bld","typo":{"els":[{"k":"cmy","n":"足球場與運動場館","pub":"pub","orig":"淡濱尼體育場"},{"k":"edu","n":"區域圖書館（5層）","pub":"pub"},{"k":"hwk","n":"熟食中心","pub":"pub"},{"k":"com","n":"商場","pub":"pub"},{"k":"cmy","n":"社區俱樂部與政府服務","pub":"pub"},{"k":"med","n":"家庭醫療與長者照護","pub":"semi"},{"k":"grn","n":"屋頂社區公園","pub":"pub"}],"rel":[{"a":1,"r":"encl","b":0},{"a":2,"r":"encl","b":0},{"a":3,"r":"encl","b":0},{"a":4,"r":"adj","b":3},{"a":5,"r":"adj","b":4},{"a":6,"r":"stack","b":3}]},"no":24},
+{"id":"fstam","no":25,"zh":"友善街道：淡濱尼","en":"Friendly Streets – Tampines","area":"淡濱尼","map":"sg","ll":[1.353,103.944],"ico":"cross","rq":["RQ3"],"intro":"友善街道首批試點之一，作為不同市鎮的對照。","focus":"不同市鎮的做法差異","ask":"和宏茂橋相比，哪些做法相同、哪些因地制宜？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"組屋","w":6},{"k":"sw","n":"人行道","w":2.5},{"k":"gr","n":"植栽帶","w":1.0},{"k":"cw","n":"車道","w":3.0},{"k":"md","n":"庇護島","w":1.5},{"k":"cw","n":"車道","w":3.0},{"k":"gr","n":"植栽帶","w":1.0},{"k":"sw","n":"人行道","w":2.5},{"k":"bld","n":"學校、市場","w":6}],"ov":[],"feat":["路緣延伸","行人庇護島","抬高式穿越道","學校區速限"]},"mode":"sec"},
+{"id":"geneo","no":26,"zh":"Geneo（新加坡科學園區）","en":"Geneo, Singapore Science Park","area":"肯特崗","map":"sg","ll":[1.2905,103.7905],"ico":"flask","rq":["RQ1","RQ3"],"arch":"Serie Architects、Multiply Architects","hours":"活動廣場開放；商店依各店營業時間","intro":"科學園區更新計畫的生命科學聚落，2025年全區啟用；以木構頂棚的活動廣場、服務式公寓與商業設施，讓研發園區第一次有了居住與夜間生活，並取得綠色標章白金級超低耗能認證。","focus":"研發園區的工作、居住與休閒混合；熱帶木構頂棚的公共廣場","ask":"下班後的廣場還有人嗎？研究人員、園區住客與附近居民會在同一個空間相遇嗎？","web":"https://www.geneo.com.sg","org":"凱德集團（CapitaLand）","scale":"園區","typo":{"els":[{"k":"rnd","n":"研發大樓","pub":"semi"},{"k":"cmy","n":"木構頂棚活動廣場","pub":"pub"},{"k":"com","n":"餐飲零售","pub":"pub"},{"k":"hot","n":"服務式公寓","pub":"priv"}],"rel":[{"a":0,"r":"encl","b":1},{"a":2,"r":"adj","b":1},{"a":3,"r":"adj","b":0}]},"mode":"bld"},
+{"id":"fswc","no":27,"zh":"友善街道：西海岸","en":"Friendly Streets – West Coast","area":"西海岸","map":"sg","ll":[1.301,103.764],"ico":"cross","rq":["RQ3"],"intro":"友善街道首批試點之一。","focus":"過街與減速設計","ask":"街道和公園、學校的入口怎麼銜接？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"組屋","w":6},{"k":"sw","n":"人行道","w":2.5},{"k":"gr","n":"植栽帶","w":1.0},{"k":"cw","n":"車道","w":3.0},{"k":"md","n":"庇護島","w":1.5},{"k":"cw","n":"車道","w":3.0},{"k":"gr","n":"植栽帶","w":1.0},{"k":"sw","n":"人行道","w":2.5},{"k":"bld","n":"學校、市場","w":6}],"ov":[],"feat":["路緣延伸","行人庇護島","抬高式穿越道","學校區速限"]},"mode":"sec"},
+{"id":"queensway","no":28,"zh":"女皇鎮高架下節點","en":"Rail Corridor Queensway viaduct","area":"女皇鎮","map":"sg","ll":[1.2935,103.803],"ico":"viaduct","rq":["RQ3"],"intro":"Rail Corridor 的高架下節點，預計2027年完成；依完工進度記錄完成或施工中的狀態。","focus":"高架下空間的設計與完成度","ask":"如果還在施工，圍籬外的人行動線怎麼處理？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"廊道","typo":{"strips":[{"k":"gr","n":"綠帶","w":6},{"k":"tr","n":"步行與單車步道","w":4,"orig":"馬來亞鐵路"},{"k":"pl","n":"高架下節點（依完工進度）","w":12},{"k":"gr","n":"綠帶","w":6}],"ov":[{"n":"女皇鎮高架道路","a":1,"b":2,"h":10}],"feat":["遮蔭"]},"mode":"sec"},
+{"id":"keppel","no":29,"zh":"吉寶灣映水苑（對照點）","en":"Reflections at Keppel Bay","area":"吉寶灣","map":"sg","ll":[1.2666,103.8119],"ico":"wave","rq":["RQ2","RQ3"],"arch":"Studio Libeskind、DCA Architects","hours":"私人住宅，僅能外觀；建議黃昏由吉寶灣沿岸觀看","intro":"2011年完工的濱水住宅，6棟24至41層的曲面塔樓與低層住宅沿約750公尺海岸線排列；吉寶港原為造船廠與港口，2000年後轉型為住宅與遊艇港。作為港口用地轉型與濱水可及性的對照。","focus":"港口用地轉型、濱水步道的公共可及性","ask":"這段海岸線有多少是公眾走得到的？","web":"","org":"吉寶置業（Keppel Land）","scale":"建築","typo":{"els":[{"k":"res","n":"曲面住宅塔","pub":"priv","orig":"造船廠與港口"},{"k":"res","n":"低層住宅","pub":"priv"},{"k":"way","n":"濱水步道（可及性待確認）"}],"rel":[{"a":0,"r":"adj","b":1},{"a":1,"r":"adj","b":2}]},"mode":"bld"},
+{"id":"pinnacle","zh":"Pinnacle@Duxton（達士嶺組屋）","en":"The Pinnacle@Duxton","area":"丹戎巴葛","map":"cbd","ll":[1.2756,103.8413],"ico":"tower","rq":["RQ3"],"arch":"ARC Studio Architecture + Urbanism、RSP","hours":"50樓空中步道約9:00–21:00，約S$6，每日限200人（出發前確認）","intro":"2009年完工的50層公共住宅，7棟塔樓以26樓與50樓兩條空中花園相連；26樓只給住戶，50樓付費對外開放。基地是早期組屋所在地。","focus":"組屋的空中公共層、住戶與訪客的分層開放","ask":"同一棟組屋，26樓只給住戶、50樓收費給遊客：誰真正用到空中花園？","web":"https://www.hdb.gov.sg","org":"建屋發展局（HDB）","scale":"建築","mode":"bld","typo":{"els":[{"k":"res","n":"下段住宅","pub":"priv","orig":"早期組屋"},{"k":"grn","n":"26樓空中花園（住戶）","pub":"priv","fl":"26F"},{"k":"res","n":"上段住宅","pub":"priv"},{"k":"grn","n":"50樓空中步道","pub":"semi","fl":"50F","hrs":"約9:00–21:00，付費、限額"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"stack","b":1},{"a":3,"r":"stack","b":2}]},"no":30},
+{"id":"oasia","zh":"Oasia Hotel Downtown（綠洲酒店）","en":"Oasia Hotel Downtown","area":"丹戎巴葛","map":"cbd","ll":[1.2768,103.8442],"ico":"tree","rq":["RQ2","RQ3"],"arch":"WOHA","hours":"旅館公共區域可進入；空中平台開放範圍待確認","intro":"2016年開幕的27層辦公與旅館大樓，辦公、旅館、會所客房分段疊合，段與段之間插入空中平台（6、12、21、27樓），立面爬滿植物。","focus":"垂直分段的空中平台、立面綠化","ask":"空中平台是給房客，還是一般人也上得去？旁邊組屋的居民看得到這片綠嗎？","web":"https://www.woha.net","org":"遠東機構（Far East Organization）","scale":"建築","mode":"bld","typo":{"els":[{"k":"grn","n":"6樓空中平台","pub":"semi","fl":"6F"},{"k":"off","n":"辦公","pub":"priv"},{"k":"grn","n":"12樓空中平台","pub":"semi","fl":"12F"},{"k":"hot","n":"旅館客房","pub":"priv"},{"k":"grn","n":"21樓空中平台","pub":"semi","fl":"21F"},{"k":"hot","n":"會所客房","pub":"priv"},{"k":"grn","n":"27樓屋頂平台","pub":"semi","fl":"27F"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"stack","b":1},{"a":3,"r":"stack","b":2},{"a":4,"r":"stack","b":3},{"a":5,"r":"stack","b":4},{"a":6,"r":"stack","b":5}]},"no":31},
+{"id":"tiong","no":32,"zh":"中峇魯 Eng Hoon Street","en":"Tiong Bahru – Eng Hoon Street","area":"中峇魯","map":"cbd","ll":[1.2846,103.8316],"ico":"people","rq":["RQ3"],"intro":"2023年完成步行化的社區街道。","focus":"常態步行化後的使用","ask":"常態步行化之後，街上多了哪些停留活動？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"戰前組屋","w":6},{"k":"arc","n":"五腳基","w":1.5},{"k":"pl","n":"步行化街道","w":8,"orig":"車道"},{"k":"arc","n":"五腳基","w":1.5},{"k":"bld","n":"戰前組屋","w":6}],"ov":[],"feat":["座椅","遮蔭"]},"mode":"sec"},
+{"id":"fsbbw","no":33,"zh":"友善街道：武吉巴督西","en":"Friendly Streets – Bukit Batok West","area":"武吉巴督","map":"sg","ll":[1.349,103.742],"ico":"cross","rq":["RQ3"],"intro":"友善街道首批試點之一，作為不同市鎮的對照。","focus":"不同市鎮的做法差異","ask":"新市鎮邊緣的街道，步行者是誰？","web":"https://www.lta.gov.sg","org":"陸路交通管理局（LTA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"組屋","w":6},{"k":"sw","n":"人行道","w":2.5},{"k":"gr","n":"植栽帶","w":1.0},{"k":"cw","n":"車道","w":3.0},{"k":"md","n":"庇護島","w":1.5},{"k":"cw","n":"車道","w":3.0},{"k":"gr","n":"植栽帶","w":1.0},{"k":"sw","n":"人行道","w":2.5},{"k":"bld","n":"學校、市場","w":6}],"ov":[],"feat":["路緣延伸","行人庇護島","抬高式穿越道","學校區速限"]},"mode":"sec"},
+{"id":"mbs","no":34,"zh":"濱海灣金沙（城市鳥瞰點）","en":"Marina Bay Sands","area":"濱海灣","map":"cbd","ll":[1.2834,103.8607],"ico":"eye","rq":["RQ1","RQ2"],"arch":"Safdie Architects","hours":"56樓觀景台約10:00–22:00，分離峰與尖峰時段，需購票（出發前確認）","intro":"2010年開幕的綜合度假村，三棟塔樓頂部以空中花園相連。本企劃把它當作城市鳥瞰點：從上方對照市中心已調查的複合型建築、濱海灣步道與道路系統。","focus":"鳥瞰城市結構：捷運、道路、濱水步道與複合型建築的配置","ask":"從上面看，市中心有多少地面留給人、多少留給車？已調查的建築在城市裡連成了什麼？","web":"https://www.marinabaysands.com","org":"濱海灣金沙（Marina Bay Sands）","scale":"建築","typo":{"els":[{"k":"hot","n":"旅館塔×3","pub":"priv"},{"k":"grn","n":"空中花園與觀景台（購票）","pub":"semi","hrs":"約10:00–22:00"},{"k":"com","n":"購物中心","pub":"pub"},{"k":"edu","n":"會展與劇院","pub":"semi"},{"k":"trn","n":"捷運站","pub":"pub"}],"rel":[{"a":1,"r":"stack","b":0},{"a":0,"r":"adj","b":2},{"a":2,"r":"adj","b":3},{"a":2,"r":"link","b":4}]},"mode":"bld"},
+{"id":"joochiat","no":35,"zh":"如切","en":"Joo Chiat","area":"如切","map":"sg","ll":[1.3125,103.9015],"ico":"shop","rq":["RQ3"],"intro":"店屋街區，作為週末街道使用的補充觀察。","focus":"店屋街區的街道生活","ask":"騎樓式的五腳基和臺灣騎樓，使用有什麼不同？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）","scale":"街道","typo":{"strips":[{"k":"bld","n":"店屋","w":5},{"k":"arc","n":"五腳基","w":1.5},{"k":"pk","n":"路邊停車","w":2.4},{"k":"cw","n":"車道","w":3.2},{"k":"cw","n":"車道","w":3.2},{"k":"pk","n":"路邊停車","w":2.4},{"k":"arc","n":"五腳基","w":1.5},{"k":"bld","n":"店屋","w":5}],"ov":[],"feat":[]},"mode":"sec"},
+{"id":"t3","no":36,"zh":"樟宜機場第三航廈","en":"Changi Airport Terminal 3","area":"樟宜","map":"sg","ll":[1.3555,103.9865],"ico":"plane","rq":["RQ2"],"arch":"SOM、CPG Consultants","hours":"全天開放（出入境大廳為非管制區）","intro":"2008年啟用，約300公尺長、五層樓高的垂直綠牆從出境與入境大廳都看得到，屋頂以百葉天窗引入自然光；是「花園城市」從機場開始的第一印象。","focus":"室內綠化與自然採光、旅客動線上的停留空間","ask":"綠牆旁有沒有可以停留的座位？自然光讓等候的人移到哪裡？","web":"https://www.changiairport.com","org":"樟宜機場集團（Changi Airport Group）","scale":"建築","typo":{"els":[{"k":"trn","n":"第三航廈","pub":"pub"},{"k":"grn","n":"垂直綠牆","pub":"pub"},{"k":"com","n":"商店與餐飲","pub":"semi"}],"rel":[{"a":0,"r":"encl","b":1},{"a":2,"r":"adj","b":0}]},"mode":"bld"}],"days":[{"d":1,"date":"10/5（二）","area":"臺北→新加坡；樟宜","sites":["jewel"],"memo":"搭機、入住；確認保險、eSIM、交通卡；抵達後於星耀樟宜做夜間觀察"},
+{"d":2,"date":"10/6（三）","area":"市中心、濱海灣","sites":["ura","capitaspring","marinaone"],"memo":"CapitaSpring 空中花園平日14:30起開放"},
+{"d":3,"date":"10/7（四）","area":"榜鵝","sites":["onepunggol","pdd"],"memo":"新一代整合型社區中心與數位園區"},
 {"d":4,"date":"10/8（五）","area":"宏茂橋、大巴窯、碧山","sites":["fsamk","fstpy","bishan"]},
 {"d":5,"date":"10/9（六）","area":"Rail Corridor 北段","sites":["rcn"]},
 {"d":6,"date":"10/10（日）","area":"市中心","sites":["haji","club","southbeach"]},
@@ -435,17 +476,17 @@ var DATA={"ico":{"bus":"\u003crect x='4' y='4' width='16' height='13' rx='3'/>\u
 {"d":8,"date":"10/12（二）","area":"兀蘭","sites":["kampung"]},
 {"d":9,"date":"10/13（三）","area":"登加","sites":["tengah"]},
 {"d":10,"date":"10/14（四）","area":"裕廊湖區、文禮","sites":["jurong","rooftop"]},
-{"d":11,"date":"10/15（五）","area":"榜鵝","sites":["air"],"memo":"自駕接駁第二輪（約3趟，含隨選服務）"},
+{"d":11,"date":"10/15（五）","area":"市中心、女皇鎮","sites":["funan","skyville"],"memo":"Funan 早上看單車通勤；SkyVille 傍晚看空中村落使用"},
 {"d":12,"date":"10/16（六）","area":"碧山、宏茂橋","sites":["bishan","fsamk"],"memo":"週末對照"},
 {"d":13,"date":"10/17（日）","area":"兀蘭、Rail Corridor","sites":["kampung","rcs"],"memo":"週末對照"},
-{"d":14,"date":"10/18（一）","area":"淡濱尼、武吉巴督西","sites":["fstam","fsbbw"]},
+{"d":14,"date":"10/18（一）","area":"淡濱尼","sites":["oth","fstam"],"memo":"Our Tampines Hub 平日"},
 {"d":15,"date":"10/19（二）","area":"肯特崗、西海岸、女皇鎮、吉寶灣","sites":["geneo","fswc","queensway","keppel"],"memo":"吉寶灣於黃昏觀看外觀"},
-{"d":16,"date":"10/20（三）","area":"市中心","sites":["ura"],"memo":"訪談或洽詢；期中整理比較矩陣"},
-{"d":17,"date":"10/21（四）","area":"榜鵝","sites":["air","pdd"],"memo":"自駕接駁第三輪（約4趟）"},
+{"d":16,"date":"10/20（三）","area":"丹戎巴葛、中峇魯","sites":["ura","pinnacle","oasia","tiong"],"memo":"訪談或洽詢；Pinnacle 50樓限額，早上前往"},
+{"d":17,"date":"10/21（四）","area":"武吉巴督西","sites":["fsbbw"],"memo":"期中補測：依前半段記錄回訪需要補量的地點"},
 {"d":18,"date":"10/22（五）","area":"市中心、濱海灣","sites":["mbs"],"memo":"訪談或公開活動；傍晚登濱海灣金沙觀景台，鳥瞰已調查的複合型建築"},
 {"d":19,"date":"10/23（六）","area":"登加、裕廊湖區","sites":["tengah","jurong"],"memo":"週末對照；新科學中心外觀或工程進度"},
-{"d":20,"date":"10/24（日）","area":"如切、中峇魯","sites":["joochiat","tiong"],"memo":"週末對照；成果初稿；雷雨備援"},
-{"d":21,"date":"10/25（一）","area":"新加坡→臺北；樟宜","sites":["t3","jewel"],"memo":"提早抵達機場：第三航廈綠牆與星耀樟宜日間觀察；返臺；資料備份"}],"sg":{"coast":[[1.322,103.635],[1.348,103.642],[1.382,103.67],[1.422,103.692],[1.442,103.708],[1.448,103.735],[1.45,103.765],[1.456,103.78],[1.462,103.8],[1.466,103.82],[1.456,103.842],[1.438,103.86],[1.426,103.878],[1.42,103.902],[1.412,103.923],[1.395,103.95],[1.388,103.975],[1.378,103.995],[1.358,104.002],[1.333,103.988],[1.315,103.96],[1.302,103.93],[1.295,103.9],[1.285,103.872],[1.272,103.86],[1.264,103.835],[1.272,103.805],[1.285,103.77],[1.298,103.74],[1.302,103.705],[1.312,103.665]],"label":[[1.468,103.705,"柔佛海峽"],[1.262,103.905,"新加坡海峽"]],"box":[[1.3035,103.8285],[1.2735,103.865]]},"cbd":{"extent":[[1.3035,103.8285],[1.2735,103.865]],"label":[[1.29,103.838,"新加坡河"],[1.279,103.859,"濱海灣"],[1.276,103.836,"丹戎巴葛"],[1.301,103.864,"甘榜格南"]]},"COMP":[["res","住宅","#d98b5f","tower"],["hot","旅館／服務式公寓","#e2b36b","tower"],["off","辦公","#5b7fc7","tower"],["rnd","研發","#3ea3c4","tower"],["com","商業","#c75b7a","pod"],["hwk","熟食中心","#c9a227","pod"],["med","醫療／照護","#a25fc7","pod"],["cmy","社區設施","#7d6fd6","pod"],["edu","文化／教育","#8a6d4f","pod"],["trn","交通樞紐","#4d5b66","pod"],["prk","停車","#9aa0a6","pod"],["grn","公園綠地","#3f9a5a","slab"],["way","步行／單車廊道","#7aa83f","line"],["st","街道","#8c8c8c","line"],["oth","其他","#a39e93","pod"]],"REL":[["stack","疊合","疊在","之上"],["adj","並置","與","並置"],["encl","圍合","圍合",""],["link","連通","與","連通"]],"PUB":[["pub","公共"],["semi","半公共"],["priv","私有"]],"TW":["車站周邊與共構","停車場與停車塔用地","社會住宅","高架橋下","鐵道廊道與綠園道","市場與熟食空間","學校周邊街道","公園與滯洪空間","老街與步行街區","科技園區"]};
+{"d":20,"date":"10/24（日）","area":"淡濱尼、如切","sites":["oth","joochiat"],"memo":"週末對照；成果初稿；雷雨備援"},
+{"d":21,"date":"10/25（一）","area":"新加坡→臺北；樟宜","sites":["t3","jewel"],"memo":"提早抵達機場：第三航廈綠牆與星耀樟宜日間觀察；返臺；資料備份"}],"sg":{"coast":[[1.322,103.635],[1.348,103.642],[1.382,103.67],[1.422,103.692],[1.442,103.708],[1.448,103.735],[1.45,103.765],[1.456,103.78],[1.462,103.8],[1.466,103.82],[1.456,103.842],[1.438,103.86],[1.426,103.878],[1.42,103.902],[1.412,103.923],[1.395,103.95],[1.388,103.975],[1.378,103.995],[1.358,104.002],[1.333,103.988],[1.315,103.96],[1.302,103.93],[1.295,103.9],[1.285,103.872],[1.272,103.86],[1.264,103.835],[1.272,103.805],[1.285,103.77],[1.298,103.74],[1.302,103.705],[1.312,103.665]],"label":[[1.468,103.705,"柔佛海峽"],[1.262,103.905,"新加坡海峽"]],"box":[[1.3035,103.8285],[1.2735,103.865]]},"cbd":{"extent":[[1.3035,103.8285],[1.2735,103.865]],"label":[[1.29,103.838,"新加坡河"],[1.279,103.859,"濱海灣"],[1.276,103.836,"丹戎巴葛"],[1.301,103.864,"甘榜格南"]]},"COMP":[["res","住宅","#d98b5f","tower"],["hot","旅館／服務式公寓","#e2b36b","tower"],["off","辦公","#5b7fc7","tower"],["rnd","研發","#3ea3c4","tower"],["com","商業","#c75b7a","pod"],["hwk","熟食中心","#c9a227","pod"],["med","醫療／照護","#a25fc7","pod"],["cmy","社區設施","#7d6fd6","pod"],["edu","文化／教育","#8a6d4f","pod"],["trn","交通樞紐","#4d5b66","pod"],["prk","停車","#9aa0a6","pod"],["grn","公園綠地","#3f9a5a","slab"],["way","步行／單車廊道","#7aa83f","line"],["st","街道","#8c8c8c","line"],["oth","其他","#a39e93","pod"]],"REL":[["stack","疊合","疊在","之上"],["adj","並置","與","並置"],["encl","圍合","圍合",""],["link","連通","與","連通"]],"PUB":[["pub","公共"],["semi","半公共"],["priv","私有"]],"TW":["車站周邊與共構","停車場與停車塔用地","社會住宅","高架橋下","鐵道廊道與綠園道","市場與熟食空間","學校周邊街道","公園與滯洪空間","老街與步行街區","科技園區"],"SEC":[["bld","建築界面","#b9a88c"],["arc","五腳基／騎樓","#d9a066"],["sw","人行道","#c4b48f"],["pl","步行廣場／封街空間","#c75b7a"],["tr","步道（廊道）","#a3b85a"],["bk","自行車道","#2e8bc0"],["gr","植栽帶／綠帶","#3f9a5a"],["md","中央分隔／庇護島","#7aa83f"],["cw","車道","#6b6b6b"],["bus","公車道","#b5473a"],["pk","路邊停車","#9aa0a6"],["dp","上下客區","#e0a030"],["wt","河道／水道","#4a90b8"]],"SECGRP":{"ppl":["arc","sw","pl","tr","bk"],"grn":["gr","md","wt"],"car":["cw","bus","pk","dp"]},"FEAT":["路緣延伸","行人庇護島","抬高式穿越道","減速設計","綠燈延長","學校區速限","遮蔭","座椅","單車停放","週末封街"]};
 </script>
 <script>
 (function(){
@@ -463,7 +504,7 @@ var AGES=[["kid","兒童"],["adult","青壯"],["elder","高齡"]];
 var ACTS=[["pass","通行"],["stay","停留"],["sit","坐"],["sport","運動"],["social","社交"],["trade","商業"]];
 var KIND={typo:"類型學記錄表",space:"人本空間記錄表",road:"道路速寫表（舊）",ride:"搭乘紀錄（舊）"};
 var NSG=SITES.length, TARGET={typo:NSG,space:24,sites:NSG};
-var state={notes:[],drafts:{},canWrite:false,db:null,assets:null,sample:null,downloads:null,editing:null,photos:[],kind:"typo",gehl:{},filter:"all",els:[],rel:[],typoSite:null};
+var state={notes:[],drafts:{},canWrite:false,db:null,assets:null,sample:null,downloads:null,editing:null,photos:[],kind:"typo",gehl:{},filter:"all",els:[],rel:[],strips:[],ov:[],mode:"bld",typoSite:null};
 var mapKey="sg", selSite=null, uid=0;
 
 function use(n){try{return (window.claude&&window.claude.use)?window.claude.use(n):Promise.resolve(null)}catch(e){return Promise.resolve(null)}}
@@ -479,49 +520,75 @@ function compOf(e){return CB[e.k]||CB.oth}
 function elName(e){return e.n||compOf(e).zh}
 
 /* ---------- typology model ---------- */
-function clone(t){return JSON.parse(JSON.stringify(t||{els:[],rel:[]}))}
-function currentTypo(id){var ns=notesFor(id).filter(function(n){return n.kind==="typo"&&n.els&&n.els.length}).sort(function(a,b){return String(b.createdAt).localeCompare(String(a.createdAt))});
-  if(ns.length)return {els:ns[0].els,rel:ns[0].rel||[],src:"live",at:ns[0].createdAt};
-  var s=SBY[id];return {els:(s&&s.typo&&s.typo.els)||[],rel:(s&&s.typo&&s.typo.rel)||[],src:"desk"}}
+var SB={}; DATA.SEC.forEach(function(c){SB[c[0]]={k:c[0],zh:c[1],c:c[2]}});
+function clone(t){return JSON.parse(JSON.stringify(t||{}))}
+function modeOf(id){var s=SBY[id];return s&&s.mode==="sec"?"sec":"bld"}
+function currentTypo(id){var mode=modeOf(id);
+  var ns=notesFor(id).filter(function(n){return n.kind==="typo"&&(n.mode||"bld")===mode&&((n.els&&n.els.length)||(n.strips&&n.strips.length))}).sort(function(a,b){return String(b.createdAt).localeCompare(String(a.createdAt))});
+  var o;if(ns.length){o=clone(ns[0]);o.src="live";o.at=ns[0].createdAt}else{var s=SBY[id];o=clone(s&&s.typo);o.src="desk"}
+  o.mode=mode;if(mode==="bld"){o.els=o.els||[];o.rel=o.rel||[]}else{o.strips=o.strips||[];o.ov=o.ov||[];o.feat=o.feat||[]}return o}
 function relText(t,r){var a=t.els[r.a],b=t.els[r.b];if(!a||!b)return"";var R=RB[r.r]||RB.adj;
   var s=r.r==="encl"?circ(r.a)+elName(a)+" 圍合 "+circ(r.b)+elName(b):r.r==="stack"?circ(r.a)+elName(a)+" 疊在 "+circ(r.b)+elName(b)+" 之上":circ(r.a)+elName(a)+" "+R.pre+" "+circ(r.b)+elName(b)+" "+R.post;
   return s+(r.n?"（"+r.n+"）":"")}
-function formulaHTML(name,t){if(!t.els.length)return '<p class="formula">'+esc(name)+' ＝ <span class="en">（尚無元件）</span></p>';
-  return '<p class="formula"><b>'+esc(name)+'</b> <span class="op">＝</span>'+t.els.map(function(e,i){return '<span style="white-space:nowrap"><span class="sw '+(e.pub||"none")+'" style="--c:'+compOf(e).c+'"></span> '+esc(elName(e))+'</span>'}).join('<span class="op">＋</span>')+'</p>'}
-function elListHTML(t){return '<ul class="ellist">'+t.els.map(function(e,i){var c=compOf(e);var bits=[c.zh!==elName(e)?c.zh:"",e.fl,e.pub?PUBZ[e.pub]:"",e.hrs?"開放 "+e.hrs:"",e.orig?"原："+e.orig:""].filter(Boolean);
-  return '<li><span class="n" style="background:'+c.c+'">'+(i+1)+'</span><span><b>'+esc(elName(e))+'</b>'+(bits.length?' <span class="en">'+esc(bits.join("・"))+'</span>':'')+'</span></li>'}).join("")+'</ul>'}
+function sbOf(s){return SB[s.k]||SB.sw}
+function stName(s){return s.n||sbOf(s).zh}
+function stW(s){var w=parseFloat(s.w);return isFinite(w)&&w>0?w:0}
+function secStats(t){var o={ppl:0,grn:0,car:0,bld:0,tot:0};(t.strips||[]).forEach(function(s){var w=stW(s);
+  if(s.k==="bld"){o.bld+=w;return}o.tot+=w;["ppl","grn","car"].forEach(function(g){if(DATA.SECGRP[g].indexOf(s.k)>=0)o[g]+=w})});
+  o.ratio=(o.ppl+o.car)?Math.round(o.ppl/(o.ppl+o.car)*100):null;return o}
+function fmtM(v){return (Math.round(v*10)/10)+" m"}
+
+function formulaHTML(name,t){
+  if(t.mode==="sec"){if(!t.strips.length)return '<p class="formula">'+esc(name)+' ＝ <span class="en">（尚無斷面）</span></p>';
+    var st=secStats(t);
+    return '<p class="formula"><b>'+esc(name)+'</b> <span class="op">＝</span>'+t.strips.map(function(s){return '<span style="white-space:nowrap"><span class="sw" style="--c:'+sbOf(s).c+'"></span> '+esc(stName(s))+(s.k!=="bld"&&stW(s)?' <span class="en">'+fmtM(stW(s))+'</span>':'')+'</span>'}).join('<span class="op">｜</span>')+'</p>'+
+      '<p class="rels">行人與單車 '+fmtM(st.ppl)+'・綠與水 '+fmtM(st.grn)+'・車用 '+fmtM(st.car)+(st.ratio!=null?'　<b style="color:var(--ink)">人本比例 '+st.ratio+'%</b>':'')+(t.feat&&t.feat.length?'<br>特徵：'+esc(t.feat.join("、")):'')+'</p>'}
+  if(!t.els.length)return '<p class="formula">'+esc(name)+' ＝ <span class="en">（尚無元件）</span></p>';
+  return '<p class="formula"><b>'+esc(name)+'</b> <span class="op">＝</span>'+t.els.map(function(e){return '<span style="white-space:nowrap"><span class="sw '+(e.pub||"none")+'" style="--c:'+compOf(e).c+'"></span> '+esc(elName(e))+'</span>'}).join('<span class="op">＋</span>')+'</p>'}
+function elListHTML(t){
+  if(t.mode==="sec"){return '<ul class="ellist">'+t.strips.map(function(s,i){var bits=[sbOf(s).zh!==stName(s)?sbOf(s).zh:"",stW(s)?fmtM(stW(s)):"",s.hrs?"時段 "+s.hrs:"",s.orig?"原："+s.orig:""].filter(Boolean);
+    return '<li><span class="n" style="background:'+sbOf(s).c+'">'+(i+1)+'</span><span><b>'+esc(stName(s))+'</b>'+(bits.length?' <span class="en">'+esc(bits.join("・"))+'</span>':'')+'</span></li>'}).join("")+'</ul>'+
+    ((t.ov||[]).length?'<p class="rels">上方構造：'+esc(t.ov.map(function(o){return (o.n||"高架")+"（"+((t.strips[o.a]?stName(t.strips[o.a]):"")+"～"+(t.strips[o.b]?stName(t.strips[o.b]):""))+"，高約 "+(o.h||10)+" m）"}).join("；"))+'</p>':'')}
+  return '<ul class="ellist">'+t.els.map(function(e,i){var c=compOf(e);var bits=[c.zh!==elName(e)?c.zh:"",e.fl,e.pub?PUBZ[e.pub]:"",e.hrs?"開放 "+e.hrs:"",e.orig?"原："+e.orig:""].filter(Boolean);
+  return '<li><span class="n" style="background:'+c.c+'">'+(i+1)+'</span><span><b>'+esc(elName(e))+'</b>'+(bits.length?' <span class="en">'+esc(bits.join("・"))+'</span>':'')+'</span></li>'}).join("")+'</ul>'+relsHTML(t)}
 function relsHTML(t){var r=(t.rel||[]).map(function(x){return relText(t,x)}).filter(Boolean);return r.length?'<p class="rels">'+esc(r.join("；"))+'</p>':''}
 
-/* auto section diagram */
+/* ---- building layout shared by section and plan ---- */
 var diaN=0;
 function parseFl(s){if(!s)return null;s=String(s).replace(/\s/g,"").replace(/[Ff樓]/g,"");var m=s.match(/^(B?)(\d+)(?:[–\-~至](B?)(\d+))?$/i);if(!m)return null;
   var a=(m[1]?-1:1)*+m[2],b=m[4]?(m[3]?-1:1)*+m[4]:a;return [Math.min(a,b),Math.max(a,b)]}
 function isUnder(e){return /^B/i.test(String(e.fl||"").trim())}
-function drawTypo(t,opt){opt=opt||{};var els=t.els||[],rel=(t.rel||[]).filter(function(r){return els[r.a]&&els[r.b]&&r.a!==r.b});
-  if(!els.length)return '<p class="empty">加入元件後，這裡會畫出剖面簡圖。</p>';
-  var id="d"+(++diaN), n=els.length;
-  /* columns by stack */
+var SZ={tower:[46,62],pod:[78,24],slab:[80,13],line:[100,8]};
+function sizeOf(e){return SZ[compOf(e).shape]||SZ.pod}
+function layoutBld(t){var els=t.els||[],rel=(t.rel||[]).filter(function(r){return els[r.a]&&els[r.b]&&r.a!==r.b}),n=els.length;
   var par=els.map(function(_,i){return i});function f(i){while(par[i]!==i){par[i]=par[par[i]];i=par[i]}return i}
   rel.forEach(function(r){if(r.r==="stack")par[f(r.a)]=f(r.b)});
   var lvl=els.map(function(){return 0});for(var it=0;it<n;it++){rel.forEach(function(r){if(r.r==="stack"&&lvl[r.a]<lvl[r.b]+1)lvl[r.a]=lvl[r.b]+1})}
   var cols={},order=[];els.forEach(function(e,i){var c=f(i);if(!cols[c]){cols[c]=[];order.push(c)}cols[c].push(i)});
-  /* column sequence by BFS over adj/encl/link */
+  Object.keys(cols).forEach(function(c){cols[c].sort(function(a,b){return lvl[a]-lvl[b]||a-b})});
   var adjm={};order.forEach(function(c){adjm[c]=[]});rel.forEach(function(r){if(r.r==="stack")return;var a=f(r.a),b=f(r.b);if(a!==b){adjm[a].push(b);adjm[b].push(a)}});
   var seq=[],seen={};order.forEach(function(st){if(seen[st])return;var q=[st];seen[st]=1;while(q.length){var c=q.shift();seq.push(c);adjm[c].forEach(function(x){if(!seen[x]){seen[x]=1;q.push(x)}})}});
-  var enc={};rel.forEach(function(r){if(r.r!=="encl")return;var a=f(r.a),b=f(r.b);if(a===b)return;(enc[b]=enc[b]||[]).indexOf(a)<0&&(enc[b]=enc[b]||[]).push(a)});
-  Object.keys(enc).forEach(function(bk){var b=+bk,E=enc[b];var pos=Math.min.apply(null,[seq.indexOf(b)].concat(E.map(function(x){return seq.indexOf(x)})).filter(function(x){return x>=0}));
-    seq=seq.filter(function(x){return x!==b&&E.indexOf(x)<0&&x!=="g"+b});var L=E.slice(0,Math.ceil(E.length/2)),R=E.slice(Math.ceil(E.length/2));var ins=L.concat([b]).concat(R.length?R:[{ghost:L[0]}]);
-    seq.splice.apply(seq,[Math.max(0,Math.min(pos,seq.length)),0].concat(ins))});
-  /* floor mode? */
+  var enc={};rel.forEach(function(r){if(r.r!=="encl")return;var a=f(r.a),b=f(r.b);if(a===b)return;enc[b]=enc[b]||[];if(enc[b].indexOf(a)<0)enc[b].push(a)});
+  var secSeq=seq.slice();
+  Object.keys(enc).forEach(function(bk){var b=+bk,E=enc[b];var pos=Math.min.apply(null,[secSeq.indexOf(b)].concat(E.map(function(x){return secSeq.indexOf(x)})).filter(function(x){return x>=0}));
+    secSeq=secSeq.filter(function(x){return x!==b&&E.indexOf(x)<0});var L=E.slice(0,Math.ceil(E.length/2)),R=E.slice(Math.ceil(E.length/2));var ins=L.concat([b]).concat(R.length?R:[{ghost:L[0]}]);
+    secSeq.splice.apply(secSeq,[Math.max(0,Math.min(pos,secSeq.length)),0].concat(ins))});
+  return {els:els,rel:rel,cols:cols,lvl:lvl,f:f,seq:seq,secSeq:secSeq,enc:enc}}
+function fillFor(e,id,defs){var c=compOf(e).c,p=e.pub||"none";
+  if(p==="pub")return c;if(p==="priv")return "color-mix(in srgb,var(--ink) 8%,var(--surface))";if(p==="none")return "color-mix(in srgb,"+c+" 30%,var(--surface))";
+  var pid=id+"h"+e.k;if(!defs.p[pid]){defs.p[pid]=1;defs.s+='<pattern id="'+pid+'" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="color-mix(in srgb,'+c+' 18%,var(--surface))"/><rect width="2" height="5" fill="'+c+'"/></pattern>'}return "url(#"+pid+")"}
+function badge(x,y,num,c){return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="6.5" fill="'+c+'" stroke="var(--surface)" stroke-width="1"/><text x="'+x.toFixed(1)+'" y="'+(y+3.3).toFixed(1)+'" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">'+num+'</text>'}
+function svgWrap(id,W,H,defs,g,opt,label){return '<svg class="dia'+(opt.small?' sm':'')+'" viewBox="0 0 '+W.toFixed(0)+' '+H.toFixed(0)+'" role="img" aria-label="'+esc(label)+'"><defs>'+defs+'</defs>'+g+'</svg>'}
+
+function drawBldSec(t,opt){opt=opt||{};var L=layoutBld(t),els=L.els;if(!els.length)return '<p class="empty">加入元件後，這裡會畫出剖面。</p>';
+  var id="d"+(++diaN),defs={s:"",p:{}};
   var fls=els.map(function(e){return parseFl(e.fl)}),floorMode=fls.every(Boolean);
-  var SZ={tower:[46,62],pod:[78,24],slab:[80,13],line:[100,8]};
-  function size(i){var s=SZ[compOf(els[i]).shape]||SZ.pod;return s}
   var GAP=14,M=10,unit=0,maxUp=0,maxDn=0;
   if(floorMode){var top=Math.max.apply(null,fls.map(function(x){return x[1]})),bot=Math.min.apply(null,fls.map(function(x){return x[0]}));unit=Math.max(3,Math.min(16,200/Math.max(1,top)));maxUp=Math.max(0,top)*unit;maxDn=bot<0?-bot*unit:0}
   var colGeo=[],x=M;
-  seq.forEach(function(c){var ghost=typeof c==="object";var ci=ghost?c.ghost:c;var mem=cols[ci].slice().sort(function(a,b){return lvl[a]-lvl[b]||a-b});
-    var w=Math.max.apply(null,mem.map(function(i){return size(i)[0]}));var blocks=[],up=0,dn=0;
-    mem.forEach(function(i){var s=size(i),bw=s[0],bh=s[1],y0,y1;
+  L.secSeq.forEach(function(c){var ghost=typeof c==="object";var ci=ghost?c.ghost:c;var mem=L.cols[ci];
+    var w=Math.max.apply(null,mem.map(function(i){return sizeOf(els[i])[0]}));var blocks=[],up=0,dn=0;
+    mem.forEach(function(i){var s=sizeOf(els[i]),bw=s[0],bh=s[1],y0,y1;
       if(floorMode){var fl=fls[i];y0=(fl[0]>0?fl[0]-1:fl[0])*unit;y1=(fl[1]>0?fl[1]:fl[1]+1)*unit;if(y1-y0<6)y1=y0+6}
       else if(isUnder(els[i])){y1=-dn;y0=y1-bh;dn+=bh+2}
       else{y0=up;y1=up+bh;up=y1+2}
@@ -530,28 +597,107 @@ function drawTypo(t,opt){opt=opt||{};var els=t.els||[],rel=(t.rel||[]).filter(fu
     colGeo.push({c:ci,ghost:ghost,x:x,w:w,blocks:blocks});x+=w+GAP});
   var W=x-GAP+M, origH=els.some(function(e){return e.orig})?16:0, H=M+maxUp+14+maxDn+origH+M, G=M+maxUp+8;
   function Y(v){return G-v}
-  var defs='',pats={};
-  function fillFor(e){var c=compOf(e).c,p=e.pub||"none";
-    if(p==="pub")return c;if(p==="priv")return "color-mix(in srgb,var(--ink) 8%,var(--surface))";if(p==="none")return "color-mix(in srgb,"+c+" 30%,var(--surface))";
-    var pid=id+"h"+e.k;if(!pats[pid]){pats[pid]=1;defs+='<pattern id="'+pid+'" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="color-mix(in srgb,'+c+' 18%,var(--surface))"/><rect width="2" height="5" fill="'+c+'"/></pattern>'}return "url(#"+pid+")"}
   var g='<line x1="0" x2="'+W+'" y1="'+G+'" y2="'+G+'" stroke="var(--ink)" stroke-width="1.4"/>';
   if(maxDn)g+='<rect x="0" y="'+G+'" width="'+W+'" height="'+(maxDn+4)+'" fill="color-mix(in srgb,var(--ink) 5%,transparent)"/>';
   var ctr={};
   colGeo.forEach(function(col){col.blocks.forEach(function(b){var e=els[b.i],c=compOf(e).c,y=Y(b.y1),h=b.y1-b.y0;
     if(!col.ghost)ctr[b.i]=[b.x+b.w/2,y+h/2];
-    g+='<rect x="'+b.x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+b.w+'" height="'+h.toFixed(1)+'" rx="2" fill="'+fillFor(e)+'" stroke="'+c+'" stroke-width="1.6"/>';
+    g+='<rect x="'+b.x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+b.w+'" height="'+h.toFixed(1)+'" rx="2" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.6"/>';
     var nm=elName(e),fits=!col.ghost&&h>=17&&nm.length*10.5<b.w-20;
     var cx=fits?b.x+11:b.x+b.w/2,cy=y+h/2;
-    if(h>=11){g+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="6.5" fill="'+c+'" stroke="var(--surface)" stroke-width="1"/><text x="'+cx.toFixed(1)+'" y="'+(cy+3.3).toFixed(1)+'" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">'+(b.i+1)+'</text>'}
-    else{g+='<text x="'+(b.x+b.w/2).toFixed(1)+'" y="'+(y-2).toFixed(1)+'" text-anchor="middle" font-size="9" font-weight="700" fill="'+c+'">'+(b.i+1)+'</text>'}
+    if(h>=11)g+=badge(cx,cy,b.i+1,c);else g+='<text x="'+(b.x+b.w/2).toFixed(1)+'" y="'+(y-2).toFixed(1)+'" text-anchor="middle" font-size="9" font-weight="700" fill="'+c+'">'+(b.i+1)+'</text>';
     if(fits)g+='<text class="lb" x="'+(b.x+21).toFixed(1)+'" y="'+(cy+3.5).toFixed(1)+'" font-size="10" fill="var(--ink)">'+esc(nm)+'</text>';
     if(e.hrs&&!col.ghost)g+='<text x="'+(b.x+b.w-3).toFixed(1)+'" y="'+(y+9).toFixed(1)+'" text-anchor="end" font-size="9" fill="var(--ink)">◷</text>'});
     var o=col.ghost?null:col.blocks.map(function(b){return els[b.i].orig}).filter(Boolean)[0];
     if(o)g+='<text x="'+(col.x+col.w/2).toFixed(1)+'" y="'+(G+maxDn+14).toFixed(1)+'" text-anchor="middle" font-size="8.5" fill="var(--muted)">原：'+esc(o.length>9?o.slice(0,9)+"…":o)+'</text>'});
-  rel.forEach(function(r){if(r.r!=="link")return;var A=ctr[r.a],B=ctr[r.b];if(!A||!B)return;
+  L.rel.forEach(function(r){if(r.r!=="link")return;var A=ctr[r.a],B=ctr[r.b];if(!A||!B)return;
     g+='<path d="M'+A[0].toFixed(1)+' '+A[1].toFixed(1)+' L'+B[0].toFixed(1)+' '+B[1].toFixed(1)+'" stroke="var(--ink)" stroke-width="1.3" stroke-dasharray="3 3" fill="none"/>'});
-  return '<svg class="dia'+(opt.small?' sm':'')+'" viewBox="0 0 '+W.toFixed(0)+' '+H.toFixed(0)+'" role="img" aria-label="'+esc((opt.name||"")+"剖面簡圖")+'"><defs>'+defs+'</defs>'+g+'</svg>'}
-function typoBlock(name,t,opt){opt=opt||{};return (opt.noFormula?'':formulaHTML(name,t))+drawTypo(t,{small:opt.small,name:name})+(opt.list===false?'':elListHTML(t)+relsHTML(t))}
+  return svgWrap(id,W,H,defs.s,g,opt,(opt.name||"")+"剖面簡圖")}
+
+function drawBldPlan(t,opt){opt=opt||{};var L=layoutBld(t),els=L.els;if(!els.length)return '<p class="empty">加入元件後，這裡會畫出平面。</p>';
+  var id="p"+(++diaN),defs={s:"",p:{}},M=12,GAP=16,g='',ctr={};
+  var enclosers={};Object.keys(L.enc).forEach(function(b){L.enc[b].forEach(function(a){enclosers[a]=1})});
+  function fp(c){var mem=L.cols[c],above=mem.filter(function(i){return !isUnder(els[i])}),under=mem.filter(function(i){return isUnder(els[i])});
+    var base=above.length?above[0]:mem[0];var w=Math.max.apply(null,(above.length?above:mem).map(function(i){return sizeOf(els[i])[0]}));
+    var shp=compOf(els[base]).shape,d=shp==="line"?12:shp==="tower"?44:Math.max(34,Math.round(w*0.6));return {mem:mem,above:above,under:under,base:base,w:w,d:d}}
+  var items=[],H=0;
+  L.seq.forEach(function(c){if(enclosers[c]&&!L.enc[c])return;items.push(c)});
+  var x=M,rows=[];
+  items.forEach(function(c){var F=fp(c),E=L.enc[c]||[],t=16,gw=F.w,gd=F.d;
+    if(E.length){gw=F.w+2*t+12;gd=F.d+2*t+12}
+    rows.push({c:c,F:F,E:E,x:x,w:gw,d:gd,t:t});x+=gw+GAP});
+  var W=Math.max(x-GAP+M+26,120),maxD=Math.max.apply(null,rows.map(function(r){return r.d}));H=maxD+2*M+40;
+  function footprint(F,x0,y0,w,d){var e=els[F.base],c=compOf(e).c,s='';
+    F.under.forEach(function(i){s+='<rect x="'+(x0-4).toFixed(1)+'" y="'+(y0-4).toFixed(1)+'" width="'+(w+8)+'" height="'+(d+8)+'" fill="none" stroke="'+compOf(els[i]).c+'" stroke-width="1.2" stroke-dasharray="4 3"/>'});
+    var up=F.above.filter(function(i){return i!==F.base}),st=Math.min(5,24/Math.max(1,up.length));
+    for(var q=up.length-1;q>=0;q--){var ue=els[up[q]],uc=compOf(ue).c,uw=Math.min(w,sizeOf(ue)[0]),off=(q+1)*st;
+      s+='<rect x="'+(x0+(w-uw)/2+off).toFixed(1)+'" y="'+(y0-off).toFixed(1)+'" width="'+uw+'" height="'+d+'" rx="2" fill="'+fillFor(ue,id,defs)+'" stroke="'+uc+'" stroke-width="1.1" opacity=".95"/>'}
+    s+='<rect x="'+x0.toFixed(1)+'" y="'+y0.toFixed(1)+'" width="'+w+'" height="'+d+'" rx="2" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.6"/>';
+    if(d>=14)s+=badge(x0+10,y0+d-10,F.base+1,c);
+    if(up.length)s+='<text x="'+(x0+w/2).toFixed(1)+'" y="'+(y0+d+11).toFixed(1)+'" text-anchor="middle" font-size="8.5" fill="var(--muted)">上疊 '+up.map(function(i){return i+1}).join("・")+'</text>';
+    F.mem.forEach(function(i){ctr[i]=[x0+w/2,y0+d/2]});return s}
+  rows.forEach(function(r){var y0=M+26+(maxD-r.d)/2;
+    if(!r.E.length){g+=footprint(r.F,r.x,y0+(r.d-r.F.d)/2,r.F.w,r.F.d);return}
+    var t=r.t,ox=r.x,oy=y0,ow=r.w,od=r.d,sides=["top","bottom","left","right"];
+    var assign={};if(r.E.length===1){sides.forEach(function(s){assign[s]=r.E[0]})}else{r.E.forEach(function(ec,k){assign[sides[k%4]]=ec})}
+    sides.forEach(function(sd){var ec=assign[sd];if(ec==null)return;var e=els[fp(ec).base],c=compOf(e).c,rx,ry,rw,rh;
+      if(sd==="top"){rx=ox;ry=oy;rw=ow;rh=t}else if(sd==="bottom"){rx=ox;ry=oy+od-t;rw=(r.E.length===1?ow*0.38:ow);rh=t}else if(sd==="left"){rx=ox;ry=oy+t;rw=t;rh=od-2*t}else{rx=ox+ow-t;ry=oy+t;rw=t;rh=od-2*t}
+      g+='<rect x="'+rx.toFixed(1)+'" y="'+ry.toFixed(1)+'" width="'+rw.toFixed(1)+'" height="'+rh.toFixed(1)+'" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.4"/>';
+      if(r.E.length===1&&sd==="bottom"){g+='<rect x="'+(ox+ow*0.62).toFixed(1)+'" y="'+ry.toFixed(1)+'" width="'+(ow*0.38).toFixed(1)+'" height="'+rh.toFixed(1)+'" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.4"/>'}
+      var bx=sd==="left"||sd==="right"?rx+rw/2:rx+12,by=sd==="top"||sd==="bottom"?ry+rh/2:ry+12;
+      if(!(r.E.length===1&&sd!=="top"))g+=badge(bx,by,fp(ec).base+1,c);
+      fp(ec).mem.forEach(function(i){if(!ctr[i])ctr[i]=[rx+rw/2,ry+rh/2]})});
+    g+=footprint(r.F,ox+t+6,oy+t+6,ow-2*t-12,od-2*t-12)});
+  L.rel.forEach(function(rl){if(rl.r!=="link")return;var A=ctr[rl.a],B=ctr[rl.b];if(!A||!B)return;
+    g+='<path d="M'+A[0].toFixed(1)+' '+A[1].toFixed(1)+' L'+B[0].toFixed(1)+' '+B[1].toFixed(1)+'" stroke="var(--ink)" stroke-width="1.3" stroke-dasharray="3 3" fill="none"/>'});
+  return svgWrap(id,W,H,defs.s,g,opt,(opt.name||"")+"平面簡圖")}
+
+/* ---- street section and plan ---- */
+function drawSecSec(t,opt){opt=opt||{};var S=t.strips||[];if(!S.length)return '<p class="empty">加入斷面元素後，這裡會畫出斷面。</p>';
+  var tot=S.reduce(function(a,s){return a+(stW(s)||1)},0),s=Math.max(4,Math.min(14,420/tot)),M=10,BH=9,maxH=Math.max(BH,Math.max.apply(null,[0].concat((t.ov||[]).map(function(o){return (+o.h||10)+1.5}))));
+  var G=M+maxH*s+6,depth=S.some(function(x){return x.k==="wt"})?1.8:0.4,W=M*2+tot*s,lab=36,H=G+depth*s+lab+M,g='',x=M,xs=[];
+  S.forEach(function(st){var w=(stW(st)||1)*s,c=sbOf(st).c,k=st.k;xs.push([x,x+w]);
+    if(k==="bld"){g+='<rect x="'+x.toFixed(1)+'" y="'+(G-BH*s).toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+(BH*s).toFixed(1)+'" fill="color-mix(in srgb,'+c+' 25%,var(--surface))" stroke="'+c+'" stroke-width="1.2"/>'}
+    else if(k==="wt"){g+='<path d="M'+x.toFixed(1)+' '+G+' L'+(x+w*0.15).toFixed(1)+' '+(G+1.5*s).toFixed(1)+' L'+(x+w*0.85).toFixed(1)+' '+(G+1.5*s).toFixed(1)+' L'+(x+w).toFixed(1)+' '+G+' Z" fill="'+c+'" opacity=".75"/>'}
+    else{var raised=["sw","arc","pl","tr","md"].indexOf(k)>=0,hh=raised?0.3*s:0.18*s;g+='<rect x="'+x.toFixed(1)+'" y="'+(G-hh).toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+hh.toFixed(1)+'" fill="'+c+'"/>'}
+    if(k==="arc"){g+='<path d="M'+x.toFixed(1)+' '+(G-3.2*s).toFixed(1)+' h'+w.toFixed(1)+'" stroke="'+c+'" stroke-width="2.2"/><path d="M'+(x+w-1).toFixed(1)+' '+(G-3.2*s).toFixed(1)+' V'+G+'" stroke="'+c+'" stroke-width="1.4"/>'}
+    if(k==="gr"||k==="md"){var n=Math.max(1,Math.round((stW(st)||1)/4));for(var i=0;i<n;i++){var tx=x+w*(i+.5)/n,th=k==="md"?1.4:5,cr=Math.min(2.2,(stW(st)||1)/n/2+.4);
+      g+='<path d="M'+tx.toFixed(1)+' '+G+' V'+(G-th*s*0.7).toFixed(1)+'" stroke="#6b5a3f" stroke-width="1.4"/><circle cx="'+tx.toFixed(1)+'" cy="'+(G-th*s*0.75).toFixed(1)+'" r="'+(cr*s*0.6).toFixed(1)+'" fill="'+c+'" opacity=".85"/>'}}
+    if(st.hrs)g+='<text x="'+(x+w/2).toFixed(1)+'" y="'+(G-0.9*s-4).toFixed(1)+'" text-anchor="middle" font-size="9" fill="var(--ink)">◷</text>';
+    x+=w});
+  (t.ov||[]).forEach(function(o){var a=xs[o.a],b=xs[o.b];if(!a||!b)return;var x0=Math.min(a[0],b[0]),x1=Math.max(a[1],b[1]),hy=G-(+o.h||10)*s;
+    g+='<rect x="'+x0.toFixed(1)+'" y="'+(hy-1.2*s).toFixed(1)+'" width="'+(x1-x0).toFixed(1)+'" height="'+(1.2*s).toFixed(1)+'" fill="#4d5b66"/><path d="M'+(x0+4).toFixed(1)+' '+hy.toFixed(1)+' V'+G+' M'+(x1-4).toFixed(1)+' '+hy.toFixed(1)+' V'+G+'" stroke="#4d5b66" stroke-width="3"/><text class="lb" x="'+((x0+x1)/2).toFixed(1)+'" y="'+(hy-1.2*s-4).toFixed(1)+'" text-anchor="middle" font-size="10" fill="var(--ink)">'+esc(o.n||"高架")+'</text>'});
+  g+='<line x1="0" x2="'+W.toFixed(1)+'" y1="'+G+'" y2="'+G+'" stroke="var(--ink)" stroke-width="1.1"/>';
+  S.forEach(function(st,i){var a=xs[i],cx=(a[0]+a[1])/2,row=(a[1]-a[0])<46?(i%2):0,y=G+depth*s+12+row*12;
+    g+='<text x="'+cx.toFixed(1)+'" y="'+y.toFixed(1)+'" text-anchor="middle" font-size="9" fill="var(--ink)">'+(i+1)+'.'+esc(stName(st).length>6&&(a[1]-a[0])<70?stName(st).slice(0,5)+"…":stName(st))+'</text>'+(st.k!=="bld"&&stW(st)&&(a[1]-a[0])>=26?'<text x="'+cx.toFixed(1)+'" y="'+(G-0.5*s-6).toFixed(1)+'" text-anchor="middle" font-size="8.5" fill="var(--muted)">'+stW(st)+'</text>':'')});
+  return svgWrap("s"+(++diaN),W,H,"",g,opt,(opt.name||"")+"斷面簡圖")}
+function drawSecPlan(t,opt){opt=opt||{};var S=t.strips||[];if(!S.length)return '<p class="empty">加入斷面元素後，這裡會畫出平面。</p>';
+  var tot=S.reduce(function(a,s){return a+(stW(s)||1)},0),Lm=30,M=10,s=Math.min(10,230/tot),k=12,W=M*2+Lm*k,H=M*2+tot*s+12,g='',y=M,ys=[],feat=t.feat||[];
+  S.forEach(function(st){var h=(stW(st)||1)*s,c=sbOf(st).c,kk=st.k,x0=M,x1=M+Lm*k;ys.push([y,y+h]);
+    var fill=kk==="bld"?"color-mix(in srgb,"+c+" 25%,var(--surface))":kk==="cw"||kk==="pk"?"color-mix(in srgb,"+c+" 55%,var(--surface))":"color-mix(in srgb,"+c+" 45%,var(--surface))";
+    g+='<rect x="'+x0+'" y="'+y.toFixed(1)+'" width="'+(x1-x0)+'" height="'+h.toFixed(1)+'" fill="'+fill+'" stroke="'+c+'" stroke-width=".8"/>';
+    if(kk==="bld"){for(var q=5;q<Lm;q+=5)g+='<path d="M'+(x0+q*k)+' '+y.toFixed(1)+' v'+h.toFixed(1)+'" stroke="'+c+'" stroke-width=".8"/>'}
+    if(kk==="cw")g+='<path d="M'+x0+' '+(y+h/2).toFixed(1)+' H'+x1+'" stroke="#fff" stroke-width="1.2" stroke-dasharray="8 6"/>';
+    if(kk==="pk"){for(var q2=5;q2<Lm;q2+=5)g+='<path d="M'+(x0+q2*k)+' '+y.toFixed(1)+' v'+h.toFixed(1)+'" stroke="#fff" stroke-width="1"/>'}
+    if(kk==="gr"){for(var q3=3;q3<Lm;q3+=6)g+='<circle cx="'+(x0+q3*k)+'" cy="'+(y+h/2).toFixed(1)+'" r="'+Math.max(2.5,Math.min(9,h/2-1)).toFixed(1)+'" fill="'+c+'" opacity=".8"/>'}
+    if(kk==="arc"){for(var q4=1.5;q4<Lm;q4+=3)g+='<rect x="'+(x0+q4*k-1.5)+'" y="'+(y+h-3).toFixed(1)+'" width="3" height="3" fill="'+c+'"/>'}
+    y+=h});
+  var cx=M+Lm*0.6*k,nb=S.map(function(st,i){return st.k!=="bld"?i:-1}).filter(function(i){return i>=0});
+  if(nb.length&&(feat.indexOf("抬高式穿越道")>=0||feat.indexOf("行人庇護島")>=0)){var y0=ys[nb[0]][0],y1=ys[nb[nb.length-1]][1];for(var z=y0;z<y1;z+=4)g+='<rect x="'+(cx-10)+'" y="'+z.toFixed(1)+'" width="20" height="2" fill="#fff" opacity=".95"/>';
+    g+='<rect x="'+(cx-10)+'" y="'+y0.toFixed(1)+'" width="20" height="'+(y1-y0).toFixed(1)+'" fill="none" stroke="var(--ink)" stroke-width=".8"/>'}
+  if(feat.indexOf("路緣延伸")>=0){S.forEach(function(st,i){if(st.k!=="sw")return;var nb2=S[i+1]&&["pk","cw"].indexOf(S[i+1].k)>=0?i+1:(S[i-1]&&["pk","cw"].indexOf(S[i-1].k)>=0?i-1:-1);if(nb2<0)return;
+    var r=ys[nb2],h=(r[1]-r[0])*0.45,yy=nb2>i?r[0]:r[1]-h;g+='<rect x="'+(cx-22)+'" y="'+yy.toFixed(1)+'" width="44" height="'+h.toFixed(1)+'" rx="4" fill="'+SB.sw.c+'" stroke="var(--ink)" stroke-width=".6"/>'})}
+  (t.ov||[]).forEach(function(o){var a=ys[o.a],b=ys[o.b];if(!a||!b)return;var y0=Math.min(a[0],b[0]),y1=Math.max(a[1],b[1]);
+    g+='<rect x="'+(M+Lm*0.15*k)+'" y="'+y0.toFixed(1)+'" width="'+(Lm*0.5*k)+'" height="'+(y1-y0).toFixed(1)+'" fill="#4d5b66" opacity=".28" stroke="#4d5b66" stroke-dasharray="4 3"/><text class="lb" x="'+(M+Lm*0.4*k)+'" y="'+(y0+11).toFixed(1)+'" text-anchor="middle" font-size="9.5" fill="var(--ink)">上方：'+esc(o.n||"高架")+'</text>'});
+  S.forEach(function(st,i){var r=ys[i],h=r[1]-r[0];if(h<9)return;g+='<text class="lb" x="'+(M+4)+'" y="'+((r[0]+r[1])/2+3.2).toFixed(1)+'" font-size="9" fill="var(--ink)">'+(i+1)+'.'+esc(stName(st))+'</text>'});
+  return svgWrap("q"+(++diaN),W,H,"",g,opt,(opt.name||"")+"街道平面簡圖")}
+function drawSite(t,opt){opt=opt||{};var sec=t.mode==="sec";
+  var a=sec?drawSecSec(t,opt):drawBldSec(t,opt),b=sec?drawSecPlan(t,opt):drawBldPlan(t,opt);
+  if(opt.only==="sec")return a;
+  return '<div class="dia2"><figure><figcaption>'+(sec?"斷面（寬度單位：公尺）":"剖面")+'</figcaption>'+a+'</figure><figure><figcaption>'+(sec?"平面（街段約 30 公尺）":"平面（外框＝圍合，虛線＝地下，錯位疊層＝上方樓層）")+'</figcaption>'+b+'</figure></div>'}
+function typoBlock(name,t,opt){opt=opt||{};return (opt.noFormula?'':formulaHTML(name,t))+drawSite(t,{small:opt.small,name:name,only:opt.only})+(opt.list===false?'':elListHTML(t))}
+function typoPlain(name,t){if(t.mode==="sec"){var st=secStats(t);return name+" ＝ "+t.strips.map(function(s){return stName(s)+(stW(s)&&s.k!=="bld"?" "+stW(s)+"m":"")+(s.orig?"〔原："+s.orig+"〕":"")+(s.hrs?"〔"+s.hrs+"〕":"")}).join("｜")+"；人本比例 "+(st.ratio==null?"—":st.ratio+"%")+((t.feat||[]).length?"；特徵："+t.feat.join("、"):"")}
+  return name+" ＝ "+t.els.map(function(e){return elName(e)+(e.fl?"（"+e.fl+"）":"")+(e.pub?"［"+PUBZ[e.pub]+"］":"")+(e.orig?"〔原："+e.orig+"〕":"")}).join(" ＋ ")+((t.rel||[]).length?"；關係："+t.rel.map(function(r){return relText(t,r)}).join("；"):"")}
 
 /* ---------- views ---------- */
 var VIEWS=["overview","route","record","handbook"];
@@ -566,13 +712,14 @@ window.addEventListener("resize",setHdr);
 
 /* ---------- overview ---------- */
 $("q-list").innerHTML=DATA.RQ.map(function(q){return '<div class="q"><div class="qtag">'+q.k+'<small>'+q.zh+'</small></div><div><p>'+q.q+'</p><p class="o">'+q.o+'</p></div></div>'}).join("");
-$("ex-dia").innerHTML=["capitaspring","kampung"].map(function(id){var s=SBY[id];return '<div class="diabox">'+typoBlock(s.zh,s.typo)+'</div>'}).join("");
+$("ex-dia").innerHTML=["capitaspring","fsamk"].map(function(id){var s=SBY[id],t=clone(s.typo);t.mode=s.mode;return '<div class="diabox"><p class="eyebrow">'+(s.mode==="sec"?"街道類型學":"建築類型學")+'・案頭版</p>'+typoBlock(s.zh,t)+'</div>'}).join("");
 $("comp-legend").innerHTML=DATA.COMP.filter(function(c){return c[0]!=="oth"}).map(function(c){return '<span><span class="sw" style="--c:'+c[2]+'"></span> '+c[1]+'</span>'}).join("");
+$("sec-legend").innerHTML=DATA.SEC.map(function(c){return '<span><span class="sw" style="--c:'+c[2]+'"></span> '+c[1]+'</span>'}).join("");
 var RELEX={stack:{els:[{k:"grn",n:"屋頂公園",pub:"pub"},{k:"res",n:"住宅",pub:"priv"},{k:"hwk",n:"熟食中心",pub:"pub"}],rel:[{a:0,r:"stack",b:1},{a:1,r:"stack",b:2}],d:"上下疊在同一棟裡，例：海軍部村莊"},
-  adj:{els:[{k:"edu",n:"學校",pub:"semi"},{k:"st",n:"街道",pub:"pub"},{k:"com",n:"市場",pub:"pub"}],rel:[{a:0,r:"adj",b:1},{a:1,r:"adj",b:2}],d:"左右並排、各自獨立，例：友善街道"},
+  adj:{els:[{k:"edu",n:"圖書館",pub:"pub"},{k:"cmy",n:"社區俱樂部",pub:"pub"},{k:"com",n:"商場",pub:"pub"}],rel:[{a:0,r:"adj",b:1},{a:1,r:"adj",b:2}],d:"左右並排、各自獨立，例：One Punggol"},
   encl:{els:[{k:"off",n:"塔樓",pub:"priv"},{k:"grn",n:"綠心",pub:"pub"}],rel:[{a:0,r:"encl",b:1}],d:"建築圍出中庭或綠心，例：Marina One"},
   link:{els:[{k:"com",n:"商場",pub:"pub"},{k:"trn",n:"捷運",pub:"pub",fl:"B"}],rel:[{a:0,r:"link",b:1,n:"地下步行網"}],d:"天橋、地下道把兩者接起來，例：星耀樟宜"}};
-$("rel-legend").innerHTML=DATA.REL.map(function(r){var x=RELEX[r[0]];return '<div class="card"><b>'+r[1]+'</b>'+drawTypo(x,{small:true,name:r[1]})+'<p>'+x.d+'</p></div>'}).join("");
+$("rel-legend").innerHTML=DATA.REL.map(function(r){var x=RELEX[r[0]];x.mode="bld";return '<div class="card"><b>'+r[1]+'</b>'+drawBldSec(x,{small:true,name:r[1]})+'<p>'+x.d+'</p></div>'}).join("");
 $("pub-legend").innerHTML=DATA.PUB.map(function(p){return '<span><span class="sw '+p[0]+'" style="--c:#3f9a5a"></span> '+p[1]+'</span>'}).join("")+'<span><span class="sw none" style="--c:#3f9a5a"></span> 未標</span>';
 
 /* ---------- map ---------- */
@@ -635,7 +782,7 @@ function openSite(id){var s=SBY[id];if(!s)return;selectSite(id);
   h+='<div class="ask"><b>我帶去的問題</b><br>'+esc(s.ask)+'</div>';
   if(/^https:\/\//.test(s.web))h+='<p class="weblink"><a href="'+esc(s.web)+'" target="_blank" rel="noopener">官方網站 ↗</a></p>';
   h+='<h3 style="margin-top:1rem">現場記錄（'+ns.length+'）</h3>'+(ns.length?ns.map(function(n){return noteHTML(n,false)}).join(""):'<p class="empty">尚無記錄。</p>');
-  if(state.canWrite)h+='<div class="row" style="margin-top:.6rem"><button class="btn primary small" type="button" data-new="typo">新增類型學記錄</button><button class="btn small" type="button" data-new="space">新增人本空間記錄</button></div>';
+  if(state.canWrite)h+='<div class="row" style="margin-top:.6rem"><button class="btn primary small" type="button" data-new="typo">新增'+(s.mode==="sec"?"街道":"建築")+'類型學記錄</button><button class="btn small" type="button" data-new="space">新增人本空間記錄</button></div>';
   $("site-body").innerHTML=h; var dlg=$("site-dlg"); if(!dlg.open)dlg.showModal();
 }
 $("site-dlg").addEventListener("click",function(e){
@@ -647,11 +794,12 @@ $("site-dlg").addEventListener("click",function(e){
 function chips(id,list,multi){$(id).innerHTML=list.map(function(x){return '<button type="button" class="chip" data-k="'+esc(x)+'" aria-pressed="false">'+esc(x)+'</button>'}).join("");$(id).dataset.multi=multi?"1":""}
 function setChips(id,vals){vals=vals||[];$(id).querySelectorAll(".chip").forEach(function(b){b.setAttribute("aria-pressed",vals.indexOf(b.dataset.k)>=0?"true":"false")})}
 function getChips(id){return Array.prototype.map.call($(id).querySelectorAll('.chip[aria-pressed="true"]'),function(b){return b.dataset.k})}
-document.addEventListener("click",function(e){var b=e.target.closest("#rec-form .chips:not(#t-add) .chip");if(!b||b.disabled)return;var box=b.parentNode;
+document.addEventListener("click",function(e){var b=e.target.closest("#rec-form .chips:not(.addchips) .chip");if(!b||b.disabled)return;var box=b.parentNode;
   if(!box.dataset.multi){box.querySelectorAll(".chip").forEach(function(x){if(x!==b)x.setAttribute("aria-pressed","false")})}
   b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true")});
 chips("f-slot",SLOTS,true); chips("f-wx",WX,false);
-chips("f-opm",OPM,true); chips("f-pp",PP,false); chips("f-fac",FAC,true); chips("f-acc",ACC,true); chips("f-twk",DATA.TW,true);
+chips("f-opm",OPM,true); chips("f-pp",PP,false); chips("f-fac",FAC,true); chips("f-acc",ACC,true); chips("f-twk",DATA.TW,true); chips("s-feat",DATA.FEAT,true);
+$("s-add").innerHTML=DATA.SEC.map(function(c){return '<button type="button" class="chip" data-add="'+c[0]+'" style="--c:'+c[2]+'">＋ '+esc(c[1])+'</button>'}).join("");
 $("t-add").innerHTML=DATA.COMP.map(function(c){return '<button type="button" class="chip" data-add="'+c[0]+'" style="--c:'+c[2]+'">＋ '+esc(c[1])+'</button>'}).join("");
 $("f-site").innerHTML=SITES.map(function(s){return '<option value="'+s.id+'">'+s.no+'. '+esc(s.zh)+'</option>'}).join("");
 
@@ -671,9 +819,40 @@ function renderRels(){
   $("t-rels").innerHTML=state.rel.map(function(r,j){return '<div class="relrow" data-j="'+j+'"><select data-r="a" aria-label="元件 A">'+elsOpts(r.a)+'</select><select data-r="r" aria-label="關係">'+DATA.REL.map(function(x){return '<option value="'+x[0]+'"'+(x[0]===r.r?' selected':'')+'>'+(x[0]==="stack"?"疊在…之上":x[1])+'</option>'}).join("")+'</select><select data-r="b" aria-label="元件 B">'+elsOpts(r.b)+'</select><input type="text" data-r="n" value="'+esc(r.n||"")+'" placeholder="說明（選填）" aria-label="說明"><button type="button" class="btn small" data-rmrel="'+j+'" aria-label="移除關係">×</button></div>'}).join("")||'<p class="empty">尚無關係。</p>';
 }
 var pvT=null;
-function renderPreview(){clearTimeout(pvT);pvT=setTimeout(function(){var s=SBY[$("f-site").value]||{zh:""};$("t-preview").innerHTML=typoBlock(s.zh,{els:state.els,rel:state.rel})},60)}
-function renderTypoAll(){renderEls();renderRels();renderPreview()}
-function loadDesk(){var s=SBY[$("f-site").value];var t=clone(s&&s.typo);state.els=t.els||[];state.rel=t.rel||[];state.typoSite=s&&s.id;renderTypoAll()}
+function curEdit(){return state.mode==="sec"?{mode:"sec",strips:state.strips,ov:state.ov,feat:getChips("s-feat")}:{mode:"bld",els:state.els,rel:state.rel}}
+function renderPreview(){clearTimeout(pvT);pvT=setTimeout(function(){var s=SBY[$("f-site").value]||{zh:""};$("t-preview").innerHTML=typoBlock(s.zh,curEdit())},60)}
+function setMode(m){state.mode=m;document.querySelectorAll("[data-mode]").forEach(function(el){el.hidden=el.dataset.mode!==m});
+  $("t-modehint").textContent=m==="sec"?"這是街道／廊道類地點：以斷面組成記錄，由左到右填每一條帶狀空間的寬度。":"這是建築類地點：以元件與關係記錄，元件可記樓層、公共性、開放時段與原用途。"}
+function renderTypoAll(){renderEls();renderRels();renderStrips();renderOv();renderPreview()}
+function loadDesk(){var s=SBY[$("f-site").value];var t=clone(s&&s.typo);setMode(modeOf(s&&s.id));
+  state.els=t.els||[];state.rel=t.rel||[];state.strips=t.strips||[];state.ov=t.ov||[];setChips("s-feat",t.feat||[]);state.typoSite=s&&s.id;renderTypoAll()}
+/* street editor */
+function stripOpts(sel){return state.strips.map(function(x,i){return '<option value="'+i+'"'+(i===sel?' selected':'')+'>'+(i+1)+'. '+esc(stName(x))+'</option>'}).join("")}
+function renderStrips(){
+  $("s-strips").innerHTML=state.strips.length?state.strips.map(function(x,i){var c=sbOf(x);
+    return '<div class="el" data-i="'+i+'" style="--c:'+c.c+'"><span class="n">'+(i+1)+'</span>'+
+      '<select data-f="k" aria-label="斷面元素">'+DATA.SEC.map(function(y){return '<option value="'+y[0]+'"'+(y[0]===x.k?' selected':'')+'>'+esc(y[1])+'</option>'}).join("")+'</select>'+
+      '<input type="text" data-f="n" value="'+esc(x.n||"")+'" placeholder="名稱，例：五腳基" aria-label="名稱">'+
+      '<input type="number" class="fl" data-f="w" value="'+esc(x.w==null?"":x.w)+'" min="0" step="0.1" inputmode="decimal" placeholder="寬（m）" aria-label="寬度（公尺）">'+
+      '<div class="pubseg" role="group" aria-label="順序"><button type="button" data-mv="-1" aria-label="往左移">← 左移</button><button type="button" data-mv="1" aria-label="往右移">右移 →</button></div>'+
+      '<button type="button" class="btn small rm" data-rmst="'+i+'" aria-label="移除">移除</button>'+
+      '<div class="more"><input type="text" data-f="hrs" value="'+esc(x.hrs||"")+'" placeholder="時段，例：週末封街" aria-label="時段"><input type="text" data-f="orig" value="'+esc(x.orig||"")+'" placeholder="原用途，例：車道" aria-label="原用途"></div></div>'}).join(""):'<p class="empty">尚無斷面元素。</p>'}
+function renderOv(){
+  $("s-ov").innerHTML=state.ov.map(function(o,j){return '<div class="relrow" data-j="'+j+'"><input type="text" data-o="n" value="'+esc(o.n||"")+'" placeholder="名稱，例：高架道路" aria-label="名稱"><select data-o="a" aria-label="起點">'+stripOpts(o.a)+'</select><select data-o="b" aria-label="終點">'+stripOpts(o.b)+'</select><input type="number" data-o="h" value="'+esc(o.h==null?"":o.h)+'" min="0" step="0.5" inputmode="decimal" placeholder="高（m）" aria-label="高度（公尺）"><button type="button" class="btn small" data-rmov="'+j+'" aria-label="移除">×</button></div>'}).join("")}
+$("s-load").addEventListener("click",function(){if(this.dataset.armed!=="1"&&state.strips.length){this.dataset.armed="1";this.textContent="再按一次：覆蓋目前內容";return}this.dataset.armed="";this.textContent="重新載入案頭版";loadDesk()});
+$("s-add").addEventListener("click",function(e){var b=e.target.closest("[data-add]");if(!b||b.disabled)return;state.strips.push({k:b.dataset.add,n:"",w:""});renderStrips();renderOv();renderPreview();
+  var last=$("s-strips").querySelector('.el:last-child [data-f="w"]');if(last)last.focus()});
+function stInput(e){var t=e.target,row=t.closest(".el");if(!row||!t.dataset.f)return;var x=state.strips[+row.dataset.i];x[t.dataset.f]=t.dataset.f==="w"?(t.value===""?"":+t.value):t.value;
+  if(t.dataset.f==="k")row.style.setProperty("--c",sbOf(x).c);if(t.dataset.f==="k"||t.dataset.f==="n")renderOv();renderPreview()}
+$("s-strips").addEventListener("input",stInput);$("s-strips").addEventListener("change",stInput);
+$("s-strips").addEventListener("click",function(e){var mv=e.target.closest("[data-mv]");if(mv&&!mv.disabled){var i=+mv.closest(".el").dataset.i,j=i+(+mv.dataset.mv);if(j<0||j>=state.strips.length)return;
+    var tmp=state.strips[i];state.strips[i]=state.strips[j];state.strips[j]=tmp;state.ov.forEach(function(o){["a","b"].forEach(function(k){if(o[k]===i)o[k]=j;else if(o[k]===j)o[k]=i})});renderStrips();renderOv();renderPreview();return}
+  var rm=e.target.closest("[data-rmst]");if(rm&&!rm.disabled){var k=+rm.dataset.rmst;state.strips.splice(k,1);state.ov=state.ov.filter(function(o){return o.a!==k&&o.b!==k}).map(function(o){return {n:o.n,a:o.a>k?o.a-1:o.a,b:o.b>k?o.b-1:o.b,h:o.h}});renderStrips();renderOv();renderPreview()}});
+$("s-addov").addEventListener("click",function(){if(!state.strips.length)return;state.ov.push({n:"",a:0,b:Math.min(1,state.strips.length-1),h:10});renderOv();renderPreview()});
+function ovInput(e){var t=e.target,row=t.closest(".relrow");if(!row)return;var o=state.ov[+row.dataset.j],k=t.dataset.o;if(!k)return;o[k]=(k==="a"||k==="b"||k==="h")?+t.value:t.value;renderPreview()}
+$("s-ov").addEventListener("input",ovInput);$("s-ov").addEventListener("change",ovInput);
+$("s-ov").addEventListener("click",function(e){var b=e.target.closest("[data-rmov]");if(b&&!b.disabled){state.ov.splice(+b.dataset.rmov,1);renderOv();renderPreview()}});
+$("s-feat").addEventListener("click",function(){setTimeout(renderPreview,0)});
 $("t-load").addEventListener("click",function(){if(this.dataset.armed!=="1"&&state.els.length){this.dataset.armed="1";this.textContent="再按一次：覆蓋目前內容";return}this.dataset.armed="";this.textContent="重新載入案頭版";loadDesk()});
 $("t-add").addEventListener("click",function(e){var b=e.target.closest("[data-add]");if(!b||b.disabled)return;state.els.push({k:b.dataset.add,n:"",pub:""});renderTypoAll();
   var last=$("t-els").querySelector('.el:last-child [data-f="n"]');if(last)last.focus()});
@@ -690,7 +869,8 @@ $("t-rels").addEventListener("input",function(e){var t=e.target,row=t.closest(".
 $("t-rels").addEventListener("change",function(e){var t=e.target,row=t.closest(".relrow");if(!row)return;var r=state.rel[+row.dataset.j],k=t.dataset.r;r[k]=(k==="a"||k==="b")?+t.value:t.value;renderPreview()});
 $("t-rels").addEventListener("click",function(e){var b=e.target.closest("[data-rmrel]");if(b&&!b.disabled){state.rel.splice(+b.dataset.rmrel,1);renderRels();renderPreview()}});
 
-function fillElSelect(sel){var t=currentTypo($("f-site").value);$("f-el").innerHTML='<option value="">整體</option>'+t.els.map(function(e,i){return '<option'+(elName(e)===sel?' selected':'')+'>'+esc(elName(e))+'</option>'}).join("")+(sel&&!t.els.some(function(e){return elName(e)===sel})?'<option selected>'+esc(sel)+'</option>':'')}
+function fillElSelect(sel){var t=currentTypo($("f-site").value),names=(t.mode==="sec"?t.strips.filter(function(x){return x.k!=="bld"}).map(stName):t.els.map(elName)).filter(function(v,i,a){return a.indexOf(v)===i});
+  $("f-el").innerHTML='<option value="">整體</option>'+names.map(function(n){return '<option'+(n===sel?' selected':'')+'>'+esc(n)+'</option>'}).join("")+(sel&&names.indexOf(sel)<0?'<option selected>'+esc(sel)+'</option>':'')}
 function renderGehl(){
   var h='<div></div>'+ACTS.map(function(a){return '<div class="h">'+a[1]+'</div>'}).join("");
   AGES.forEach(function(g){h+='<div class="rh">'+g[1]+'</div>'+ACTS.map(function(a){var k=g[0]+"_"+a[0];return '<button type="button" data-g="'+k+'" aria-label="'+g[1]+a[1]+'">'+(state.gehl[k]||0)+'</button>'}).join("")});
@@ -715,7 +895,7 @@ function tmReset(min){tmAcc=(min||0)*60000;tmStart=null;clearInterval(tmInt);$("
 $("tm-reset").addEventListener("click",function(){tmReset(0)});
 
 function guessSlot(){var d=new Date(),h=d.getHours(),w=d.getDay(),o=[(w===0||w===6)?"假日":"平日"];o.push(h<11?"上午":h<15?"中午":h<19?"傍晚":"夜間");return o}
-function clearForm(){state.gehl={};state.photos=[];state.els=[];state.rel=[];state.typoSite=null;
+function clearForm(){state.gehl={};state.photos=[];state.els=[];state.rel=[];state.strips=[];state.ov=[];state.typoSite=null;setChips("s-feat",[]);
   ["f-orig","f-op","f-tw","f-text"].forEach(function(i){$(i).value=""});
   ["f-opm","f-pp","f-fac","f-acc","f-twk"].forEach(function(i){setChips(i,[])});setChips("f-wx",[]);setChips("f-slot",guessSlot());
   renderGehl();renderFormPhotos();renderTypoAll();tmReset(0)}
@@ -723,7 +903,7 @@ function startNew(site,kind){state.editing=null;clearForm();$("f-site").value=si
   $("save").textContent="儲存記錄";$("save-status").textContent="";$("save-status").className="status";if(site)$("rec-form").scrollIntoView({block:"start"})}
 function loadEdit(id){var n=state.notes.find(function(x){return x.id===id});if(!n)return;state.editing=null;clearForm();state.editing=id;
   $("f-site").value=n.site;var k=(n.kind==="typo"||n.kind==="space")?n.kind:"space";
-  state.els=clone({els:n.els}).els||[];state.rel=clone({rel:n.rel}).rel||[];state.typoSite=n.site;setKind(k);
+  state.els=clone({els:n.els}).els||[];state.rel=clone({rel:n.rel}).rel||[];state.strips=clone({s:n.strips}).s||[];state.ov=clone({o:n.ov}).o||[];setMode(n.mode||modeOf(n.site));setChips("s-feat",n.feat||[]);state.typoSite=n.site;setKind(k);
   setChips("f-slot",n.slot);setChips("f-wx",n.wx?[n.wx]:[]);tmReset(n.min||0);$("f-text").value=n.text||"";
   $("f-orig").value=n.orig||"";$("f-op").value=n.op||"";setChips("f-opm",n.opm);setChips("f-pp",n.pp?[n.pp]:[]);setChips("f-fac",n.fac);setChips("f-acc",n.acc);state.gehl=Object.assign({},n.gehl||{});
   setChips("f-twk",n.twk);$("f-tw").value=n.tw||"";fillElSelect(n.el||"");
@@ -753,8 +933,12 @@ $("rec-form").addEventListener("submit",async function(e){e.preventDefault();if(
   if(state.photos.some(function(p){return !p.url})){$("save-status").textContent="照片仍在上傳";return}
   var k=state.kind, body={kind:k,site:$("f-site").value,slot:getChips("f-slot"),wx:getChips("f-wx")[0]||"",min:Math.round(tmNow()/60000),text:$("f-text").value.trim(),
     twk:getChips("f-twk"),tw:$("f-tw").value.trim(),photos:state.photos.map(function(p){return {id:p.id,url:p.url,cap:p.cap}})};
-  if(k==="typo"){if(!state.els.length){$("save-status").textContent="請至少加入一個元件";$("save-status").className="status err";return}
-    body.els=cleanEls();body.rel=state.rel.filter(function(r){return r.a!==r.b&&state.els[r.a]&&state.els[r.b]}).map(function(r){var o={a:r.a,r:r.r,b:r.b};if(r.n&&r.n.trim())o.n=r.n.trim();return o})}
+  if(k==="typo"){body.mode=state.mode;
+    if(state.mode==="sec"){if(!state.strips.length){$("save-status").textContent="請至少加入一個斷面元素";$("save-status").className="status err";return}
+      body.strips=state.strips.map(function(x){var o={k:x.k};if(x.n&&String(x.n).trim())o.n=String(x.n).trim();if(x.w!==""&&x.w!=null&&isFinite(+x.w))o.w=+x.w;["orig","hrs"].forEach(function(f){if(x[f]&&String(x[f]).trim())o[f]=String(x[f]).trim()});return o});
+      body.ov=state.ov.filter(function(o){return state.strips[o.a]&&state.strips[o.b]}).map(function(o){var r={a:o.a,b:o.b,h:+o.h||10};if(o.n&&o.n.trim())r.n=o.n.trim();return r});body.feat=getChips("s-feat")}
+    else{if(!state.els.length){$("save-status").textContent="請至少加入一個元件";$("save-status").className="status err";return}
+      body.els=cleanEls();body.rel=state.rel.filter(function(r){return r.a!==r.b&&state.els[r.a]&&state.els[r.b]}).map(function(r){var o={a:r.a,r:r.r,b:r.b};if(r.n&&r.n.trim())o.n=r.n.trim();return o})}}
   if(k==="space"){body.el=$("f-el").value;body.orig=$("f-orig").value.trim();body.op=$("f-op").value.trim();body.opm=getChips("f-opm");body.pp=getChips("f-pp")[0]||"";body.fac=getChips("f-fac");body.acc=getChips("f-acc");
     var g={};for(var key in state.gehl){if(state.gehl[key])g[key]=state.gehl[key]}body.gehl=g}
   var st=$("save-status");$("save").disabled=true;st.textContent="儲存中…";st.className="status";
@@ -766,6 +950,7 @@ $("rec-form").addEventListener("submit",async function(e){e.preventDefault();if(
 
 /* ---------- note cards ---------- */
 function noteSummary(n){
+  if(n.kind==="typo"&&n.mode==="sec"){var tt={mode:"sec",strips:n.strips||[],ov:n.ov||[],feat:n.feat||[]},ss=secStats(tt);return tt.strips.map(stName).join("｜")+"｜人本比例 "+(ss.ratio==null?"—":ss.ratio+"%")}
   if(n.kind==="typo"){var t={els:n.els||[],rel:n.rel||[]};var pc={};t.els.forEach(function(e){if(e.pub)pc[e.pub]=(pc[e.pub]||0)+1});
     return t.els.map(elName).join(" ＋ ")+"｜關係 "+t.rel.length+" 條"+(Object.keys(pc).length?"｜"+DATA.PUB.filter(function(p){return pc[p[0]]}).map(function(p){return p[1]+" "+pc[p[0]]}).join("、"):"")}
   if(n.kind==="space"){var g=n.gehl||{},tot=sum(g),ag=AGES.map(function(a){var t=0;ACTS.forEach(function(x){t+=g[a[0]+"_"+x[0]]||0});return a[1]+" "+t}).join("、");
@@ -774,7 +959,7 @@ function noteSummary(n){
 function noteHTML(n,act){var s=SBY[n.site]||{zh:n.site,map:"sg"};
   var h='<div class="note" style="--c:'+colorOf(s)+'"><div class="meta"><span class="tag">'+esc(KIND[n.kind]||"記錄")+'</span><b>'+esc(s.zh)+'</b><span>'+esc(fmtTime(n.createdAt))+'</span>'+(n.slot&&n.slot.length?'<span>'+esc(n.slot.join("・"))+'</span>':'')+(n.wx?'<span>'+esc(n.wx)+'</span>':'')+(n.min?'<span>'+n.min+' 分鐘</span>':'')+'</div>';
   h+='<div class="sum">'+esc(noteSummary(n))+'</div>';
-  if(n.kind==="typo"&&n.els&&n.els.length)h+=drawTypo({els:n.els,rel:n.rel||[]},{small:true,name:s.zh});
+  if(n.kind==="typo"&&((n.els&&n.els.length)||(n.strips&&n.strips.length)))h+=drawSite(n.mode==="sec"?{mode:"sec",strips:n.strips,ov:n.ov||[],feat:n.feat||[]}:{mode:"bld",els:n.els,rel:n.rel||[]},{small:true,name:s.zh});
   if(n.text)h+='<div class="txt">'+esc(n.text)+'</div>';
   if(n.tw||(n.twk&&n.twk.length))h+='<div class="txt" style="margin-top:.3rem"><b>臺灣對應：</b>'+esc((n.twk||[]).join("、"))+(n.tw?(n.twk&&n.twk.length?"｜":"")+esc(n.tw):"")+'</div>';
   var ph=(n.photos||[]).filter(function(p){return p.url&&(/^https:\/\//.test(p.url)||/^\/_blob\//.test(p.url)||/^photos\//.test(p.url))});
@@ -808,13 +993,17 @@ function renderHandbook(){
   var comps=DATA.COMP.filter(function(x){return x[0]!=="oth"});
   var th='<table><thead><tr><th>地點</th>'+comps.map(function(x){return '<th><span class="sw" style="--c:'+x[2]+'"></span><br>'+esc(x[1].replace("／","／<wbr>"))+'</th>'}).join("").replace(/&lt;wbr&gt;/g,"<wbr>")+'<th>其他</th><th>關係</th><th>轉用</th></tr></thead><tbody>';
   var pairs={},relc={stack:0,adj:0,encl:0,link:0},pubc={pub:0,semi:0,priv:0,none:0};
-  SITES.forEach(function(s){var t=currentTypo(s.id),by={};t.els.forEach(function(e){var k=CB[e.k]?e.k:"oth";(by[k]=by[k]||[]).push(e);pubc[e.pub||"none"]++});
+  SITES.filter(function(s){return s.mode!=="sec"}).forEach(function(s){var t=currentTypo(s.id),by={};t.els.forEach(function(e){var k=CB[e.k]?e.k:"oth";(by[k]=by[k]||[]).push(e);pubc[e.pub||"none"]++});
     (t.rel||[]).forEach(function(r){if(relc[r.r]!=null)relc[r.r]++});
     var ks=Object.keys(by).sort();for(var i=0;i<ks.length;i++)for(var j=i+1;j<ks.length;j++){var p=ks[i]+"|"+ks[j];pairs[p]=(pairs[p]||0)+1}
     var rc={};(t.rel||[]).forEach(function(r){rc[r.r]=(rc[r.r]||0)+1});
     th+='<tr><td>'+s.no+'. '+esc(s.zh)+' <span class="srctag'+(t.src==="live"?' live':'')+'">'+(t.src==="live"?"現":"案")+'</span></td>'+comps.concat([["oth"]]).map(function(x){var a=by[x[0]];return '<td>'+(a?swHTML(a[0])+(a.length>1?'<span class="cnt">×'+a.length+'</span>':''):'')+'</td>'}).join("")+
       '<td class="rel">'+DATA.REL.filter(function(r){return rc[r[0]]}).map(function(r){return r[1].slice(0,1)+rc[r[0]]}).join(" ")+'</td><td>'+(t.els.some(function(e){return e.orig})?"✓":"")+'</td></tr>'});
   $("tmx").innerHTML=th+'</tbody></table>';
+  var sh='<table><thead><tr><th>地點</th><th>行人與單車</th><th>綠與水</th><th>車用</th><th style="min-width:9rem">人本比例</th><th>特徵</th><th>轉用</th></tr></thead><tbody>';
+  SITES.filter(function(s){return s.mode==="sec"}).forEach(function(s){var t=currentTypo(s.id),st=secStats(t);
+    sh+='<tr><td>'+s.no+'. '+esc(s.zh)+' <span class="srctag'+(t.src==="live"?' live':'')+'">'+(t.src==="live"?"現":"案")+'</span></td><td>'+fmtM(st.ppl)+'</td><td>'+fmtM(st.grn)+'</td><td>'+fmtM(st.car)+'</td><td><div class="bars"><div style="grid-template-columns:minmax(0,1fr) 2.6rem"><i style="width:'+(st.ratio||0)+'%"></i><b>'+(st.ratio==null?"—":st.ratio+"%")+'</b></div></div></td><td>'+(t.feat||[]).length+'</td><td>'+(t.strips.some(function(x){return x.orig})?"✓":"")+'</td></tr>'});
+  $("smx").innerHTML=sh+'</tbody></table>';
   var pl=Object.keys(pairs).map(function(k){return [k,pairs[k]]}).sort(function(a,b){return b[1]-a[1]}).slice(0,8),pm=pl.length?pl[0][1]:1;
   $("pairs").innerHTML=pl.map(function(p){var ab=p[0].split("|").map(function(k){return CB[k].zh});return '<div><span>'+esc(ab.join(" ＋ "))+'</span><i style="width:'+Math.round(p[1]/pm*100)+'%"></i><b>'+p[1]+'</b></div>'}).join("")||'<p class="empty">尚無資料。</p>';
   var rm=Math.max(1,Math.max.apply(null,Object.keys(relc).map(function(k){return relc[k]}))),pmx=Math.max(1,Math.max.apply(null,Object.keys(pubc).map(function(k){return pubc[k]})));
@@ -832,13 +1021,12 @@ function renderHandbook(){
     else if(dr&&(dr.zh||dr.tw)){h+='<div class="draft">'+(dr.zh?'<p>'+esc(dr.zh)+'</p>':'')+(dr.tw?'<p><b>設計原則：</b>'+esc(dr.tw)+'</p>':'')+'</div>'}
     return h+'</div>'}).join("");
 }
-function typoPlain(name,t){return name+" ＝ "+t.els.map(function(e){return elName(e)+(e.fl?"（"+e.fl+"）":"")+(e.pub?"［"+PUBZ[e.pub]+"］":"")+(e.orig?"〔原："+e.orig+"〕":"")}).join(" ＋ ")+((t.rel||[]).length?"；關係："+t.rel.map(function(r){return relText(t,r)}).join("；"):"")}
 $("hb").addEventListener("click",async function(e){
   var g=e.target.closest("[data-gen]");
   if(g&&state.sample){var id=g.dataset.gen,s=SBY[id],st=$("ds-"+id);g.disabled=true;st.textContent="起草中…";st.className="status";
     var t=currentTypo(id);
     var ns=notesFor(id).map(function(n){return {表單:KIND[n.kind],時段:(n.slot||[]).join("・"),摘要:noteSummary(n),筆記:n.text||"",臺灣對應:(n.twk||[]).join("、"),臺灣轉譯:n.tw||""}});
-    var prompt="你是建築設計師的寫作助理。以下是新加坡「"+s.zh+"」的複合建築類型學記錄。組成公式（"+(t.src==="live"?"現場版":"案頭版")+"）："+typoPlain(s.zh,t)+"。現場記錄（JSON）："+JSON.stringify(ns)+"。請只根據以上資料，不要補充沒有的事實，用繁體中文寫：(1) zh：一段約150字的案例卡說明，描述這個地點由哪些元件、以什麼關係組成，哪些部分真正對公眾開放、誰在使用；(2) tw：一到兩條可用於臺灣待設計空間（以記錄中勾選的類別為主）的設計原則，每條以「宜」或「應」開頭。回傳 JSON：{\"zh\":\"...\",\"tw\":\"...\"}。";
+    var prompt="你是建築設計師的寫作助理。以下是新加坡「"+s.zh+"」的"+(t.mode==="sec"?"街道斷面":"複合建築")+"類型學記錄。組成公式（"+(t.src==="live"?"現場版":"案頭版")+"）："+typoPlain(s.zh,t)+"。現場記錄（JSON）："+JSON.stringify(ns)+"。請只根據以上資料，不要補充沒有的事實，用繁體中文寫：(1) zh：一段約150字的案例卡說明，描述這個地點由哪些元件或斷面帶、以什麼方式組成，哪些部分真正對公眾開放或留給行人、誰在使用；(2) tw：一到兩條可用於臺灣待設計空間（以記錄中勾選的類別為主）的設計原則，每條以「宜」或「應」開頭。回傳 JSON：{\"zh\":\"...\",\"tw\":\"...\"}。";
     try{var out=await state.sample.json(prompt,{modelTier:"default"});if(out&&typeof out.zh==="string"){$("dz-"+id).value=out.zh;$("dt-"+id).value=typeof out.tw==="string"?out.tw:"";st.textContent="已起草，請修改後按「儲存段落」";st.className="status ok"}else{st.textContent="起草格式不完整，請再試一次";st.className="status err"}}
     catch(err){st.textContent="起草失敗："+(err&&err.code||"");st.className="status err"}
     g.disabled=false;return}
@@ -847,7 +1035,7 @@ $("hb").addEventListener("click",async function(e){
     try{await state.db.collection("drafts").doc(id2).set({zh:$("dz-"+id2).value,tw:$("dt-"+id2).value,updatedAt:new Date().toISOString()});st2.textContent="已儲存";st2.className="status ok"}
     catch(err){st2.textContent="儲存失敗";st2.className="status err"}}});
 $("export").addEventListener("click",async function(){var st=$("export-status");if(!state.downloads)return;
-  var md="# 獅城步行誌：複合建築類型學\n\n賀昭恩｜新加坡 2027.10.5–10.25\n\n";
+  var md="# 獅城步行誌：複合建築與街道類型學\n\n賀昭恩｜新加坡 2027.10.5–10.25\n\n";
   var c={typo:0,space:0};state.notes.forEach(function(n){c[n.kind]=(c[n.kind]||0)+1});
   md+="- 類型學記錄表："+c.typo+" 份\n- 人本空間記錄表："+c.space+" 份\n\n## 組成公式\n\n";
   SITES.forEach(function(s){var t=currentTypo(s.id);md+="- "+s.no+"（"+(t.src==="live"?"現場版":"案頭版")+"）"+typoPlain(s.zh,t)+"\n"});
