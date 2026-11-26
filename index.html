@@ -133,6 +133,11 @@ fieldset.sec{border:1px solid var(--line);border-radius:.6rem;background:var(--s
 fieldset.sec legend{font-weight:700;padding:0 .35rem;font-size:.95rem}
 .timer{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
 .timer b{font-size:1.4rem;font-variant-numeric:tabular-nums;min-width:4.5rem}
+.crow{display:grid;grid-template-columns:7.5rem auto minmax(0,1fr) minmax(0,1.2fr);gap:.5rem;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--line)}
+.crow.ch{font-size:.78rem;color:var(--muted);padding-top:0}
+.crow b{font-weight:500;font-size:.9rem}
+.crow input,.crow select{padding:.35rem .45rem;font-size:.88rem}
+@media (max-width:560px){.crow{grid-template-columns:auto minmax(0,1fr) minmax(0,1.1fr)}.crow b{grid-column:1/-1;margin-bottom:-.2rem}.crow.ch{display:none}}
 .ctab{width:100%;border-collapse:collapse;font-size:.88rem}
 .ctab th,.ctab td{border-bottom:1px solid var(--line);padding:.35rem .3rem;text-align:center;vertical-align:middle}
 .ctab th:first-child,.ctab td:first-child{text-align:left}
@@ -282,7 +287,7 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
       </fieldset>
       <fieldset class="sec"><legend>③ 上下客與用路人計數</legend>
         <p class="en">每看到一次上下客就按＋；行人過街列計人數。</p>
-        <div style="overflow-x:auto"><table class="ctab"><thead><tr><th>類別</th><th>次數</th><th>平均停留（秒）</th><th>發生位置</th></tr></thead><tbody id="f-cnt"></tbody></table></div>
+        <div class="crows"><div class="crow ch"><span>類別</span><span>次數</span><span>平均停留（秒）</span><span>發生位置</span></div><div id="f-cnt"></div></div>
       </fieldset>
     </div>
 
@@ -295,7 +300,7 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
       </fieldset>
       <fieldset class="sec"><legend>B 環境與設施</legend><div class="chips" id="f-fac"></div></fieldset>
       <fieldset class="sec"><legend>C 使用觀察（年齡層 × 活動）</legend>
-        <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">每看到一人做某件事，就點對應格子一下。</p><button type="button" class="btn small" id="g-minus" aria-pressed="false">修正（－1）</button></div>
+        <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">每看到一人做某件事，就點對應格子一下（青壯含青少年）。</p><button type="button" class="btn small" id="g-minus" aria-pressed="false">修正（－1）</button></div>
         <div class="gehl" id="f-gehl" style="margin-top:.5rem"></div>
       </fieldset>
       <fieldset class="sec"><legend>D 照片</legend>
@@ -453,7 +458,7 @@ var VEH=[["av","自駕接駁"],["taxi","計程車／網約車"],["car","一般�
 var WHERE=["","路緣","港灣式停靠區","建築退縮","路口","人行道上","其他"];
 var OPM=["政府","市鎮理事會","社區","委外／民間","公私合作","不明"], PP=["有公眾參與","無","不明"];
 var FAC=["遮蔭","雨遮","座椅","飲水","廁所","無障礙坡道","照明","單車停放","遊戲設施","運動設施","攤商／熟食","綠地／水岸"];
-var AGES=[["kid","兒童"],["adult","青少年・青壯"],["elder","高齡"]];
+var AGES=[["kid","兒童"],["adult","青壯"],["elder","高齡"]];
 var ACTS=[["pass","通行"],["stay","停留"],["sit","坐"],["sport","運動"],["social","社交"],["trade","商業"]];
 var SVC=["固定路線","隨選服務"], STOP=["專用上下客點","一般公車站","路緣臨停","建築入口"];
 var KIND={road:"道路速寫表",space:"人本空間記錄表",ride:"搭乘紀錄"};
@@ -571,8 +576,9 @@ function fillSelects(){
 fillSelects();
 function renderCounts(){
   $("f-cnt").innerHTML=VEH.map(function(v){var c=state.counts[v[0]]||{n:0,dw:"",at:""};
-    return '<tr><td>'+v[1]+'</td><td><span class="tally"><button type="button" data-cm="'+v[0]+'" aria-label="'+v[1]+'減一">−</button><output>'+(c.n||0)+'</output><button type="button" class="plus" data-cp="'+v[0]+'" aria-label="'+v[1]+'加一">＋</button></span></td>'+
-      '<td><input type="number" min="0" inputmode="numeric" data-dw="'+v[0]+'" value="'+esc(c.dw)+'"'+(v[0]==="ped"?' placeholder="—"':'')+'></td><td><select data-at="'+v[0]+'">'+WHERE.map(function(w){return '<option'+(c.at===w?' selected':'')+'>'+esc(w)+'</option>'}).join("")+'</select></td></tr>'}).join("");
+    return '<div class="crow"><b>'+v[1]+'</b><span class="tally"><button type="button" data-cm="'+v[0]+'" aria-label="'+v[1]+'減一">−</button><output>'+(c.n||0)+'</output><button type="button" class="plus" data-cp="'+v[0]+'" aria-label="'+v[1]+'加一">＋</button></span>'+
+      '<input type="number" min="0" inputmode="numeric" data-dw="'+v[0]+'" value="'+esc(c.dw)+'" aria-label="'+v[1]+'平均停留秒數" placeholder="停留秒數">'+
+      '<select data-at="'+v[0]+'" aria-label="'+v[1]+'發生位置">'+WHERE.map(function(w){return '<option value="'+esc(w)+'"'+(c.at===w?' selected':'')+'>'+esc(w||"位置")+'</option>'}).join("")+'</select></div>'}).join("");
 }
 $("f-cnt").addEventListener("click",function(e){var b=e.target.closest("[data-cp],[data-cm]");if(!b||b.disabled)return;var k=b.dataset.cp||b.dataset.cm;var c=state.counts[k]||(state.counts[k]={n:0,dw:"",at:""});c.n=Math.max(0,(c.n||0)+(b.dataset.cp?1:-1));b.parentNode.querySelector("output").textContent=c.n});
 $("f-cnt").addEventListener("input",function(e){var t=e.target,k=t.dataset.dw||t.dataset.at;if(!k)return;var c=state.counts[k]||(state.counts[k]={n:0,dw:"",at:""});if(t.dataset.dw)c.dw=t.value;else c.at=t.value});
