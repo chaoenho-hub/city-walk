@@ -244,6 +244,8 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
 .sstrip .src{font-size:.68rem;color:var(--muted)}
 .sstrip .src.live{color:var(--ok)}
 .dia2 figure.sx{overflow-x:auto;min-width:0}
+ol.flow{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:720px){ol.flow{grid-template-columns:1fr}}
 .dia2 figure.sx svg{display:block}
 </style></head><body>
 <header class="top"><div class="bar">
@@ -269,8 +271,7 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
   <h2>論點：釋放、重組、檢驗</h2>
   <ol class="flow">
     <li>釋放<b>路面與停車</b><span class="en">碩士論文推演：自駕與 AI 將釋放雙手、空間與時間；少車政策讓新加坡先走了一步</span></li>
-    <li>重組<b>複合建築</b><span class="en">停車、交通、居住、照護、商業與綠地垂直疊合，公共生活被收進建築</span></li>
-    <li>重組<b>人本街道</b><span class="en">車道讓出寬度，斷面重新分配給行人、單車、綠帶與封街活動</span></li>
+    <li>重組<b>複合建築與人本街道</b><span class="en">建築：停車、交通、居住、照護、商業與綠地垂直疊合，公共生活被收進建築。街道：車道讓出寬度，斷面重新分配給行人、單車、綠帶與封街活動</span></li>
     <li>檢驗<b>人本與臺灣</b><span class="en">公共性四問與使用觀察；對應臺灣待設計空間，寫成設計原則</span></li>
   </ol>
 
@@ -312,12 +313,12 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
 
   <h2>現場怎麼記</h2>
   <div class="grid2">
-    <div class="card"><h3>類型學記錄表 <span class="tag">主表</span></h3><p class="en">打開地點即載入案頭版（依公開資料整理、尚未實地確認），現場增刪元件、修正關係與寬度；簡圖即時更新，另可上傳手繪。</p></div>
+    <div class="card"><h3>類型學記錄表 <span class="tag">主表</span></h3><p class="en">打開地點即載入初稿（依公開資料整理、尚未實地確認），現場增刪元件、修正關係與寬度；簡圖即時更新，另可上傳手繪。</p></div>
     <div class="card"><h3>人本空間記錄表</h3><p class="en">選定公式中的某個元件或斷面帶，以「年齡層 × 活動」點按計數，記錄設施、經營與公共性。</p></div>
     <div class="card"><h3>臺灣對應的待設計空間</h3><p class="en">兩張表都可勾選臺灣哪一類待設計空間可以借鏡：車站周邊、停車場用地、社宅、高架橋下、鐵道廊道等。</p></div>
     <div class="card"><h3>手冊</h3><p class="en">建築類型學矩陣、街道人本比例比較、最常出現的元件組合；可請 Claude 依記錄起草案例卡，匯出 Markdown。</p></div>
   </div>
-  <footer>賀昭恩・九典聯合建築師事務所 建築設計師。案頭版公式與寬度依公開資料整理，現場會再修正；觀察只計人數與活動類型，不拍攝可辨識的面孔與車牌。</footer>
+  <footer>賀昭恩・九典聯合建築師事務所 建築設計師。初稿公式與寬度依公開資料整理，現場會再修正；觀察只計人數與活動類型，不拍攝可辨識的面孔與車牌。</footer>
 </section>
 
 <section id="v-route" class="view" hidden>
@@ -355,7 +356,7 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
       <p class="banner" id="t-modehint" style="margin-top:.6rem"></p>
       <div data-mode="bld">
       <fieldset class="sec"><legend>① 組成元件</legend>
-        <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">從案頭版開始修正；點下方按鈕加入元件。</p><button type="button" class="btn small" id="t-load">重新載入案頭版</button></div>
+        <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">從初稿開始修正；點下方按鈕加入元件。</p><button type="button" class="btn small" id="t-load">重新載入初稿</button></div>
         <div id="t-els"></div>
         <span class="f">加入元件</span><div class="chips addchips" id="t-add"></div>
       </fieldset>
@@ -367,7 +368,7 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
       </div>
       <div data-mode="sec">
       <fieldset class="sec"><legend>① 斷面組成（由左到右）</legend>
-        <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">寬度以公尺填寫；案頭版為示意寬度，請現場量測修正。</p><button type="button" class="btn small" id="s-load">重新載入案頭版</button></div>
+        <div class="row" style="justify-content:space-between"><p class="en" style="margin:0">寬度以公尺填寫；初稿為示意寬度，請現場量測修正。</p><button type="button" class="btn small" id="s-load">重新載入初稿</button></div>
         <div id="s-strips"></div>
         <span class="f">加入斷面元素</span><div class="chips addchips" id="s-add"></div>
       </fieldset>
@@ -427,7 +428,7 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
 
 <section id="v-handbook" class="view" hidden>
   <h1 style="font-size:1.6rem">手冊</h1>
-  <p class="en">記錄自動彙整為進度、類型學矩陣與案例卡，回國後作為《案例圖集》與《設計指引（草案）》的底稿。現場版優先，尚未記錄的地點顯示案頭版。</p>
+  <p class="en">記錄自動彙整為進度、類型學矩陣與案例卡，回國後作為《案例圖集》與《設計指引（草案）》的底稿。現場版優先，尚未記錄的地點顯示初稿。</p>
   <div class="stats" id="stats"></div>
   <div class="row"><button class="btn" id="export" hidden>匯出手冊（Markdown）</button><span class="status" id="export-status"></span></div>
   <h2>建築類型學矩陣</h2>
@@ -744,7 +745,7 @@ window.addEventListener("resize",setHdr);
 
 /* ---------- overview ---------- */
 $("q-list").innerHTML=DATA.RQ.map(function(q){return '<div class="q"><div class="qtag">'+q.k+'<small>'+q.zh+'</small></div><div><p>'+q.q+'</p><p class="o">'+q.o+'</p></div></div>'}).join("");
-$("ex-dia").innerHTML=["capitaspring","fsamk"].map(function(id){var s=SBY[id],t=clone(s.typo);t.mode=s.mode;return '<div class="diabox"><p class="eyebrow">'+(s.mode==="sec"?"街道類型學":"建築類型學")+'・案頭版</p>'+typoBlock(s.zh,t)+'</div>'}).join("");
+$("ex-dia").innerHTML=["capitaspring","fsamk"].map(function(id){var s=SBY[id],t=clone(s.typo);t.mode=s.mode;return '<div class="diabox"><p class="eyebrow">'+(s.mode==="sec"?"街道類型學":"建築類型學")+'・初稿</p>'+typoBlock(s.zh,t)+'</div>'}).join("");
 $("comp-legend").innerHTML=DATA.COMP.filter(function(c){return c[0]!=="oth"}).map(function(c){return '<span><span class="sw" style="--c:'+c[2]+'"></span> '+c[1]+'</span>'}).join("");
 $("sec-legend").innerHTML=DATA.SEC.map(function(c){return '<span><span class="sw" style="--c:'+c[2]+'"></span> '+c[1]+'</span>'}).join("");
 var RELEX={stack:{els:[{k:"grn",n:"屋頂公園",pub:"pub"},{k:"res",n:"住宅",pub:"priv"},{k:"hwk",n:"熟食中心",pub:"pub"}],rel:[{a:0,r:"stack",b:1},{a:1,r:"stack",b:2}],d:"上下疊在同一棟裡，例：海軍部村莊"},
@@ -809,7 +810,7 @@ function dayOf(id){return DATA.days.filter(function(d){return d.sites.indexOf(id
 function openSite(id){var s=SBY[id];if(!s)return;selectSite(id);
   var ds=dayOf(id), ns=notesFor(id), t=currentTypo(id);
   var h='<button class="btn small close" type="button" data-close>關閉</button><div class="ttl" style="--c:'+colorOf(s)+'"><span class="no">'+sic(s.ico)+'</span><div><p class="eyebrow">'+esc(s.no)+'・'+esc(s.area)+'・'+esc(s.scale)+'</p><h2 style="margin:.1rem 0 0">'+esc(s.zh)+'</h2><div class="en">'+esc(s.en)+'</div></div></div>';
-  h+='<div class="diabox" style="margin-top:.7rem"><div class="row" style="justify-content:space-between"><b>組成公式</b><span class="srctag'+(t.src==="live"?' live':'')+'">'+(t.src==="live"?"現場版 "+fmtTime(t.at):"案頭版・待現場確認")+'</span></div>'+typoBlock(s.zh,t)+'</div>';
+  h+='<div class="diabox" style="margin-top:.7rem"><div class="row" style="justify-content:space-between"><b>組成公式</b><span class="srctag'+(t.src==="live"?' live':'')+'">'+(t.src==="live"?"現場版 "+fmtTime(t.at):"初稿・待現場確認")+'</span></div>'+typoBlock(s.zh,t)+'</div>';
   h+='<p class="intro">'+esc(s.intro)+'</p><dl class="kv"><dt>觀察重點</dt><dd>'+esc(s.focus)+'</dd><dt>研究問題</dt><dd>'+s.rq.map(function(t){return '<span class="tag">'+t+'</span>'}).join(" ")+'</dd><dt>行程</dt><dd>'+(ds.length?ds.join("、"):"—")+'</dd><dt>主管／營運</dt><dd>'+esc(s.org)+'</dd>'+(s.arch?'<dt>設計</dt><dd>'+esc(s.arch)+'</dd>':'')+(s.hours?'<dt>開放</dt><dd>'+esc(s.hours)+'</dd>':'')+'</dl>';
   h+='<div class="ask"><b>我帶去的問題</b><br>'+esc(s.ask)+'</div>';
   if(/^https:\/\//.test(s.web))h+='<p class="weblink"><a href="'+esc(s.web)+'" target="_blank" rel="noopener">官方網站 ↗</a></p>';
@@ -871,7 +872,7 @@ function renderStrips(){
       '<div class="more"><input type="text" data-f="hrs" value="'+esc(x.hrs||"")+'" placeholder="時段，例：週末封街" aria-label="時段"><input type="text" data-f="orig" value="'+esc(x.orig||"")+'" placeholder="原用途，例：車道" aria-label="原用途"></div></div>'}).join(""):'<p class="empty">尚無斷面元素。</p>'}
 function renderOv(){
   $("s-ov").innerHTML=state.ov.map(function(o,j){return '<div class="relrow" data-j="'+j+'"><input type="text" data-o="n" value="'+esc(o.n||"")+'" placeholder="名稱，例：高架道路" aria-label="名稱"><select data-o="a" aria-label="起點">'+stripOpts(o.a)+'</select><select data-o="b" aria-label="終點">'+stripOpts(o.b)+'</select><input type="number" data-o="h" value="'+esc(o.h==null?"":o.h)+'" min="0" step="0.5" inputmode="decimal" placeholder="高（m）" aria-label="高度（公尺）"><button type="button" class="btn small" data-rmov="'+j+'" aria-label="移除">×</button></div>'}).join("")}
-$("s-load").addEventListener("click",function(){if(this.dataset.armed!=="1"&&state.strips.length){this.dataset.armed="1";this.textContent="再按一次：覆蓋目前內容";return}this.dataset.armed="";this.textContent="重新載入案頭版";loadDesk()});
+$("s-load").addEventListener("click",function(){if(this.dataset.armed!=="1"&&state.strips.length){this.dataset.armed="1";this.textContent="再按一次：覆蓋目前內容";return}this.dataset.armed="";this.textContent="重新載入初稿";loadDesk()});
 $("s-add").addEventListener("click",function(e){var b=e.target.closest("[data-add]");if(!b||b.disabled)return;state.strips.push({k:b.dataset.add,n:"",w:""});renderStrips();renderOv();renderPreview();
   var last=$("s-strips").querySelector('.el:last-child [data-f="w"]');if(last)last.focus()});
 function stInput(e){var t=e.target,row=t.closest(".el");if(!row||!t.dataset.f)return;var x=state.strips[+row.dataset.i];x[t.dataset.f]=t.dataset.f==="w"?(t.value===""?"":+t.value):t.value;
@@ -885,7 +886,7 @@ function ovInput(e){var t=e.target,row=t.closest(".relrow");if(!row)return;var o
 $("s-ov").addEventListener("input",ovInput);$("s-ov").addEventListener("change",ovInput);
 $("s-ov").addEventListener("click",function(e){var b=e.target.closest("[data-rmov]");if(b&&!b.disabled){state.ov.splice(+b.dataset.rmov,1);renderOv();renderPreview()}});
 $("s-feat").addEventListener("click",function(){setTimeout(renderPreview,0)});
-$("t-load").addEventListener("click",function(){if(this.dataset.armed!=="1"&&state.els.length){this.dataset.armed="1";this.textContent="再按一次：覆蓋目前內容";return}this.dataset.armed="";this.textContent="重新載入案頭版";loadDesk()});
+$("t-load").addEventListener("click",function(){if(this.dataset.armed!=="1"&&state.els.length){this.dataset.armed="1";this.textContent="再按一次：覆蓋目前內容";return}this.dataset.armed="";this.textContent="重新載入初稿";loadDesk()});
 $("t-add").addEventListener("click",function(e){var b=e.target.closest("[data-add]");if(!b||b.disabled)return;state.els.push({k:b.dataset.add,n:"",pub:""});renderTypoAll();
   var last=$("t-els").querySelector('.el:last-child [data-f="n"]');if(last)last.focus()});
 $("t-els").addEventListener("input",function(e){var t=e.target,row=t.closest(".el");if(!row||!t.dataset.f)return;var el=state.els[+row.dataset.i];el[t.dataset.f]=t.value;
@@ -921,7 +922,7 @@ function renderStrip(){var cur=$("f-site").value,h="";
   SITES.forEach(function(s){var t=currentTypo(s.id),has=(t.els&&t.els.length)||(t.strips&&t.strips.length);
     h+='<button type="button" role="radio" data-site="'+s.id+'" aria-checked="'+(s.id===cur)+'" style="--c:'+colorOf(s)+'">'
       +'<span class="th">'+(has?drawSite(t,{only:"sec",small:true,name:s.zh}):'<i>尚無簡圖</i>')+'</span>'
-      +'<span class="nm"><b>'+s.no+'</b> '+esc(s.zh)+'</span><span class="src '+(t.src==="live"?"live":"")+'">'+(t.mode==="sec"?"街道":"建築")+'・'+(t.src==="live"?"現場版":"案頭版")+'</span></button>'});
+      +'<span class="nm"><b>'+s.no+'</b> '+esc(s.zh)+'</span><span class="src '+(t.src==="live"?"live":"")+'">'+(t.mode==="sec"?"街道":"建築")+'・'+(t.src==="live"?"現場版":"初稿")+'</span></button>'});
   $("f-strip").innerHTML=h;syncStrip(true)}
 function syncStrip(center){var cur=$("f-site").value,box=$("f-strip");if(!box.firstChild)return;
   box.classList.toggle("locked",!!state.editing);
@@ -1041,7 +1042,7 @@ function renderHandbook(){
   var ns=Object.keys(sites).length;
   function st(lab,v,t){return '<div class="stat"><div>'+lab+'</div><b>'+v+(t?'<small> / '+t+'</small>':'')+'</b>'+(t?'<div class="pb"><i style="width:'+Math.min(100,Math.round(v/t*100))+'%"></i></div>':'')+'</div>'}
   $("stats").innerHTML=st("類型學記錄表",c.typo,TARGET.typo)+st("使用觀察時段",c.space,TARGET.space)+st("已記錄地點",ns,TARGET.sites)+st("計數人次",people)+st("現場版公式",SITES.filter(function(s){return currentTypo(s.id).src==="live"}).length,NSG);
-  $("hb-legend").innerHTML=DATA.PUB.map(function(p){return '<span><span class="sw '+p[0]+'" style="--c:#5b7fc7"></span> '+p[1]+'</span>'}).join("")+'<span><span class="sw none" style="--c:#5b7fc7"></span> 未標</span><span><span class="srctag">案</span> 案頭版</span><span><span class="srctag live">現</span> 現場版</span>';
+  $("hb-legend").innerHTML=DATA.PUB.map(function(p){return '<span><span class="sw '+p[0]+'" style="--c:#5b7fc7"></span> '+p[1]+'</span>'}).join("")+'<span><span class="sw none" style="--c:#5b7fc7"></span> 未標</span><span><span class="srctag">案</span> 初稿</span><span><span class="srctag live">現</span> 現場版</span>';
   var comps=DATA.COMP.filter(function(x){return x[0]!=="oth"});
   var th='<table><thead><tr><th>地點</th>'+comps.map(function(x){return '<th><span class="sw" style="--c:'+x[2]+'"></span><br>'+esc(x[1].replace("／","／<wbr>"))+'</th>'}).join("").replace(/&lt;wbr&gt;/g,"<wbr>")+'<th>其他</th><th>關係</th><th>轉用</th></tr></thead><tbody>';
   var pairs={},relc={stack:0,adj:0,encl:0,link:0},pubc={pub:0,semi:0,priv:0,none:0};
@@ -1078,7 +1079,7 @@ $("hb").addEventListener("click",async function(e){
   if(g&&state.sample){var id=g.dataset.gen,s=SBY[id],st=$("ds-"+id);g.disabled=true;st.textContent="起草中…";st.className="status";
     var t=currentTypo(id);
     var ns=notesFor(id).map(function(n){return {表單:KIND[n.kind],時段:(n.slot||[]).join("・"),摘要:noteSummary(n),筆記:n.text||"",臺灣對應:(n.twk||[]).join("、"),臺灣轉譯:n.tw||""}});
-    var prompt="你是建築設計師的寫作助理。以下是新加坡「"+s.zh+"」的"+(t.mode==="sec"?"街道斷面":"複合建築")+"類型學記錄。組成公式（"+(t.src==="live"?"現場版":"案頭版")+"）："+typoPlain(s.zh,t)+"。現場記錄（JSON）："+JSON.stringify(ns)+"。請只根據以上資料，不要補充沒有的事實，用繁體中文寫：(1) zh：一段約150字的案例卡說明，描述這個地點由哪些元件或斷面帶、以什麼方式組成，哪些部分真正對公眾開放或留給行人、誰在使用；(2) tw：一到兩條可用於臺灣待設計空間（以記錄中勾選的類別為主）的設計原則，每條以「宜」或「應」開頭。回傳 JSON：{\"zh\":\"...\",\"tw\":\"...\"}。";
+    var prompt="你是建築設計師的寫作助理。以下是新加坡「"+s.zh+"」的"+(t.mode==="sec"?"街道斷面":"複合建築")+"類型學記錄。組成公式（"+(t.src==="live"?"現場版":"初稿")+"）："+typoPlain(s.zh,t)+"。現場記錄（JSON）："+JSON.stringify(ns)+"。請只根據以上資料，不要補充沒有的事實，用繁體中文寫：(1) zh：一段約150字的案例卡說明，描述這個地點由哪些元件或斷面帶、以什麼方式組成，哪些部分真正對公眾開放或留給行人、誰在使用；(2) tw：一到兩條可用於臺灣待設計空間（以記錄中勾選的類別為主）的設計原則，每條以「宜」或「應」開頭。回傳 JSON：{\"zh\":\"...\",\"tw\":\"...\"}。";
     try{var out=await state.sample.json(prompt,{modelTier:"default"});if(out&&typeof out.zh==="string"){$("dz-"+id).value=out.zh;$("dt-"+id).value=typeof out.tw==="string"?out.tw:"";st.textContent="已起草，請修改後按「儲存段落」";st.className="status ok"}else{st.textContent="起草格式不完整，請再試一次";st.className="status err"}}
     catch(err){st.textContent="起草失敗："+(err&&err.code||"");st.className="status err"}
     g.disabled=false;return}
@@ -1090,7 +1091,7 @@ $("export").addEventListener("click",async function(){var st=$("export-status");
   var md="# 獅城步行誌：複合建築與街道類型學\n\n賀昭恩｜新加坡 2027.10.5–10.25\n\n";
   var c={typo:0,space:0};state.notes.forEach(function(n){c[n.kind]=(c[n.kind]||0)+1});
   md+="- 類型學記錄表："+c.typo+" 份\n- 人本空間記錄表："+c.space+" 份\n\n## 組成公式\n\n";
-  SITES.forEach(function(s){var t=currentTypo(s.id);md+="- "+s.no+"（"+(t.src==="live"?"現場版":"案頭版")+"）"+typoPlain(s.zh,t)+"\n"});
+  SITES.forEach(function(s){var t=currentTypo(s.id);md+="- "+s.no+"（"+(t.src==="live"?"現場版":"初稿")+"）"+typoPlain(s.zh,t)+"\n"});
   md+="\n## 案例卡\n";
   SITES.forEach(function(s){var ns=notesFor(s.id);if(!ns.length)return;var dr=state.drafts[s.id]||{};
     md+="\n### "+s.no+". "+s.zh+"（"+s.en+"）\n\n"+(dr.zh?dr.zh+"\n\n":"")+(dr.tw?"**設計原則**："+dr.tw+"\n\n":"");
