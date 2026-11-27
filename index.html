@@ -229,6 +229,22 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
 .dia2 figure{margin:0;min-width:0}
 .dia2 figcaption{font-size:.74rem;color:var(--muted);margin-bottom:.15rem}
 @media (max-width:560px){.dia2{grid-template-columns:1fr}}
+
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sstrip{display:flex;gap:.55rem;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:.15rem .1rem .6rem;margin:0 0 .6rem;scrollbar-width:thin;cursor:grab;-webkit-user-select:none;user-select:none}
+.sstrip.drag{cursor:grabbing;scroll-snap-type:none}
+.sstrip.locked button:not([aria-checked=true]){opacity:.45}
+.sstrip button{flex:0 0 8.2rem;scroll-snap-align:center;display:flex;flex-direction:column;gap:.2rem;padding:.4rem .4rem .45rem;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:inherit}
+.sstrip button[aria-checked=true]{border-color:var(--c,var(--accent));box-shadow:0 0 0 2px color-mix(in srgb,var(--c,var(--accent)) 35%,transparent)}
+.sstrip .th{height:74px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;border-radius:8px;background:color-mix(in srgb,var(--ink) 3%,var(--surface));pointer-events:none}
+.sstrip .th svg{width:100%;height:100%;max-height:74px}
+.sstrip .th i{font-style:normal;font-size:.72rem;color:var(--muted);align-self:center}
+.sstrip .nm{font-size:.8rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.1em}
+.sstrip .nm b{color:var(--c,var(--accent))}
+.sstrip .src{font-size:.68rem;color:var(--muted)}
+.sstrip .src.live{color:var(--ok)}
+.dia2 figure.sx{overflow-x:auto;min-width:0}
+.dia2 figure.sx svg{display:block}
 </style></head><body>
 <header class="top"><div class="bar">
   <div class="brand">獅城步行誌<small>複合建築與街道類型學・新加坡 21 天</small></div>
@@ -325,8 +341,10 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
       <button type="button" data-kind="typo" aria-pressed="true">類型學記錄表<small>元件・關係・簡圖</small></button>
       <button type="button" data-kind="space" aria-pressed="false">人本空間記錄表<small>誰在使用</small></button>
     </div>
+    <span class="f" id="f-site-lab">地點<small>左右滑動，點選簡圖</small></span>
+    <div class="sstrip" id="f-strip" role="radiogroup" aria-labelledby="f-site-lab"></div>
+    <select id="f-site" class="vh" aria-hidden="true" tabindex="-1" required></select>
     <div class="grid2">
-      <div><label class="f" for="f-site">地點</label><select id="f-site" required></select></div>
       <div><span class="f">觀察計時<small>建議 30–60 分鐘</small></span>
         <div class="timer"><b id="tm">00:00</b><button type="button" class="btn small" id="tm-go">開始</button><button type="button" class="btn small" id="tm-reset">歸零</button></div></div>
     </div>
@@ -429,8 +447,7 @@ footer{margin-top:3rem;font-size:.78rem;color:var(--muted)}
 <dialog id="site-dlg"><div class="dlg" id="site-body"></div></dialog>
 </div>
 
-<script>window.__STATIC__=true;</script>
-<script>
+<script>window.__STATIC__=true;</script><script>
 var DATA={"ico":{"bus":"\u003crect x='4' y='4' width='16' height='13' rx='3'/>\u003cpath d='M4 11h16'/>\u003cpath d='M7.5 20v-3M16.5 20v-3'/>\u003cpath d='M8 14.2h.01M16 14.2h.01'/>","grid":"\u003cpath d='M3 20.5h18'/>\u003cpath d='M5 20.5V9l5-3v14.5'/>\u003cpath d='M10 20.5V4l9 4v12.5'/>\u003cpath d='M13 10h3M13 13.5h3M13 17h3'/>","chip":"\u003crect x='7' y='7' width='10' height='10' rx='2'/>\u003cpath d='M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4'/>","gantry":"\u003cpath d='M4 21V6M20 21V6'/>\u003cpath d='M4 6h16'/>\u003crect x='8' y='8' width='8' height='4' rx='1'/>\u003cpath d='M7 21l2-5h6l2 5'/>","tree":"\u003cpath d='M12 21v-5'/>\u003cpath d='M12 3l6 7h-3l4 5H5l4-5H6z'/>","wave":"\u003cpath d='M3 9c2.5-2 4.5-2 7 0s4.5 2 7 0 3-1.5 4-1'/>\u003cpath d='M3 15c2.5-2 4.5-2 7 0s4.5 2 7 0 3-1.5 4-1'/>","lake":"\u003cpath d='M12 4c2.5 2.5 2.5 6 0 9-2.5-3-2.5-6.5 0-9z'/>\u003cpath d='M12 13c-3-.5-6-2.5-7-5 3 0 6 1.5 7 5zM12 13c3-.5 6-2.5 7-5-3 0-6 1.5-7 5z'/>\u003cpath d='M4 19c2.7-1.6 5.3-1.6 8 0s5.3 1.6 8 0'/>","rail":"\u003cpath d='M8 3l-2 18M16 3l2 18'/>\u003cpath d='M6.9 7h10.2M6.4 12h11.2M5.9 17h12.2'/>","viaduct":"\u003cpath d='M2 7h20'/>\u003cpath d='M2 10h20'/>\u003cpath d='M6 10v11M18 10v11'/>\u003cpath d='M10.5 21v-3a1.5 1.5 0 0 1 3 0v3'/>","cross":"\u003cpath d='M3 5h18M3 19h18'/>\u003cpath d='M6 8v8M10 8v8M14 8v8M18 8v8'/>","people":"\u003ccircle cx='8' cy='6' r='2.2'/>\u003ccircle cx='16' cy='6' r='2.2'/>\u003cpath d='M4.5 20v-5a3.5 3.5 0 0 1 7 0v5'/>\u003cpath d='M12.5 20v-5a3.5 3.5 0 0 1 7 0v5'/>","stack":"\u003crect x='4' y='12' width='16' height='9' rx='1'/>\u003crect x='6.5' y='6' width='11' height='6' rx='1'/>\u003cpath d='M12 6V3.5'/>\u003cpath d='M9 3.5c1.5-1.2 4.5-1.2 6 0'/>","roof":"\u003crect x='4' y='10' width='16' height='11' rx='1'/>\u003cpath d='M9.5 19v-6h2.2a1.8 1.8 0 0 1 0 3.6H9.5'/>\u003cpath d='M12 10V6'/>\u003cpath d='M12 7c-2-.2-3.3-1.3-3.5-3 2 .2 3.3 1.3 3.5 3zM12 7c2-.2 3.3-1.3 3.5-3-2 .2-3.3 1.3-3.5 3z'/>","gallery":"\u003cpath d='M3 9.5L12 4l9 5.5'/>\u003cpath d='M4 9.5h16'/>\u003cpath d='M6.5 12v6M10 12v6M14 12v6M17.5 12v6'/>\u003cpath d='M3 20.5h18'/>","shop":"\u003cpath d='M4 21V8l4-4h8l4 4v13'/>\u003cpath d='M4 11h16'/>\u003cpath d='M9 21v-5h6v5'/>\u003cpath d='M8 8h.01M12 8h.01M16 8h.01'/>","station":"\u003cpath d='M3 20.5h18'/>\u003cpath d='M5 20.5V10l7-5 7 5v10.5'/>\u003cpath d='M9 20.5v-5h6v5'/>\u003cpath d='M9.5 11.5h5'/>","tower":"\u003cpath d='M3 21h18'/>\u003cpath d='M8 21V3h8v18'/>\u003cpath d='M8 9h8M8 15h8'/>\u003cpath d='M10.5 12c.8-1.2 2.2-1.2 3 0'/>\u003cpath d='M11 6h2M11 18h2'/>","drop":"\u003cpath d='M3 21h18'/>\u003cpath d='M4 21c0-7 3.5-11 8-11s8 4 8 11'/>\u003cpath d='M12 10V3'/>\u003cpath d='M10 6.5c.6 1 .6 2 0 3M14 6.5c-.6 1-.6 2 0 3'/>","canopy":"\u003cpath d='M2 10c3-3 6-3 10 0s7 3 10 0'/>\u003cpath d='M6 10v11M18 10v11'/>\u003cpath d='M3 21h18'/>\u003cpath d='M10 21v-5h4v5'/>","eye":"\u003cpath d='M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z'/>\u003ccircle cx='12' cy='12' r='2.8'/>","flask":"\u003cpath d='M9 3h6'/>\u003cpath d='M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3'/>\u003cpath d='M7.5 15h9'/>","plane":"\u003cpath d='M3 21h18'/>\u003cpath d='M2 13l8-1 5-7h2l-3 7 5-.5 2-2h1.5l-1 3.5 1 3.5H20l-2-2-5-.5 3 7h-2l-5-7-8-1z'/>"},"RQ":[{"k":"RQ1","zh":"智慧城市","q":"AI 與自駕車大量進城之前，智慧園區與交通樞紐如何重組建築與街道？","o":"榜鵝數位區、緯壹科技城、Geneo、星耀樟宜等智慧園區與交通樞紐的複合方式"},{"k":"RQ2","zh":"永續城市","q":"城市如何減少對汽車的依賴，把空間還給自然與人？","o":"停車場改建、車道地下化、共享停車、屋頂與空中綠化、河道自然化"},{"k":"RQ3","zh":"友善都市空間","q":"友善的街道與公共空間如何被設計、經營，並與社區共同維持？","o":"整合型社區中心、空中村落、友善街道與封街；各層的公共性、使用者與時段"},{"k":"RQ4","zh":"臺灣轉譯","q":"對臺灣的待設計空間有什麼啟示？","o":"車站周邊、停車場用地、社宅、高架橋下、鐵道廊道等臺灣待設計空間的對應原則"}],"sites":[{"id":"jewel","no":1,"zh":"星耀樟宜","en":"Jewel Changi Airport","area":"樟宜","map":"sg","ll":[1.3602,103.9894],"ico":"drop","rq":["RQ2","RQ3"],"arch":"Safdie Architects","hours":"全天開放；雨漩渦約10:00–22:00，夜間有燈光秀（出發前確認）","intro":"2019年開幕，以40公尺高的室內瀑布「雨漩渦」與五層樓的森林谷，把航廈、商場、旅館與停車串成免費開放的室內公共空間，不搭機也能進入。","focus":"交通樞紐作為公共空間、室內綠化與氣候調節、轉乘動線","ask":"沒有要搭機的人來這裡做什麼？轉乘旅客與在地居民各停留多久？森林谷是給人走、給人坐，還是只給人拍照？","web":"https://www.jewelchangiairport.com","org":"樟宜機場集團（Changi Airport Group）","scale":"建築","typo":{"els":[{"k":"trn","n":"航廈連通","pub":"pub"},{"k":"com","n":"商場","pub":"pub"},{"k":"grn","n":"森林谷與雨漩渦","pub":"pub","hrs":"雨漩渦約10:00–22:00"},{"k":"grn","n":"樹冠公園（部分收費）","pub":"semi"},{"k":"hot","n":"旅館","pub":"priv"},{"k":"prk","n":"停車","pub":"semi","fl":"B"}],"rel":[{"a":1,"r":"encl","b":2},{"a":3,"r":"stack","b":1},{"a":1,"r":"link","b":0,"n":"步行連通"},{"a":4,"r":"adj","b":1},{"a":1,"r":"stack","b":5}]},"mode":"bld"},
 {"id":"ura","no":2,"zh":"城市展覽館與宜居城市中心","en":"Singapore City Gallery / CLC（URA Centre）","area":"丹戎巴葛","map":"cbd","ll":[1.2794,103.8446],"ico":"gallery","rq":["RQ1","RQ2","RQ3"],"intro":"城市規劃展覽館免費開放；宜居城市中心為國家發展部的研究機構，兩者位於同一區。","focus":"規劃制度與公眾溝通","ask":"新加坡怎麼向市民說明少車政策與自駕計畫？","web":"https://www.ura.gov.sg","org":"市區重建局（URA）、宜居城市中心（CLC）","scale":"建築","typo":{"els":[{"k":"edu","n":"城市展覽館","pub":"pub"},{"k":"off","n":"宜居城市中心","pub":"semi"}],"rel":[{"a":0,"r":"adj","b":1}]},"mode":"bld"},
 {"id":"capitaspring","no":3,"zh":"CapitaSpring","en":"CapitaSpring","area":"萊佛士坊","map":"cbd","ll":[1.284,103.8505],"ico":"tower","rq":["RQ2","RQ3"],"arch":"BIG、Carlo Ratti Associati","hours":"綠洲（17–20樓）與空中花園（51樓）：週一至週五 8:30–10:30、14:30–18:00；週末及國定假日不開放","intro":"2021年完工的51層複合大樓，基地原為金鞋停車場；2–3樓為熟食中心，17–20樓「綠洲」與51樓空中花園對外開放，另含辦公與服務式公寓。是停車場用地轉為公共生活的實例。","focus":"停車場用地轉化（Parking+）、垂直公共空間的開放規則","ask":"空中花園只在平日早上與下午開放，這樣的公共空間誰用得到？樓下熟食中心的午餐人潮從哪裡來？","web":"https://www.capitaland.com","org":"凱德集團（CapitaLand）","scale":"建築","typo":{"els":[{"k":"cmy","n":"城市客廳","pub":"pub","fl":"1F"},{"k":"hwk","n":"熟食中心","pub":"pub","fl":"2–3F","orig":"金鞋停車場"},{"k":"hot","n":"服務式公寓","pub":"priv"},{"k":"grn","n":"綠洲","pub":"semi","fl":"17–20F","hrs":"平日 8:30–10:30、14:30–18:00"},{"k":"off","n":"辦公","pub":"priv"},{"k":"grn","n":"空中花園","pub":"semi","fl":"51F","hrs":"平日 8:30–10:30、14:30–18:00"}],"rel":[{"a":1,"r":"stack","b":0},{"a":2,"r":"stack","b":1},{"a":3,"r":"stack","b":2},{"a":4,"r":"stack","b":3},{"a":5,"r":"stack","b":4}]},"mode":"bld"},
@@ -578,7 +595,7 @@ function fillFor(e,id,defs){var c=compOf(e).c,p=e.pub||"none";
   if(p==="pub")return c;if(p==="priv")return "color-mix(in srgb,var(--ink) 8%,var(--surface))";if(p==="none")return "color-mix(in srgb,"+c+" 30%,var(--surface))";
   var pid=id+"h"+e.k;if(!defs.p[pid]){defs.p[pid]=1;defs.s+='<pattern id="'+pid+'" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="color-mix(in srgb,'+c+' 18%,var(--surface))"/><rect width="2" height="5" fill="'+c+'"/></pattern>'}return "url(#"+pid+")"}
 function badge(x,y,num,c){return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="6.5" fill="'+c+'" stroke="var(--surface)" stroke-width="1"/><text x="'+x.toFixed(1)+'" y="'+(y+3.3).toFixed(1)+'" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">'+num+'</text>'}
-function svgWrap(id,W,H,defs,g,opt,label){return '<svg class="dia'+(opt.small?' sm':'')+'" viewBox="0 0 '+W.toFixed(0)+' '+H.toFixed(0)+'" role="img" aria-label="'+esc(label)+'"><defs>'+defs+'</defs>'+g+'</svg>'}
+function svgWrap(id,W,H,defs,g,opt,label){return '<svg class="dia'+(opt.small?' sm':'')+'"'+(opt.fixw?' style="width:'+opt.fixw+'px;max-width:none;max-height:none"':'')+' viewBox="0 0 '+W.toFixed(0)+' '+H.toFixed(0)+'" role="img" aria-label="'+esc(label)+'"><defs>'+defs+'</defs>'+g+'</svg>'}
 
 function drawBldSec(t,opt){opt=opt||{};var L=layoutBld(t),els=L.els;if(!els.length)return '<p class="empty">加入元件後，這裡會畫出剖面。</p>';
   var id="d"+(++diaN),defs={s:"",p:{}};
@@ -615,42 +632,57 @@ function drawBldSec(t,opt){opt=opt||{};var L=layoutBld(t),els=L.els;if(!els.leng
   return svgWrap(id,W,H,defs.s,g,opt,(opt.name||"")+"剖面簡圖")}
 
 function drawBldPlan(t,opt){opt=opt||{};var L=layoutBld(t),els=L.els;if(!els.length)return '<p class="empty">加入元件後，這裡會畫出平面。</p>';
-  var id="p"+(++diaN),defs={s:"",p:{}},M=12,GAP=16,g='',ctr={};
+  /* 地面層平面：每一欄只畫最底層的地上元件（實心），上方樓層與地下以編號標籤列在下方，不再疊色塊；
+     圍合畫成外框，連通畫在上方的括號線，避免線條穿過色塊。 */
+  var id="p"+(++diaN),defs={s:"",p:{}},M=12,GAP=22,g='',top={},CH=15;
   var enclosers={};Object.keys(L.enc).forEach(function(b){L.enc[b].forEach(function(a){enclosers[a]=1})});
   function fp(c){var mem=L.cols[c],above=mem.filter(function(i){return !isUnder(els[i])}),under=mem.filter(function(i){return isUnder(els[i])});
-    var base=above.length?above[0]:mem[0];var w=Math.max.apply(null,(above.length?above:mem).map(function(i){return sizeOf(els[i])[0]}));
-    var shp=compOf(els[base]).shape,d=shp==="line"?12:shp==="tower"?44:Math.max(34,Math.round(w*0.6));return {mem:mem,above:above,under:under,base:base,w:w,d:d}}
-  var items=[],H=0;
-  L.seq.forEach(function(c){if(enclosers[c]&&!L.enc[c])return;items.push(c)});
+    var base=above.length?above[0]:mem[0],shp=compOf(els[base]).shape,sz=sizeOf(els[base]);
+    var w=Math.round(sz[0]*0.85),d=shp==="line"?12:shp==="tower"?40:34;
+    return {mem:mem,above:above,under:under,base:base,up:above.filter(function(i){return i!==base}),w:w,d:d}}
+  var items=[];L.seq.forEach(function(c){if(enclosers[c]&&!L.enc[c])return;items.push(c)});
   var x=M,rows=[];
-  items.forEach(function(c){var F=fp(c),E=L.enc[c]||[],t=16,gw=F.w,gd=F.d;
-    if(E.length){gw=F.w+2*t+12;gd=F.d+2*t+12}
-    rows.push({c:c,F:F,E:E,x:x,w:gw,d:gd,t:t});x+=gw+GAP});
-  var W=Math.max(x-GAP+M+26,120),maxD=Math.max.apply(null,rows.map(function(r){return r.d}));H=maxD+2*M+40;
-  function footprint(F,x0,y0,w,d){var e=els[F.base],c=compOf(e).c,s='';
-    F.under.forEach(function(i){s+='<rect x="'+(x0-4).toFixed(1)+'" y="'+(y0-4).toFixed(1)+'" width="'+(w+8)+'" height="'+(d+8)+'" fill="none" stroke="'+compOf(els[i]).c+'" stroke-width="1.2" stroke-dasharray="4 3"/>'});
-    var up=F.above.filter(function(i){return i!==F.base}),st=Math.min(5,24/Math.max(1,up.length));
-    for(var q=up.length-1;q>=0;q--){var ue=els[up[q]],uc=compOf(ue).c,uw=Math.min(w,sizeOf(ue)[0]),off=(q+1)*st;
-      s+='<rect x="'+(x0+(w-uw)/2+off).toFixed(1)+'" y="'+(y0-off).toFixed(1)+'" width="'+uw+'" height="'+d+'" rx="2" fill="'+fillFor(ue,id,defs)+'" stroke="'+uc+'" stroke-width="1.1" opacity=".95"/>'}
-    s+='<rect x="'+x0.toFixed(1)+'" y="'+y0.toFixed(1)+'" width="'+w+'" height="'+d+'" rx="2" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.6"/>';
-    if(d>=14)s+=badge(x0+10,y0+d-10,F.base+1,c);
-    if(up.length)s+='<text x="'+(x0+w/2).toFixed(1)+'" y="'+(y0+d+11).toFixed(1)+'" text-anchor="middle" font-size="8.5" fill="var(--muted)">上疊 '+up.map(function(i){return i+1}).join("・")+'</text>';
-    F.mem.forEach(function(i){ctr[i]=[x0+w/2,y0+d/2]});return s}
-  rows.forEach(function(r){var y0=M+26+(maxD-r.d)/2;
-    if(!r.E.length){g+=footprint(r.F,r.x,y0+(r.d-r.F.d)/2,r.F.w,r.F.d);return}
-    var t=r.t,ox=r.x,oy=y0,ow=r.w,od=r.d,sides=["top","bottom","left","right"];
-    var assign={};if(r.E.length===1){sides.forEach(function(s){assign[s]=r.E[0]})}else{r.E.forEach(function(ec,k){assign[sides[k%4]]=ec})}
-    sides.forEach(function(sd){var ec=assign[sd];if(ec==null)return;var e=els[fp(ec).base],c=compOf(e).c,rx,ry,rw,rh;
-      if(sd==="top"){rx=ox;ry=oy;rw=ow;rh=t}else if(sd==="bottom"){rx=ox;ry=oy+od-t;rw=(r.E.length===1?ow*0.38:ow);rh=t}else if(sd==="left"){rx=ox;ry=oy+t;rw=t;rh=od-2*t}else{rx=ox+ow-t;ry=oy+t;rw=t;rh=od-2*t}
-      g+='<rect x="'+rx.toFixed(1)+'" y="'+ry.toFixed(1)+'" width="'+rw.toFixed(1)+'" height="'+rh.toFixed(1)+'" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.4"/>';
-      if(r.E.length===1&&sd==="bottom"){g+='<rect x="'+(ox+ow*0.62).toFixed(1)+'" y="'+ry.toFixed(1)+'" width="'+(ow*0.38).toFixed(1)+'" height="'+rh.toFixed(1)+'" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.4"/>'}
-      var bx=sd==="left"||sd==="right"?rx+rw/2:rx+12,by=sd==="top"||sd==="bottom"?ry+rh/2:ry+12;
-      if(!(r.E.length===1&&sd!=="top"))g+=badge(bx,by,fp(ec).base+1,c);
-      fp(ec).mem.forEach(function(i){if(!ctr[i])ctr[i]=[rx+rw/2,ry+rh/2]})});
-    g+=footprint(r.F,ox+t+6,oy+t+6,ow-2*t-12,od-2*t-12)});
-  L.rel.forEach(function(rl){if(rl.r!=="link")return;var A=ctr[rl.a],B=ctr[rl.b];if(!A||!B)return;
-    g+='<path d="M'+A[0].toFixed(1)+' '+A[1].toFixed(1)+' L'+B[0].toFixed(1)+' '+B[1].toFixed(1)+'" stroke="var(--ink)" stroke-width="1.3" stroke-dasharray="3 3" fill="none"/>'});
-  return svgWrap(id,W,H,defs.s,g,opt,(opt.name||"")+"平面簡圖")}
+  items.forEach(function(c){var F=fp(c),E=L.enc[c]||[],th=12,gw=F.w,gd=F.d,extra=[];
+    E.forEach(function(ec){var Fe=fp(ec);extra=extra.concat(Fe.up,Fe.under)});
+    if(E.length){gw=F.w+2*th+10;gd=F.d+2*th+10}
+    var chips=F.up.concat(extra.filter(function(i){return !isUnder(els[i])})),und=F.under.concat(extra.filter(function(i){return isUnder(els[i])})).filter(function(i){return i!==F.base});
+    gw=Math.max(gw,92);var nr=(chips.length?1+chips.length:0)+(und.length?1+und.length:0);
+    rows.push({c:c,F:F,E:E,x:x,w:gw,d:gd,th:th,chips:chips,und:und,nr:nr});x+=gw+GAP});
+  var links=L.rel.filter(function(r){return r.r==="link"}),LK=links.length?14+links.length*7:6;
+  var maxD=Math.max.apply(null,rows.map(function(r){return r.d})),maxR=Math.max.apply(null,rows.map(function(r){return r.nr}));
+  var y0=M+LK,W=Math.max(x-GAP+M,140),H=y0+maxD+10+maxR*CH+M;
+  function nm(e){var v=e.n||compOf(e).zh;return v}
+  function chipList(list,x0,y,w,dash){var s='',mx=Math.max(3,Math.floor((w-20)/8.6));list.forEach(function(i,k){var cy=y+k*CH+CH/2,c=compOf(els[i]).c,e=els[i],t=nm(e);if(t.length>mx)t=t.slice(0,mx-1)+"…";
+      s+=(dash?'<circle cx="'+(x0+7).toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="6.5" fill="var(--surface)" stroke="'+c+'" stroke-width="1.3" stroke-dasharray="2.5 2"/><text x="'+(x0+7).toFixed(1)+'" y="'+(cy+3.3).toFixed(1)+'" text-anchor="middle" font-size="9" font-weight="700" fill="'+c+'">'+(i+1)+'</text>':badge(x0+7,cy,i+1,c))
+        +'<text x="'+(x0+17).toFixed(1)+'" y="'+(cy+3.2).toFixed(1)+'" font-size="9" fill="var(--ink)">'+esc(t)+(e.fl?'<tspan fill="var(--muted)"> '+esc(String(e.fl))+'</tspan>':'')+'</text>'});return s}
+  function foot(F,x0,yy){var e=els[F.base],c=compOf(e).c,s='';
+    if(F.under.length&&!F.above.length){s+='<rect x="'+x0.toFixed(1)+'" y="'+yy.toFixed(1)+'" width="'+F.w+'" height="'+F.d+'" rx="2" fill="none" stroke="'+c+'" stroke-width="1.4" stroke-dasharray="4 3"/>'}
+    else{s+='<rect x="'+x0.toFixed(1)+'" y="'+yy.toFixed(1)+'" width="'+F.w+'" height="'+F.d+'" rx="2" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.5"/>';
+      if(F.under.length)s+='<rect x="'+(x0-4).toFixed(1)+'" y="'+(yy-4).toFixed(1)+'" width="'+(F.w+8)+'" height="'+(F.d+8)+'" rx="3" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 3"/>'}
+    if(F.d>=14){s+=badge(x0+10,yy+F.d/2,F.base+1,c);var tn=nm(e),mx=Math.floor((F.w-24)/8.6);if(mx>=2){if(tn.length>mx)tn=tn.slice(0,mx-1)+"…";
+      s+='<text class="lb" x="'+(x0+20).toFixed(1)+'" y="'+(yy+F.d/2+3.2).toFixed(1)+'" font-size="9" fill="var(--ink)">'+esc(tn)+'</text>'}}
+    else s+=badge(x0-8,yy+F.d/2,F.base+1,c);
+    return s}
+  rows.forEach(function(r){var ry=y0+(maxD-r.d)/2;top[r.c]=[r.x+r.w/2,ry];
+    if(!r.E.length){g+=foot(r.F,r.x,ry+(r.d-r.F.d)/2)}
+    else{var th=r.th,ox=r.x,oy=ry,ow=r.w,od=r.d,sides=["top","bottom","left","right"],assign={};
+      if(r.E.length===1){sides.forEach(function(s){assign[s]=r.E[0]})}else{r.E.forEach(function(ec,k){assign[sides[k%4]]=ec})}
+      sides.forEach(function(sd){var ec=assign[sd];if(ec==null)return;var e=els[fp(ec).base],c=compOf(e).c,rx,ry2,rw,rh;
+        if(sd==="top"){rx=ox;ry2=oy;rw=ow;rh=th}else if(sd==="bottom"){rx=ox;ry2=oy+od-th;rw=ow;rh=th}else if(sd==="left"){rx=ox;ry2=oy+th;rw=th;rh=od-2*th}else{rx=ox+ow-th;ry2=oy+th;rw=th;rh=od-2*th}
+        g+='<rect x="'+rx.toFixed(1)+'" y="'+ry2.toFixed(1)+'" width="'+rw.toFixed(1)+'" height="'+rh.toFixed(1)+'" fill="'+fillFor(e,id,defs)+'" stroke="'+c+'" stroke-width="1.2"/>';
+        if(sd==="top"||(r.E.length>1&&(sd==="left"||sd==="right"||sd==="bottom")))g+=badge(sd==="left"||sd==="right"?rx+rw/2:rx+10,sd==="top"||sd==="bottom"?ry2+rh/2:ry2+10,fp(ec).base+1,c);
+        fp(ec).mem.forEach(function(i){top[i]=[rx+rw/2,oy]})});
+      g+=foot(r.F,ox+th+5,oy+th+5)}
+    r.F.mem.forEach(function(i){top[i]=[r.x+r.w/2,ry]});
+    var cy=y0+maxD+10;
+    if(r.chips.length){g+='<text x="'+r.x+'" y="'+(cy+10).toFixed(1)+'" font-size="8.5" fill="var(--muted)">上方樓層</text>'+chipList(r.chips,r.x,cy+CH,r.w,false);cy+=(1+r.chips.length)*CH}
+    if(r.und.length){g+='<text x="'+r.x+'" y="'+(cy+10).toFixed(1)+'" font-size="8.5" fill="var(--muted)">地下</text>'+chipList(r.und,r.x,cy+CH,r.w,true)}
+  });
+  links.forEach(function(rl,k){var A=top[rl.a],B=top[rl.b];if(!A||!B)return;var yy=M+4+k*7,ya=Math.min(A[1],B[1]);
+    var xa=A[0]+(A[0]===B[0]?-6:0),xb=B[0]+(A[0]===B[0]?6:0);
+    g+='<path d="M'+xa.toFixed(1)+' '+(A[1]-1).toFixed(1)+' V'+yy+' H'+xb.toFixed(1)+' V'+(B[1]-1).toFixed(1)+'" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="3 2.5" fill="none"/>'});
+  if(links.length)g+='<text x="'+(W-M)+'" y="'+(M+2)+'" text-anchor="end" font-size="8.5" fill="var(--muted)">虛線＝連通</text>';
+  opt=Object.assign({},opt,{fixw:Math.round(W*(opt.small?1.05:1.3))});return svgWrap(id,W,H,defs.s,g,opt,(opt.name||"")+"平面簡圖")}
 
 /* ---- street section and plan ---- */
 function drawSecSec(t,opt){opt=opt||{};var S=t.strips||[];if(!S.length)return '<p class="empty">加入斷面元素後，這裡會畫出斷面。</p>';
@@ -694,7 +726,7 @@ function drawSecPlan(t,opt){opt=opt||{};var S=t.strips||[];if(!S.length)return '
 function drawSite(t,opt){opt=opt||{};var sec=t.mode==="sec";
   var a=sec?drawSecSec(t,opt):drawBldSec(t,opt),b=sec?drawSecPlan(t,opt):drawBldPlan(t,opt);
   if(opt.only==="sec")return a;
-  return '<div class="dia2"><figure><figcaption>'+(sec?"斷面（寬度單位：公尺）":"剖面")+'</figcaption>'+a+'</figure><figure><figcaption>'+(sec?"平面（街段約 30 公尺）":"平面（外框＝圍合，虛線＝地下，錯位疊層＝上方樓層）")+'</figcaption>'+b+'</figure></div>'}
+  return '<div class="dia2"><figure><figcaption>'+(sec?"斷面（寬度單位：公尺）":"剖面")+'</figcaption>'+a+'</figure><figure'+(sec?'':' class="sx"')+'><figcaption>'+(sec?"平面（街段約 30 公尺）":"地面層平面（實心＝地面層，外框＝圍合，虛線＝地下；上方樓層列在下方）")+'</figcaption>'+b+'</figure></div>'}
 function typoBlock(name,t,opt){opt=opt||{};return (opt.noFormula?'':formulaHTML(name,t))+drawSite(t,{small:opt.small,name:name,only:opt.only})+(opt.list===false?'':elListHTML(t))}
 function typoPlain(name,t){if(t.mode==="sec"){var st=secStats(t);return name+" ＝ "+t.strips.map(function(s){return stName(s)+(stW(s)&&s.k!=="bld"?" "+stW(s)+"m":"")+(s.orig?"〔原："+s.orig+"〕":"")+(s.hrs?"〔"+s.hrs+"〕":"")}).join("｜")+"；人本比例 "+(st.ratio==null?"—":st.ratio+"%")+((t.feat||[]).length?"；特徵："+t.feat.join("、"):"")}
   return name+" ＝ "+t.els.map(function(e){return elName(e)+(e.fl?"（"+e.fl+"）":"")+(e.pub?"［"+PUBZ[e.pub]+"］":"")+(e.orig?"〔原："+e.orig+"〕":"")}).join(" ＋ ")+((t.rel||[]).length?"；關係："+t.rel.map(function(r){return relText(t,r)}).join("；"):"")}
@@ -704,7 +736,7 @@ var VIEWS=["overview","route","record","handbook"];
 function show(){var v=(location.hash||"").slice(1); if(VIEWS.indexOf(v)<0)v="overview";
   VIEWS.forEach(function(x){$("v-"+x).hidden=x!==v});
   document.querySelectorAll("nav.tabs a").forEach(function(a){if(a.getAttribute("href")==="#"+v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-  if(v==="route")renderRoute(); if(v==="record")renderRecent(); if(v==="handbook")renderHandbook();
+  if(v==="route")renderRoute(); if(v==="record"){renderRecent();renderStrip()} if(v==="handbook")renderHandbook();
   setHdr(); window.scrollTo(0,0)}
 window.addEventListener("hashchange",show);
 function setHdr(){var h=document.querySelector("header.top");if(h)document.documentElement.style.setProperty("--hdr",h.offsetHeight+"px")}
@@ -884,7 +916,27 @@ function setKind(k){state.kind=k;document.querySelectorAll("#kind [data-kind]").
   document.querySelectorAll("[data-for]").forEach(function(el){el.hidden=el.dataset.for.split(" ").indexOf(k)<0});
   if(k==="typo"&&!state.editing&&state.typoSite!==$("f-site").value)loadDesk();if(k==="space")fillElSelect($("f-el").value)}
 $("kind").addEventListener("click",function(e){var b=e.target.closest("[data-kind]");if(b&&!state.editing)setKind(b.dataset.kind)});
-$("f-site").addEventListener("change",function(){if(state.editing)return;if(state.kind==="typo")loadDesk();fillElSelect("")});
+$("f-site").addEventListener("change",function(){syncStrip();if(state.editing)return;if(state.kind==="typo")loadDesk();fillElSelect("")});
+function renderStrip(){var cur=$("f-site").value,h="";
+  SITES.forEach(function(s){var t=currentTypo(s.id),has=(t.els&&t.els.length)||(t.strips&&t.strips.length);
+    h+='<button type="button" role="radio" data-site="'+s.id+'" aria-checked="'+(s.id===cur)+'" style="--c:'+colorOf(s)+'">'
+      +'<span class="th">'+(has?drawSite(t,{only:"sec",small:true,name:s.zh}):'<i>尚無簡圖</i>')+'</span>'
+      +'<span class="nm"><b>'+s.no+'</b> '+esc(s.zh)+'</span><span class="src '+(t.src==="live"?"live":"")+'">'+(t.mode==="sec"?"街道":"建築")+'・'+(t.src==="live"?"現場版":"案頭版")+'</span></button>'});
+  $("f-strip").innerHTML=h;syncStrip(true)}
+function syncStrip(center){var cur=$("f-site").value,box=$("f-strip");if(!box.firstChild)return;
+  box.classList.toggle("locked",!!state.editing);
+  Array.prototype.forEach.call(box.children,function(b){var on=b.dataset.site===cur;b.setAttribute("aria-checked",on);b.tabIndex=on?0:-1;
+    if(on&&center!==false){var l=b.offsetLeft-(box.clientWidth-b.offsetWidth)/2;box.scrollTo({left:Math.max(0,l),behavior:center===true?"auto":"smooth"})}})}
+(function(){var box=$("f-strip"),down=null,moved=false;
+  box.addEventListener("click",function(e){var b=e.target.closest("button[data-site]");if(!b||moved)return;
+    if(state.editing){$("save-status").textContent="編輯既有記錄時不能更換地點；請先按「清空」開新記錄。";$("save-status").className="status warn";return}
+    var sel=$("f-site");if(sel.value===b.dataset.site)return;sel.value=b.dataset.site;sel.dispatchEvent(new Event("change"))});
+  box.addEventListener("keydown",function(e){if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;var bs=[].slice.call(box.children),k=bs.findIndex(function(b){return b.dataset.site===$("f-site").value}),n=bs[Math.min(bs.length-1,Math.max(0,k+(e.key==="ArrowRight"?1:-1)))];
+    if(n&&!state.editing){e.preventDefault();$("f-site").value=n.dataset.site;$("f-site").dispatchEvent(new Event("change"));n.focus()}});
+  /* 滑鼠拖曳也能左右捲動（觸控裝置原生支援） */
+  box.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse")return;down={x:e.clientX,l:box.scrollLeft};moved=false});
+  window.addEventListener("pointermove",function(e){if(!down)return;var dx=e.clientX-down.x;if(Math.abs(dx)>5){moved=true;box.classList.add("drag")}box.scrollLeft=down.l-dx});
+  window.addEventListener("pointerup",function(){if(!down)return;down=null;box.classList.remove("drag");setTimeout(function(){moved=false},0)})})();
 
 /* timer */
 var tmStart=null,tmAcc=0,tmInt=null;
@@ -899,10 +951,10 @@ function clearForm(){state.gehl={};state.photos=[];state.els=[];state.rel=[];sta
   ["f-orig","f-op","f-tw","f-text"].forEach(function(i){$(i).value=""});
   ["f-opm","f-pp","f-fac","f-acc","f-twk"].forEach(function(i){setChips(i,[])});setChips("f-wx",[]);setChips("f-slot",guessSlot());
   renderGehl();renderFormPhotos();renderTypoAll();tmReset(0)}
-function startNew(site,kind){state.editing=null;clearForm();$("f-site").value=site||SITES[0].id;setKind(kind||state.kind||"typo");fillElSelect("");
+function startNew(site,kind){state.editing=null;clearForm();$("f-site").value=site||SITES[0].id;syncStrip();setKind(kind||state.kind||"typo");fillElSelect("");
   $("save").textContent="儲存記錄";$("save-status").textContent="";$("save-status").className="status";if(site)$("rec-form").scrollIntoView({block:"start"})}
 function loadEdit(id){var n=state.notes.find(function(x){return x.id===id});if(!n)return;state.editing=null;clearForm();state.editing=id;
-  $("f-site").value=n.site;var k=(n.kind==="typo"||n.kind==="space")?n.kind:"space";
+  $("f-site").value=n.site;syncStrip();var k=(n.kind==="typo"||n.kind==="space")?n.kind:"space";
   state.els=clone({els:n.els}).els||[];state.rel=clone({rel:n.rel}).rel||[];state.strips=clone({s:n.strips}).s||[];state.ov=clone({o:n.ov}).o||[];setMode(n.mode||modeOf(n.site));setChips("s-feat",n.feat||[]);state.typoSite=n.site;setKind(k);
   setChips("f-slot",n.slot);setChips("f-wx",n.wx?[n.wx]:[]);tmReset(n.min||0);$("f-text").value=n.text||"";
   $("f-orig").value=n.orig||"";$("f-op").value=n.op||"";setChips("f-opm",n.opm);setChips("f-pp",n.pp?[n.pp]:[]);setChips("f-fac",n.fac);setChips("f-acc",n.acc);state.gehl=Object.assign({},n.gehl||{});
@@ -1055,7 +1107,7 @@ async function setupMic(){var d=await use("dictation");if(!d)return;var mic=$("m
   mic.addEventListener("click",function(){if(d.active()){d.stop().catch(function(){})}else{$("mic-status").textContent="輸入到："+($(micTarget).id==="f-tw"?"臺灣轉譯筆記":"觀察筆記");d.start().catch(function(err){$("mic-status").textContent=err&&err.code==="not_granted"?"未允許語音輸入，請改用打字":"語音輸入無法使用";if(err&&err.code==="not_granted")mic.hidden=true})}})}
 
 /* ---------- boot ---------- */
-function rerender(){var v=(location.hash||"").slice(1);if(v==="record")renderRecent();if(v==="handbook")renderHandbook();if(v==="route")renderRoute()}
+function rerender(){var v=(location.hash||"").slice(1);if(v==="record"){renderRecent();renderStrip()}if(v==="handbook")renderHandbook();if(v==="route")renderRoute()}
 function demoMode(msg){var b=$("rec-banner");b.className="banner demo";b.hidden=false;b.textContent=msg;$("rec-form").hidden=false;startNew();
   $("save").disabled=true;$("rec-form").querySelectorAll("input[type=file]").forEach(function(x){x.disabled=true});
   document.querySelectorAll(".phbtn").forEach(function(l){l.setAttribute("aria-disabled","true")})}
